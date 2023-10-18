@@ -1,0 +1,18 @@
+class Jugador
+
+nickname
+encerts
+
+incrementar_encerts++
+
+class Game
+
+generar_nombre_aleatori
+jugar (Jugador)
+
+
+class MenuInteractiu
+
+mostrar_menu
+
+veure_puntuacions

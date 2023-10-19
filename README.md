@@ -9,27 +9,27 @@ Proyectos hechos en clase de Daniel Cabrera
 .--------------------------------------------------------------------------------.
 |        | Lunes     | Martes    | Jueves    | Viernes   |  |        | Miércoles |
 |--------------------------------------------------------------------------------|
-| 15:30  | Clase     | Clase     | Clase     | Clase     |  |        |           |
-| 16:30  | Clase     | Clase     | Clase     | Clase     |  | 16:30  | Clase     |
+| 15:30  | MP13PROJ  | MP03PG-2  | MP13FOL   | MP12EIE   |  |        |           |
+| 16:30  | MP13PROJ  | MP03PG-2  | MP13FOL   | MP13EIE   |  | 16:30  |           |
 |--------------------------------------------------------------------------------|
-| 16:30  | Clase     | Clase     | Clase     | Clase     |  | 16:30  | Clase     |
-| 17:30  | Clase     | Clase     | Clase     | Clase     |  | 17:20  | Clase     |
+| 16:30  | MP13PROJ  | MP03PG-2  | MP12EIE   | MP08PMDM  |  | 16:30  | MP09PSP   |
+| 17:30  | MP13PROJ  | MP03PG-2  | MP12EIE   | MP08PMDM  |  | 17:20  | MP09PSP   |
 |--------------------------------------------------------------------------------|
-| 17:30  | Clase     | Clase     | Clase     | Clase     |  | 17:20  | Clase     |
-| 18:30  | Clase     | Clase     | Clase     | Clase     |  | 18:10  | Clase     |
+| 17:30  | MP13PROJ  | MP13PROJ  | MP06AD    | MP08PMDM  |  | 17:20  | MP09PSP   |
+| 18:30  | MP13PROJ  | MP13PROJ  | MP06AD    | MP08PMDM  |  | 18:10  | MP09PSP   |
 |--------------------------------------------------------------------------------|
 | 18:30  | PATIO     | PATIO     | PATIO     | PATIO     |  | 18:10  | PATIO     |
 |   -    | PATIO     | PATIO     | PATIO     | PATIO     |  |   -    | PATIO     |
 | 19:00  | PATIO     | PATIO     | PATIO     | PATIO     |  | 18:40  | PATIO     |
 |--------------------------------------------------------------------------------|
-| 19:00  | Clase     | Clase     | Clase     | Clase     |  | 18:40  | Clase     |
-| 20:00  | Clase     | Clase     | Clase     | Clase     |  | 19:30  | Clase     |
+| 19:00  | MP13PROJ  | MP13PROJ  | MP06AD    | MP07DI    |  | 18:40  | MP07DI    |
+| 20:00  | MP13PROJ  | MP13PROJ  | MP06AD    | MP07DI    |  | 19:30  | MP07DI    |
 |--------------------------------------------------------------------------------|
-| 20:00  | Clase     | Clase     | Clase     | Clase     |  | 19:30  | Clase     |
-| 21:00  | Clase     | Clase     | Clase     | Clase     |  | 20:20  | Clase     |
+| 20:00  | MP13PROJ  | MP13PROJ  |           | MP07DI    |  | 19:30  | TUTORIA   |
+| 21:00  | MP13PROJ  | MP13PROJ  |           | MP07DI    |  | 20:20  | TUTORIA   |
 |--------------------------------------------------------------------------------|
-| 21:00  | Clase     | Clase     | Clase     | Clase     |  | 20:20  | Clase     |
-| 22:00  | Clase     | Clase     | Clase     | Clase     |  | 21:10  | Clase     |
+| 21:00  | MP08      | MP08      |           |           |  | 20:20  | MP06AD    |
+| 22:00  | MP08      | MP08      |           |           |  | 21:10  | MP06AD    |
 '--------------------------------------------------------------------------------'
 ~~~~
 ---

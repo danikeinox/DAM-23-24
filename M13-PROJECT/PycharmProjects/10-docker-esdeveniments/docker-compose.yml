@@ -1,0 +1,52 @@
+version: "3.8"
+services:
+  db:
+    container_name: postgres_db
+    image: postgres:14
+    environment:
+      - POSTGRES_DB=app_db
+      - POSTGRES_USER=app_user
+      - POSTGRES_PASSWORD=app_password
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    networks:
+      - app-network
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/pgdata
+      - ./sql/001_create_tables.sql:/docker-entrypoint-initdb.d/001_create_tables.sql
+    tty: true
+    stdin_open: true
+    depends_on:
+      - app
+
+  app:
+    container_name: esdeveniments_bd
+    build: .
+    image: postgres:14
+    environment:
+      - POSTGRES_DB=app_db
+      - POSTGRES_USER=app_user
+      - POSTGRES_PASSWORD=app_password
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+      - POSTGRES_SSLMODE=disable
+    networks:
+      - app-network
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/pgdata
+      - ./sql/002_import_data.sql:/docker-entrypoint-initdb.d/002_import_data.sql
+    tty: true
+    stdin_open: true
+    depends_on:
+      - db
+
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:

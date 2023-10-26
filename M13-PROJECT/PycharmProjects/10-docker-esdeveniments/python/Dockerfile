@@ -3,6 +3,6 @@ MAINTAINER Daniel Cabrera <daniel@danielcabrera.es>
 
 WORKDIR /app
 
-COPY . .
+COPY .. .
 
 CMD ["python", "main.py"]

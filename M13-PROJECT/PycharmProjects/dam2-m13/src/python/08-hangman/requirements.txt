@@ -1,0 +1,4 @@
+pyinstaller~=6.0.0
+setuptools~=68.2.2
+requests~=2.31.0
+psycopg2-binary~=2.9.9

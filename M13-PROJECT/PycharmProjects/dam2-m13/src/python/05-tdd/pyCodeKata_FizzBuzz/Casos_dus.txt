@@ -1,0 +1,10 @@
+Quan cridem a fizz_buzz(valor):
+- Obtenim "1" quan passem "1"
+- Obtenim "2" quan passem "2"
+- Obtenim "Fizz" quan passem "3"
+- Obtenim "Buzz" quan passem "5"
+- Obtenim "Fizz" quan passem "6" (un múltiple de 3)
+- Obtenim "Buzz" quan passem "10" (un múltiple de 5)
+- Obtenim "FizzBuzz" quan passem "15" (un múltiple de 3 i de 5)
+
+

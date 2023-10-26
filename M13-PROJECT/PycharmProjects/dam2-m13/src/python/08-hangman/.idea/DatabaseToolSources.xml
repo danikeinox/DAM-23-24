@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DatabaseToolSources">
+    <data-source name="cicles.ies-eugeni.cat" uuid="d6f15a96-c255-4f2c-aa7a-8b2248113b70" type="POSTGRES">
+      <base-info connect-type="DB_DEFAULT" />
+      <user-name>dcabrera</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node negative="1">
+            <node kind="database" qname="postgres" operator="@">
+              <node kind="schema">
+                <name qname="public" />
+              </node>
+            </node>
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+      <url>jdbc:postgresql://cicles.ies-eugeni.cat:5432/dcabrera_db</url>
+      <remarks />
+      <vm-options />
+      <driver-info id="postgresql" />
+      <ssh-properties enabled="false" />
+      <ssl-config enabled="true">
+        <uuid />
+        <caFile />
+        <clientCertificateFile />
+        <clientKeyFile />
+        <sslMode>REQUIRE</sslMode>
+      </ssl-config>
+    </data-source>
+  </component>
+</project>

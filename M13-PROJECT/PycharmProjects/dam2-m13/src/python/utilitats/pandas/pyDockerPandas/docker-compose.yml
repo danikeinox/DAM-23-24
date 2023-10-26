@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    environment:
+      POSTGRES_HOST: timescaledb
+      POSTGRES_PORT: 5432
+      POSTGRES_DBNAME: test_db
+      POSTGRES_USER: test_user
+      POSTGRES_PASSWORD: test_password
+    networks:
+      - monitoring
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    ports:
+      - '3000:3000'
+    networks:
+      - monitoring
+    volumes:
+      - grafana:/var/lib/grafana
+
+  timescaledb:
+    image: timescale/timescaledb-ha:pg14-latest
+    container_name: timescaledb
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: test_db
+      POSTGRES_USER: test_user
+      POSTGRES_PASSWORD: test_password
+    volumes:
+      - timescaledb:/home/postgres/pgdata
+    networks:
+      - monitoring
+
+networks:
+  monitoring:
+
+volumes:
+  grafana:
+    driver: local
+  timescaledb:
+    driver: local

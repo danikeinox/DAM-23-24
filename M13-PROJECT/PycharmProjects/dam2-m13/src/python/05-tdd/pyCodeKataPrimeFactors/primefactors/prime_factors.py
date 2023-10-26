@@ -1,0 +1,2 @@
+def of(numero):
+    pass

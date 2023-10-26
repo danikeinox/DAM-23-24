@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="302.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cat.dam.psp.activitat_dos.controllers.MainViewController">
+   <children>
+      <Button layoutX="435.0" layoutY="262.0" mnemonicParsing="false" onAction="#btSurtOnAction" text="Surt ..." />
+      <TextField fx:id="tfNom" layoutX="180.0" layoutY="34.0" prefHeight="26.0" prefWidth="256.0" promptText="nom" />
+      <Label fx:id="lblError" alignment="CENTER" contentDisplay="CENTER" layoutX="180.0" layoutY="146.0" prefHeight="17.0" prefWidth="256.0" text="#" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfTel" layoutX="180.0" layoutY="72.0" prefHeight="26.0" prefWidth="256.0" promptText="telèfon" />
+      <Label layoutX="64.0" layoutY="77.0" prefHeight="17.0" prefWidth="106.0" text="Telèfon">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfEmail" layoutX="180.0" layoutY="108.0" prefHeight="26.0" prefWidth="256.0" promptText="correu electrònic" />
+      <Label layoutX="64.0" layoutY="113.0" prefHeight="17.0" prefWidth="106.0" text="Correu electrònic">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="39.0" prefHeight="17.0" prefWidth="106.0" text="Nom">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="taResultat" editable="false" layoutX="174.0" layoutY="176.0" prefHeight="113.0" prefWidth="256.0" />
+      <Label layoutX="64.0" layoutY="176.0" prefHeight="17.0" prefWidth="106.0" text="Resultat">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="btDesa" layoutX="117.0" layoutY="172.0" mnemonicParsing="false" onAction="#btDesaOnAction" prefHeight="26.0" prefWidth="51.0" text="Desa" />
+      <Button layoutX="443.0" layoutY="109.0" mnemonicParsing="false" onAction="#btTestOnAction" onMouseClicked="#btTestOnMouseClicked" prefHeight="26.0" prefWidth="51.0" text="Test" />
+   </children>
+</AnchorPane>

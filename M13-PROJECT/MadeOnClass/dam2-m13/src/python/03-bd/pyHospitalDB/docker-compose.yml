@@ -1,0 +1,18 @@
+version: '3'
+
+# Creen els serveis
+services:
+  mydb:                                 # Identifiquem el servei amb mydb
+    image: postgres:13-bullseye         # Utiltizem la versió 13.X (last version) de potgres
+    volumes:
+      - postgresdb:/var/lib/postgresql  # Creem un volum per emmagatzemar les dades
+    ports:                               
+      - "5432:5432"                     # Habilitem el port 5432 per accedir a la DB
+    environment:                        # Creem les variables d'usuari i contrasenya de la DB
+      POSTGRES_USER: admin              #   que són necessaris per docker
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: testdb
+
+volumes:                                # asignem el volum
+  postgresdb:
+    driver: local

@@ -1,0 +1,6 @@
+﻿{
+  "Ahmad" : {"apples": 3, "oranges": 0},
+  "Ali"   : {"apples": 2, "oranges": 3},
+  "Rashed": {"apples": 0, "oranges": 2},
+  "Hamza" : {"apples": 1, "oranges": 2}
+}

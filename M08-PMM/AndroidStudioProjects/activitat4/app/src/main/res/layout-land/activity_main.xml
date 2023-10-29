@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +11,6 @@
 
         <TextView
             android:id="@+id/titleTicTacToe"
-            style="@style/titol"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/black"
@@ -25,15 +22,116 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:background="@drawable/fons"
-            android:orientation="vertical">
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:id="@+id/cnfRad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/facil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Dificultat: Facil"
+                            android:textColor="@color/white" />
+
+                        <RadioButton
+                            android:id="@+id/normal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Dificultat: Normal"
+                            android:textColor="@color/white" />
+
+                        <RadioButton
+                            android:id="@+id/impo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Dificultat: Imposible"
+                            android:textColor="@color/white" />
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/unjug"
+                            style="@style/boto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_weight="1"
+                            android:text="Un Jugador"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:id="@+id/dosjug"
+                            style="@style/boto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_weight="1"
+                            android:text="Dos Jugadors"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                </LinearLayout>
+<!--
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/cnfRad"
+                        style="@style/boto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:foreground="@drawable/buttons"
+                        android:src="@drawable/buttons"
+                        android:tooltipText="Un Jugador" />
+
+                    <ImageButton
+                        android:id="@+id/Jugarhi"
+                        style="@style/boto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:foreground="@drawable/buttons"
+                        android:src="@drawable/buttons"
+                        android:tooltipText="Dos Jugadors" />
+
+                </LinearLayout>
+-->
+            </LinearLayout>
 
             <androidx.gridlayout.widget.GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_weight="60"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
                 app:columnCount="3"
                 app:rowCount="3">
 
@@ -127,101 +225,6 @@
                     app:layout_columnWeight="10"
                     app:layout_rowWeight="10" />
             </androidx.gridlayout.widget.GridLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:orientation="vertical">
-
-                <RadioGroup
-                    android:id="@+id/cnfRad"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-
-                    <RadioButton
-                        android:id="@+id/facil"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Dificultat: Facil"
-                        android:textColor="@color/white" />
-
-                    <RadioButton
-                        android:id="@+id/normal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Dificultat: Normal"
-                        android:textColor="@color/white" />
-
-                    <RadioButton
-                        android:id="@+id/impo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Dificultat: Imposible"
-                        android:textColor="@color/white" />
-                </RadioGroup>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/unjug"
-                        style="@style/boto"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_weight="1"
-                        android:text="Un Jugador"
-                        android:textColor="@color/white" />
-
-                    <Button
-                        android:id="@+id/dosjug"
-                        style="@style/boto"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_weight="1"
-                        android:text="Dos Jugadors"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-
-            </LinearLayout>
-<!--
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="20"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/cnfRad"
-                    style="@style/boto"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="20dp"
-                    android:layout_weight="1"
-                    android:foreground="@drawable/buttons"
-                    android:src="@drawable/buttons"
-                    android:tooltipText="Un Jugador" />
-
-                <ImageButton
-                    android:id="@+id/Jugarhi"
-                    style="@style/boto"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="20dp"
-                    android:layout_weight="1"
-                    android:foreground="@drawable/buttons"
-                    android:src="@drawable/buttons"
-                    android:tooltipText="Dos Jugadors" />
-
-            </LinearLayout>
-            -->
 
         </LinearLayout>
 

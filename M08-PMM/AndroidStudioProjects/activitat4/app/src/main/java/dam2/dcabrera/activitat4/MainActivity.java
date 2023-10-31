@@ -1,12 +1,14 @@
 package dam2.dcabrera.activitat4;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.WindowDecorActionBar;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private int[] caselles = new int[9];
     private Joc3R joc;
     private int nJugadors;
+    private TextView tx_winner;
 
 
     @Override
@@ -29,18 +32,20 @@ public class MainActivity extends AppCompatActivity {
         caselles[6] = R.id.C1;
         caselles[7] = R.id.C2;
         caselles[8] = R.id.C3;
+        tx_winner = (TextView) findViewById(R.id.tx_winner);
     }
 
-    public void juguemHi(View view){
+    public void juguemHi(View view) {
+        tx_winner.setText("");
         ImageView img;
 
-        for(int casella: caselles){
+        for (int casella : caselles) {
             img = (ImageView) findViewById(casella);
             img.setImageResource(R.drawable.casella);
         }
 
         nJugadors = 1;
-        if(view.getId()==R.id.dosjug){
+        if (view.getId() == R.id.dosjug) {
             nJugadors = 2;
         }
 
@@ -53,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             difJoc = 2;
         }
 
-        joc=new Joc3R(difJoc);
+        joc = new Joc3R(difJoc);
         ((Button) findViewById(R.id.unjug)).setEnabled(false);
         ((Button) findViewById(R.id.dosjug)).setEnabled(false);
         ((RadioGroup) findViewById(R.id.cnfRad)).setAlpha(0);
@@ -61,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup rg = (RadioGroup) findViewById(R.id.cnfRad);
         int selectedId = rg.getCheckedRadioButtonId();
 
-        if(selectedId==-1){
+        if (selectedId == -1) {
             return;
         } else {
             difJoc = rg.getCheckedRadioButtonId();
@@ -78,25 +83,30 @@ public class MainActivity extends AppCompatActivity {
                 casella = i;
             }
         }
-        if (joc.checkCasella(casella) == true) {
-            marcaCasella(casella);
+        if (joc.checkCasella(casella) == false) {
+            return;
         }
-        else return;
-
-
+        marcaCasella(casella);
+        int resTirada = joc.torn();
+        if (resTirada>0) {
+            finalPartida(resTirada);
+            return;
+        }
         if(nJugadors == 1) {
-            joc.torn();
             casella = joc.jugaMaquina();
             while(joc.checkCasella(casella) != true){
                 casella = joc.jugaMaquina();
             }
+            marcaCasella(casella);
+            resTirada = joc.torn();
+            if (resTirada>0) {
+                finalPartida(resTirada);
+                return;
+            }
         }
-
-        marcaCasella(casella);
-        joc.torn();
     }
 
-    public void marcaCasella(int casella){
+    public void marcaCasella(int casella) {
         ImageView img;
         img = (ImageView) findViewById(caselles[casella]);
         if(joc.jugador == 1) {
@@ -104,6 +114,16 @@ public class MainActivity extends AppCompatActivity {
         } else {
             img.setImageResource(R.drawable.creu);
         }
+    }
 
+    public void finalPartida(int resT) {
+        String missatge;
+        if (resT == 1) missatge = "Guanya Cercles";
+        else if (resT == 2) missatge = "Guanya Creus";
+        else missatge = "Empate";
+        tx_winner.setText(missatge);
+        ((Button) findViewById(R.id.unjug)).setEnabled(true);
+        ((Button) findViewById(R.id.dosjug)).setEnabled(true);
+        ((RadioGroup) findViewById(R.id.cnfRad)).setAlpha(1);
     }
 }

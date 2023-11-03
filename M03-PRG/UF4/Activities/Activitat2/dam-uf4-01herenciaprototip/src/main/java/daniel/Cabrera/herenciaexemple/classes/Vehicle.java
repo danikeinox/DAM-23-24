@@ -1,6 +1,8 @@
 package daniel.Cabrera.herenciaexemple.classes;
 
 
+import pkgFitxers.Fitxers;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
@@ -20,12 +22,23 @@ public class Vehicle implements Serializable {
 
 
     // Variables protected que podran utilitzar les filles sense necessitat de declarar-les
-    //protected static Fitxers f = new Fitxers();
+    protected static Fitxers f = new Fitxers();
     protected static String dir = ".data/";       // carpeta contenidora dels fitxers
+    protected static String matricula = "";        // matrícula del vehicle
+    protected static String model = "";           // model del vehicle
+    protected static String potencia = "";        // potència del vehicle
     //</editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Constructors">
 
+    public Vehicle() {
+    }
+
+    public Vehicle(String matricula, String model, String potencia) {
+        Vehicle.matricula = matricula;
+        Vehicle.model = model;
+        Vehicle.potencia = potencia;
+    }
 
     //</editor-fold>
 
@@ -37,11 +50,10 @@ public class Vehicle implements Serializable {
      * @throws IOException Excepció d'E/S
      */
     public void guardaVehicleFitxer(String rutaFitxer) throws IOException {
-
-
+        f.escriuObjecteFitxer(this, rutaFitxer, true);
         // *** //
-
     }
+
 
     /**
      * Mètode per retornar qualsevol objecte vehicle
@@ -55,13 +67,9 @@ public class Vehicle implements Serializable {
      * @throws IllegalAccessException excepció
      * @throws IOException            excepció
      */
-    public List<Object> retornaVehiclesEnLlista(String arxiu) throws ClassNotFoundException {
-
-        // ** //
-
-        return null;        // <-- eliminar el return null
+    public List<String> retornaVehiclesEnLlista(String arxiu) throws ClassNotFoundException {
+        return f.retornaFitxerTextEnLlista(arxiu);        // <-- eliminar el return null
     }
-
 
 
     /**
@@ -88,11 +96,35 @@ public class Vehicle implements Serializable {
         return mat;
     }
 
+    public void missatge(String alerta) {
+        System.out.println();
+    }
+
     //</editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Getters">
 
     //getters (necessaris per a que des de la classe filla puga'm veure les dades (si volem clar)
+
+    public static Fitxers getF() {
+        return f;
+    }
+
+    public static String getDir() {
+        return dir;
+    }
+
+    public static String getMatricula() {
+        return matricula;
+    }
+
+    public static String getModel() {
+        return model;
+    }
+
+    public static String getPotencia() {
+        return potencia;
+    }
 
 
     //</editor-fold>

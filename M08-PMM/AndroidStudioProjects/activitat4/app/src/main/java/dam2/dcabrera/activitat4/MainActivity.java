@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
     public void marcaCasella(int casella) {
         ImageView img;
         img = (ImageView) findViewById(caselles[casella]);
-        if(joc.jugador == 1) {
+        if (joc.jugador == 1) {
             img.setImageResource(R.drawable.cercle);
         } else {
             img.setImageResource(R.drawable.creu);

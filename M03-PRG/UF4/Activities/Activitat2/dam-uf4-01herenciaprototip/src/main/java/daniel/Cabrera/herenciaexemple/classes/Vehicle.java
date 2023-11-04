@@ -126,6 +126,12 @@ public class Vehicle implements Serializable {
         return potencia;
     }
 
+    @Override
+    public String toString() {
+        return "Matricula: " + matricula + "\n" +
+                "Model: " + model + "\n" +
+                "Potencia: " + potencia + "\n";
+    }
 
     //</editor-fold>
 

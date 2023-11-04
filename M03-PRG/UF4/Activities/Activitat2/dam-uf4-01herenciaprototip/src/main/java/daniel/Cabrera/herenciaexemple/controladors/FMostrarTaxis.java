@@ -50,6 +50,8 @@ public class FMostrarTaxis {
      */
     private void mostraTaxis(List<Taxi> tx) {
         //  ***  //
+        tx.forEach(taxi -> TAPantalla.appendText(taxi.toString()));
+
     }
 
 

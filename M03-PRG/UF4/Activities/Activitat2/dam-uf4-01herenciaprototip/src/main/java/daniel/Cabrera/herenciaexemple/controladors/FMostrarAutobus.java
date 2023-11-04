@@ -25,7 +25,6 @@ public class FMostrarAutobus {
     protected void initialize() throws IOException, ClassNotFoundException,
             InterruptedException, NoSuchFieldException, IllegalAccessException {
 
-
      // *** //
 
     }
@@ -36,6 +35,13 @@ public class FMostrarAutobus {
      * @param tx Llista d'Autobusos que han sigut recollits del fitxer autobusos.dat
      */
     private void ompliTaula(List<Autobus> tx) {
+
+        TAPantalla.setEditable(false);
+        TAPantalla.clear();
+        TAPantalla.appendText("AUTOBUSOS\n");
+        TAPantalla.appendText("Matricula\tModel\tPotencia\n");
+        TAPantalla.appendText("-----------------------------------------------------------\n");
+        mostraAutobussos(tx);
 
         //  OPCIONAL. HO PODEU FER EN TAULA O EN TEXT ÀREA  //
 
@@ -51,6 +57,7 @@ public class FMostrarAutobus {
      */
     private void mostraAutobussos(List<Autobus> tx) {
 
+        tx.forEach(autobus -> TAPantalla.appendText(autobus.toString()));
       // **** //
 
 

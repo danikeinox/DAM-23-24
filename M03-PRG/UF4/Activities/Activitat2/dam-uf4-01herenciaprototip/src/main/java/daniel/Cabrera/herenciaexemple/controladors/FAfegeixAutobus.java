@@ -35,12 +35,14 @@ public class FAfegeixAutobus {
     // <editor-fold defaultstate="collapsed" desc="Mètodes">
 
     /**
-     * Inicialització de les variables  del formulari
+     * Inicialització de les variables del formulari
      *
      * @throws IOException excepció d'entrada/sortida
      */
     @FXML
     protected void initialize() throws IOException {
+
+        TFMatricula.setText(au.generaMatricula());
 
         // *** //
 
@@ -53,6 +55,8 @@ public class FAfegeixAutobus {
     @FXML
     public void BtGuarda() throws IOException {
 
+        au.guardaVehicleFitxer(Autobus.getRutaFitxer());
+
         // *** //
 
     }
@@ -61,6 +65,11 @@ public class FAfegeixAutobus {
      * Buidem els comboBox del formulari
      */
     public void buidaCamps() {
+
+        TFMatricula.setText("");
+        TFModel.setText("");
+        TFPlaces.setText("");
+        TFPotencia.setText("");
 
         // *** //
 

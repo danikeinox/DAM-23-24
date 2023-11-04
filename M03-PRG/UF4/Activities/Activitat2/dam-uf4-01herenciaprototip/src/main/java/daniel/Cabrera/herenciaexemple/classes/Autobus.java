@@ -1,7 +1,6 @@
 package daniel.Cabrera.herenciaexemple.classes;
 
-
-import java.io.IOException;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Autobus extends Vehicle {
@@ -9,8 +8,8 @@ public class Autobus extends Vehicle {
 
     // <editor-fold defaultstate="collapsed" desc="Propietats">
 
-    private static String rutaFitxer=dir+".autobussos.dat";
-    private int numPlaces=0;
+    private static String rutaFitxer = dir + ".autobussos.dat";
+    private int numPlaces = 0;
     // IMPORTANT.Noteu que la variable dir és una variable de la classe pare. PROTECTED
     //</editor-fold>
 
@@ -52,28 +51,31 @@ public class Autobus extends Vehicle {
     //</editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc=" Mètodes">
+
     /**
      * Genera una matrícula aleatoria amb le utilitació
      * del mètode generarClau de la llibreria LlibreriaComuna
      * A aquesta matrícula se li afegirà aleatoriament
      * unes sigles d'un país europeu.
-     *
+     * <p>
      * Utilitzem polimorfisme, ja que aquest mètode està creat
      * en el pare, i reprogramat en aquesta classe derivada
      *
      * @return marícula amb sigles pais
      */
-    public String generaMatricula(){
-      Random rnd = new Random();
-      String mat = "";
-      char[] lletra = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-      for (int i = 0; i < 4; i++){
-        mat = mat + rnd.nextInt(10);        // número aleatorio entre 0 i 9
-      }
-      for (int i = 0; i < 3; i++){
-        mat = mat + lletra[rnd.nextInt(lletra.length)];
-      }
-      return mat;
+    public String generaMatricula() {
+        Random rnd = new Random();
+        StringBuilder mat = new StringBuilder();
+        for(int i = 0; i < 4; i++){
+            mat.append(rnd.nextInt(10));
+        }
+        char[] lletra = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+        for(int i = 0; i < 3; i++) {
+            mat.append(lletra[rnd.nextInt(lletra.length)]);
+        }
+        String[] lletresMatricula = {"RO", "IT", "DE", "BE", "ES", "FR", "GB", "PT", "AT", "CH", "DK", "FI", "HU", "IE", "IS", "NL", "NO", "SE", "SK"};
+        mat.append(" (").append(rnd.nextInt(Arrays.toString(lletresMatricula).length())).append(")");
+        return mat.toString();
     }
     //</editor-fold>
 

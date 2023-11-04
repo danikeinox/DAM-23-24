@@ -1,5 +1,6 @@
 package daniel.Cabrera.herenciaexemple.controladors;
 
+import daniel.Cabrera.herenciaexemple.classes.Autobus;
 import daniel.Cabrera.herenciaexemple.classes.Taxi;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -34,12 +35,14 @@ public class FAfegeixTaxi {
     // <editor-fold defaultstate="collapsed" desc="Mètodes">
 
     /**
-     * Inicialització de les variables  del formulari
+     * Inicialització de les variables del formulari
      *
      * @throws IOException excepció d'entrada/sortida
      */
     @FXML
     protected void initialize() throws IOException {
+
+        TFMatricula.setText(tx.generaMatricula());
 
             // ** //
 
@@ -51,7 +54,9 @@ public class FAfegeixTaxi {
      * @throws IOException execpció d'entrada sortida
      */
     @FXML
-    public void BtGuarda() {
+    public void BtGuarda() throws IOException {
+
+        tx.guardaVehicleFitxer(Taxi.getRutaFitxer());
 
        // *** //
 
@@ -61,6 +66,11 @@ public class FAfegeixTaxi {
      * Buidem els comboBox del formulari
      */
     public void buidaCamps() {
+
+        TFMatricula.setText("");
+        TFModel.setText("");
+        TFLlicencia.setText("");
+        TFPotencia.setText("");
 
 
         // *** //

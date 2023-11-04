@@ -1,17 +1,12 @@
 package daniel.Cabrera.herenciaexemple.classes;
 
-
-import pkgFitxers.Fitxers;
-
-import java.io.IOException;
-
 public class Taxi extends Vehicle {
 
 
     // <editor-fold defaultstate="collapsed" desc="Propietats">
     // sols una propietat de taxi. La resta estan en el pare
     protected static String numeroLlicencia = "";
-    private static String rutaFitxer=dir+".autobussos.dat";
+    private static String rutaFitxer=dir+".taxis.dat";
 
     // IMPORTANT.Noteu que la variable dir és una variable de la classe pare. PROTECTED
     //</editor-fold>

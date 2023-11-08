@@ -5,118 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c05e159-92df-401c-b10a-278878745020" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../colors/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../colors/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../colors/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../colors/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../colors/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../colors/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../M13-PROJECT/PycharmProjects/10-docker-esdeveniments/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../M13-PROJECT/PycharmProjects/10-docker-esdeveniments/python/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../M13-PROJECT/PycharmProjects/10-docker-esdeveniments/python/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../M13-PROJECT/PycharmProjects/10-docker-esdeveniments/sql/001_create_tables.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../M13-PROJECT/PycharmProjects/10-docker-esdeveniments/sql/002_import_data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../M13-PROJECT/PycharmProjects/10-docker-esdeveniments/venv/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../M13-PROJECT/PycharmProjects/10-docker-esdeveniments/website/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../M13-PROJECT/PycharmProjects/10-docker-esdeveniments/website/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activitat1/pacman-estructurat/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activitat1/pacman-estructurat/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activitat1/pacman-estructurat/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activitat1/pacman-estructurat/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activitat1/pacman-estructurat/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activitat1/pacman-estructurat/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activitat1/pacman-estructurat/pacman.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activitat1/pacman-estructurat/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activitat1/pacman-estructurat/src/main/java/daniel/Cabrera/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activitat1/pacman-estructurat/src/main/java/daniel/Cabrera/PacmanGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activitat1/pacman-estructurat/src/main/java/daniel/Cabrera/Pantalla.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activitat1/pacman-estructurat/src/main/java/daniel/Cabrera/Personaje.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activitat1/pacman-estructurat/src/main/java/daniel/Cabrera/UsuarioInput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activitat1/pacman-estructurat/taulell.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/act1fitxers/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/act1fitxers/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/act1fitxers/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/act1fitxers/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/act1fitxers/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/act1fitxers/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/act1fitxers/src/main/java/daniel/cabrera/act1fitxers/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/act1fitxers/src/main/java/daniel/cabrera/act1fitxers/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/act1fitxers/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/act1fitxers/src/main/resources/daniel/cabrera/act1fitxers/hello-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/.fitxers/.llibres.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/.fitxers/llibres.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/llibres.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/src/main/java/daniel/Cabrera/act1_fitxers/Classes/Llibre.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/src/main/java/daniel/Cabrera/act1_fitxers/Controladors/LlibreController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/src/main/java/daniel/Cabrera/act1_fitxers/LlibreApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/src/main/java/daniel/Cabrera/act1_fitxers/llibres.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/src/main/java/lib/pkgFitxers/Fitxers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/src/main/java/lib/pkgFitxers/MeuObjecteOutputStream.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers - Copy/src/main/resources/daniel/Cabrera/act1_fitxers/hello-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers/.fitxers/.llibres.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers/.fitxers/llibres.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers/llibres.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers/src/main/java/daniel/Cabrera/act1_fitxers/Classes/Llibre.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers/src/main/java/daniel/Cabrera/act1_fitxers/Controladors/LlibreController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers/src/main/java/daniel/Cabrera/act1_fitxers/LlibreApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers/src/main/java/lib/pkgFitxers/Fitxers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers/src/main/java/lib/pkgFitxers/MeuObjecteOutputStream.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../activitats/dcabrera_act1-fitxers/src/main/resources/daniel/Cabrera/act1_fitxers/hello-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../entregas/M3_UF4_Act1_LLibres_Cabrera.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../entregas/M3_UF4_REPAS_PACMAN_GINE.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/colors/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/colors/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/colors/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/colors/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/colors/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/colors/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/colors/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/colors/src/main/java/daniel/Cabrera/Colors11.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/fitxers/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/fitxers/Test/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/fitxers/Test/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/fitxers/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/fitxers/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/fitxers/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/fitxers/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/fitxers/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/fitxers/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/fitxers/src/main/java/pkgFitxers/Fitxers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/fitxers/src/main/java/pkgFitxers/MeuObjecteOutputStream.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/fitxers/src/test/java/pkgFitxers/FitxersTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/fitxers/src/test/java/pkgFitxers/Metodes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/fitxers/src/test/java/pkgFitxers/Persona.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/Projecto-test/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/Projecto-test/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/Projecto-test/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/Projecto-test/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/Projecto-test/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/Projecto-test/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/Projecto-test/src/main/java/daniel/cabrera/projectotest/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/Projecto-test/src/main/java/daniel/cabrera/projectotest/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/Projecto-test/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/Projecto-test/src/main/resources/daniel/cabrera/projectotest/hello-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/java-test/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/java-test/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/java-test/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/java-test/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/java-test/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/java-test/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../projectos/java-test/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/src/M09_UF1_ACT02_Cabrera.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/src/main/java/org/example/Act2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/src/main/java/org/example/Act3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/src/main/java/org/example/Act4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Pruebas/fitxer.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../M13-PROJECT/PycharmProjects/fastApiProject/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../M13-PROJECT/PycharmProjects/fastApiProject/test_main.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/classes/Autobus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/classes/Autobus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/classes/Taxi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/classes/Taxi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/classes/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/classes/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/controladors/FAfegeixAutobus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/controladors/FAfegeixAutobus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/controladors/FAfegeixTaxi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/controladors/FAfegeixTaxi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/controladors/FMostrarAutobus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/controladors/FMostrarAutobus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/controladors/FMostrarTaxis.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/controladors/FMostrarTaxis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pkgFitxers/Fitxers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pkgFitxers/Fitxers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/src/main/java/org/example/Act1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/src/main/java/org/example/Act1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,26 +83,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/K3IN0X/Documents/GitHub/DAM-23-24/M03-PRG/UF4/Llibreries/fitxers&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/K3IN0X/Documents/GitHub/DAM-23-24/M09-PSP/UF1/Xifratge/Simetric/Act2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="gradlew clean" />
@@ -333,6 +243,7 @@
       <workItem from="1698167605945" duration="2414000" />
       <workItem from="1698170033790" duration="46000" />
       <workItem from="1698170193113" duration="761000" />
+      <workItem from="1699370952056" duration="2435000" />
     </task>
     <servers />
   </component>

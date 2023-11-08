@@ -6,7 +6,7 @@ import java.nio.file.*;
 import java.util.*;
 
 
-import static java.lang.Thread.sleep;
+//import static java.lang.Thread.sleep;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 public class Fitxers {
@@ -46,7 +46,7 @@ public class Fitxers {
         // FITXERS CHARACTER STREAMS //
         // ///////////////////////// //
         try ( // BLOC DE TRY .. CATCH
-              FileReader in = new FileReader(fitxer);) {
+              FileReader in = new FileReader(fitxer)) {
             Scanner input = new Scanner(in);
 //
 //
@@ -97,7 +97,7 @@ public class Fitxers {
         String linia;                                   // per recollir la línia
 
         try ( // BLOC DE TRY .. CATCH
-              FileReader in = new FileReader(fitxer);) {
+              FileReader in = new FileReader(fitxer)) {
             Scanner input = new Scanner(in);
             while (input.hasNextLine()) {               // Mentre hi hagen línies a l'arxiu ...
                 linia = input.nextLine();               // Agafa una línia
@@ -124,7 +124,7 @@ public class Fitxers {
 
         // calculem les línies
         try ( // BLOC DE TRY .. CATCH
-              FileReader in = new FileReader(fitxer);) {
+              FileReader in = new FileReader(fitxer)) {
             Scanner input = new Scanner(in);
             while (input.hasNextLine()) {           // Mentre hi hagen línies a l'arxiu ...
                 linia = input.nextLine();
@@ -138,7 +138,7 @@ public class Fitxers {
         totalLinies = 0;                              // l'utilitzem ara per contador
         // introduïm les línes al array d'String
         try ( // BLOC DE TRY .. CATCH
-              FileReader in = new FileReader(fitxer);) {
+              FileReader in = new FileReader(fitxer)) {
             Scanner input = new Scanner(in);
             while (input.hasNextLine()) {           // Mentre hi hagen línies a l'arxiu ...
                 linia = input.nextLine();
@@ -172,7 +172,7 @@ public class Fitxers {
 
         try ( // BLOC DE TRY .. CATCH
 
-              FileReader in = new FileReader(fitxer);) {
+              FileReader in = new FileReader(fitxer)) {
             Scanner input = new Scanner(in);
 
             while (input.hasNextLine()) {           // Mentre hi hagen línies a l'arxiu ...
@@ -208,7 +208,7 @@ public class Fitxers {
 
 
         try ( // BLOC DE TRY .. CATCH
-              FileReader in = new FileReader(fitxer);) {
+              FileReader in = new FileReader(fitxer)) {
             Scanner input = new Scanner(in);
             while (input.hasNextLine()) {           // Mentre hi hagen línies a l'arxiu ...
                 linia = input.nextLine();           // Agafa una línia
@@ -335,8 +335,8 @@ public class Fitxers {
             in.close();                     // tanquem el fitxer d'objectes
             in = null;                      // i l'alliberem de memòria
         } catch (IOException e) {
-            //e.printStackTrace();
-            //System.err.println("\nFinal Fitxer");
+            e.printStackTrace();
+            System.err.println("\nFinal Fitxer");
         }
         return LObjs;
     }
@@ -382,8 +382,8 @@ public class Fitxers {
             in = null;                      // i l'allibrerem de memòria
 
         } catch (IOException e) {
-            //e.printStackTrace();
-            //System.err.println("\nFinal Fitxer");
+            e.printStackTrace();
+            System.err.println("\nFinal Fitxer");
         }
         return LObjs;
     }
@@ -428,8 +428,8 @@ public class Fitxers {
             in = null;                      // i l'allibrerem de memòria
 
         } catch (IOException e) {
-            //e.printStackTrace();
-            //System.err.println("\nFinal Fitxer");
+            e.printStackTrace();
+            System.err.println("\nFinal Fitxer");
         }
         return LObjs;
     }
@@ -475,8 +475,8 @@ public class Fitxers {
             in = null;                      // i l'allibrerem de memòria
 
         } catch (IOException e) {
-            //e.printStackTrace();
-            //System.err.println("\nFinal Fitxer");
+            e.printStackTrace();
+            System.err.println("\nFinal Fitxer");
         }
         return LObjs;
     }

@@ -1,0 +1,8 @@
+-classpath 'C:\\Users\\K3IN0X\\Documents\\GitHub\\DAM-23-24\\M03-PRG\\UF4\\Llibreries\\fitxers\\build\\classes\\java\\main;C:\\Users\\K3IN0X\\Documents\\GitHub\\DAM-23-24\\M03-PRG\\UF4\\Llibreries\\fitxers\\build\\resources\\main'
+-d 'C:\\Users\\K3IN0X\\Documents\\GitHub\\DAM-23-24\\M03-PRG\\UF4\\Llibreries\\fitxers\\build\\docs\\javadoc'
+-doctitle 'Fitxers 4.0 API'
+-notimestamp 
+-quiet 
+-windowtitle 'Fitxers 4.0 API'
+'C:\\Users\\K3IN0X\\Documents\\GitHub\\DAM-23-24\\M03-PRG\\UF4\\Llibreries\\fitxers\\src\\main\\java\\pkgFitxers\\Fitxers.java'
+'C:\\Users\\K3IN0X\\Documents\\GitHub\\DAM-23-24\\M03-PRG\\UF4\\Llibreries\\fitxers\\src\\main\\java\\pkgFitxers\\MeuObjecteOutputStream.java'

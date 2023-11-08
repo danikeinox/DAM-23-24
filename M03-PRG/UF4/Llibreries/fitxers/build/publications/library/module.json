@@ -1,0 +1,60 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "daniel.Cabrera",
+    "module": "Fitxers",
+    "version": "4.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "Fitxers-4.0.jar",
+          "url": "Fitxers-4.0.jar",
+          "size": 7458,
+          "sha512": "e6f92ed7884b8af1d61873435e04e38cfe923c1a025dbf6c7effd6935f491eae3cde29a848a6507cb32112d9ed64fe02b0d3f388691fafa6959c5d6202c38d20",
+          "sha256": "344970c067516b0c7200c75991b65577884f58199c3cec9d01b8b8917f02a392",
+          "sha1": "5a46b162d9f3f52c6662ea6cbdba83db577d3099",
+          "md5": "4fdf80cdf77494ddaa2c87234bbbde93"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "Fitxers-4.0.jar",
+          "url": "Fitxers-4.0.jar",
+          "size": 7458,
+          "sha512": "e6f92ed7884b8af1d61873435e04e38cfe923c1a025dbf6c7effd6935f491eae3cde29a848a6507cb32112d9ed64fe02b0d3f388691fafa6959c5d6202c38d20",
+          "sha256": "344970c067516b0c7200c75991b65577884f58199c3cec9d01b8b8917f02a392",
+          "sha1": "5a46b162d9f3f52c6662ea6cbdba83db577d3099",
+          "md5": "4fdf80cdf77494ddaa2c87234bbbde93"
+        }
+      ]
+    }
+  ]
+}

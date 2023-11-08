@@ -5,7 +5,6 @@ import pkgFitxers.Fitxers;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.List;
 import java.util.Random;
 
 public class Vehicle implements Serializable {
@@ -19,14 +18,12 @@ public class Vehicle implements Serializable {
      */
 
     // <editor-fold defaultstate="collapsed" desc="Propietats">
-
-
+    private String matricula;        // matrícula del vehicle
+    private String model;           // model del vehicle
+    private Double potencia;
     // Variables protected que podran utilitzar les filles sense necessitat de declarar-les
     protected static Fitxers f = new Fitxers();
     protected static String dir = ".data/";       // carpeta contenidora dels fitxers
-    protected static String matricula = "";        // matrícula del vehicle
-    protected static String model = "";           // model del vehicle
-    protected static String potencia = "";        // potència del vehicle
     //</editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Constructors">
@@ -34,10 +31,10 @@ public class Vehicle implements Serializable {
     public Vehicle() {
     }
 
-    public Vehicle(String matricula, String model, String potencia) {
-        Vehicle.matricula = matricula;
-        Vehicle.model = model;
-        Vehicle.potencia = potencia;
+    public Vehicle(String matricula, String model, Double potencia) {
+        this.matricula = matricula;
+        this.model = model;
+        this.potencia = potencia;
     }
 
     //</editor-fold>
@@ -50,8 +47,9 @@ public class Vehicle implements Serializable {
      * @throws IOException Excepció d'E/S
      */
     public void guardaVehicleFitxer(String rutaFitxer) throws IOException {
+        if (!f.existeix(dir))
+            f.creaDirectori(dir);
         f.escriuObjecteFitxer(this, rutaFitxer, true);
-        // *** //
     }
 
 
@@ -67,7 +65,7 @@ public class Vehicle implements Serializable {
      * @throws IllegalAccessException excepció
      * @throws IOException            excepció
      */
-    public List<String> retornaVehiclesEnLlista(String arxiu) throws ClassNotFoundException {
+    public <T> Object retornaVehiclesEnLlista(String arxiu, T Class) throws ClassNotFoundException, InterruptedException, NoSuchFieldException, IllegalAccessException, IOException {
         return f.retornaFitxerTextEnLlista(arxiu);        // <-- eliminar el return null
     }
 
@@ -114,15 +112,15 @@ public class Vehicle implements Serializable {
         return dir;
     }
 
-    public static String getMatricula() {
+    public String getMatricula() {
         return matricula;
     }
 
-    public static String getModel() {
+    public String getModel() {
         return model;
     }
 
-    public static String getPotencia() {
+    public Double getPotencia() {
         return potencia;
     }
 

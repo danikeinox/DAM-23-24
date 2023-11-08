@@ -18,11 +18,11 @@ public class Autobus extends Vehicle {
     public Autobus() {
     }
 
-    public Autobus(String matricula, String model, String potencia) {
+    public Autobus(String matricula, String model, Double potencia) {
         super(matricula, model, potencia);
     }
 
-    public Autobus(String matricula, String model, String potencia, int numPlaces) {
+    public Autobus(String matricula, String model, Double potencia, int numPlaces) {
         super(matricula, model, potencia);
         this.numPlaces = numPlaces;
     }

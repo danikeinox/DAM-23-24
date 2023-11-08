@@ -1,6 +1,5 @@
 package daniel.Cabrera.herenciaexemple.controladors;
 
-import daniel.Cabrera.herenciaexemple.classes.Autobus;
 import daniel.Cabrera.herenciaexemple.classes.Taxi;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -55,8 +54,19 @@ public class FAfegeixTaxi {
      */
     @FXML
     public void BtGuarda() throws IOException {
+        try{
+            Double potencia = Double.parseDouble(TFPotencia.getText());
+            String matricula = TFMatricula.getText();
+            String model = TFModel.getText();
+            String llicencia = TFLlicencia.getText();
 
-        tx.guardaVehicleFitxer(Taxi.getRutaFitxer());
+            // construïm objecte, amb les dades de la classe pare (vehicle) i filla (taxi)
+            Taxi tx = new Taxi(matricula, model, potencia, llicencia);
+            tx.guardaVehicleFitxer(Taxi.getRutaFitxer());
+            buidaCamps();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
 
        // *** //
 

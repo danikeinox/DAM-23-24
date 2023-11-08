@@ -1,5 +1,6 @@
 package daniel.Cabrera.herenciaexemple.controladors;
 
+import daniel.Cabrera.herenciaexemple.classes.Taxi;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import daniel.Cabrera.herenciaexemple.classes.Autobus;
@@ -24,8 +25,10 @@ public class FMostrarAutobus {
     @FXML
     protected void initialize() throws IOException, ClassNotFoundException,
             InterruptedException, NoSuchFieldException, IllegalAccessException {
-
-     // *** //
+        Autobus au = new Autobus();
+        TAPantalla.setText("");
+        List<Autobus> llistaAutobussos = (List<Autobus>) au.retornaVehiclesEnLlista(au.getRutaFitxer(), Autobus.class);
+        mostraAutobussos(llistaAutobussos);
 
     }
 
@@ -53,11 +56,14 @@ public class FMostrarAutobus {
      * extret del fitxer on estan tots els taxis guardats
      * que li passarem per paràmetre
      *
-     * @param tx Llista de tipus taxis
+     * @param au Llista de tipus Autobusos
      */
-    private void mostraAutobussos(List<Autobus> tx) {
+    private void mostraAutobussos(List<Autobus> au) {
 
-        tx.forEach(autobus -> TAPantalla.appendText(autobus.toString()));
+        int i;
+        for (i = 0; i < au.size(); i++) {
+            TAPantalla.setText(TAPantalla.getText() + au.get(i).toString() + "\n" + au.get(i).getNumPlaces() + "\n");
+        }
       // **** //
 
 

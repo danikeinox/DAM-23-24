@@ -32,9 +32,10 @@ public class FMostrarTaxis {
      */
     @FXML
     protected void initialize() throws IOException, ClassNotFoundException, InterruptedException, NoSuchFieldException, IllegalAccessException {
-
-      //  ***  //
-
+        Taxi tx = new Taxi();
+        TAPantalla.setText("");
+        List<Taxi> llistaTaxis = (List<Taxi>) tx.retornaVehiclesEnLlista(tx.getRutaFitxer(), Taxi.class);
+        mostraTaxis(llistaTaxis);
     }
 
 
@@ -49,8 +50,11 @@ public class FMostrarTaxis {
      * @param tx Llista de tipus taxis
      */
     private void mostraTaxis(List<Taxi> tx) {
+        int i;
+        for (i = 0; i < tx.size(); i++) {
+            TAPantalla.setText(TAPantalla.getText() + tx.get(i).toString() + "\n");
+        }
         //  ***  //
-        tx.forEach(taxi -> TAPantalla.appendText(taxi.toString()));
 
     }
 

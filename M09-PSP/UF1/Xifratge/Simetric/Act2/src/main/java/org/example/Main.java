@@ -15,20 +15,19 @@ public class Main {
                     Act1.act1();
                     break;
                 case 2:
-                    //Act2.act2();
+                    Act2.act2();
                     break;
                 case 3:
-                    //Act3.act3();
+                    Act3.act3();
                     break;
                 case 4:
-                    //Act4.act4();
+                    Act4.act4();
                     break;
                 case 5:
                     System.exit(0);
                     break;
                 default:
                     System.out.println("Opcio incorrecta");
-                    break;
             }
 
         }

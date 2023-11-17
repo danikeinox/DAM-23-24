@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.Random;
 
-public interface Vehicle extends Serializable {
+public interface Vehicle extends Serializable, Comparable {
 
 
     /**
@@ -21,6 +21,7 @@ public interface Vehicle extends Serializable {
     // Variables protected que podran utilitzar les filles sense necessitat de declarar-les
     Fitxers f = new Fitxers();
     String dir = ".data/";       // carpeta contenidora dels fitxers
+    //missatgesJavaSwing m = new missatgesJavaSwing();
     //</editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Mètodes">
@@ -45,7 +46,9 @@ public interface Vehicle extends Serializable {
      * @throws IllegalAccessException excepció
      * @throws IOException            excepció
      */
-    <T> Object retornaVehiclesEnLlista(String arxiu, T Class);
+    <T> Object retornaVehiclesEnLlista(String arxiu, T classeObjecte)
+            throws InterruptedException, ClassNotFoundException, NoSuchFieldException,
+            IllegalAccessException, IOException;
 
 
     /**
@@ -59,8 +62,6 @@ public interface Vehicle extends Serializable {
      */
     String generaMatricula();
 
-    void missatge(String alerta);
-
     //</editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Getters">
@@ -68,7 +69,9 @@ public interface Vehicle extends Serializable {
     //getters (necessaris per a que des de la classe filla puga'm veure les dades (si volem clar)
 
     String getMatricula();
+
     String getModel();
+
     Double getPotencia();
 
     //</editor-fold>

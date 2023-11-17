@@ -4,8 +4,11 @@ module daniel.Cabrera.herenciaexemple {
     requires Fitxers;
 
 
-    opens daniel.Cabrera.herenciaexemple to javafx.fxml;
+    opens daniel.Cabrera.herenciaexemple;
     exports daniel.Cabrera.herenciaexemple;
+    exports daniel.Cabrera.herenciaexemple.controladors;
     opens daniel.Cabrera.herenciaexemple.controladors to javafx.fxml;
+
+    opens daniel.Cabrera.herenciaexemple.classes;
 
 }

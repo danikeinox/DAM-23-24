@@ -1,9 +1,13 @@
 package daniel.Cabrera.herenciaexemple.controladors;
 
-import daniel.Cabrera.herenciaexemple.classes.Taxi;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import daniel.Cabrera.herenciaexemple.classes.Autobus;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,6 +21,21 @@ public class FMostrarAutobus {
     @FXML
     private TextArea TAPantalla;
 
+    @FXML
+    private TableView<Autobus> TVPantalla;
+
+    @FXML
+    private TableColumn<Autobus, String> columnMatricula;
+
+    @FXML
+    private TableColumn<Autobus, String> columnModel;
+
+    @FXML
+    private TableColumn<Autobus, Double> columnPotencia;
+
+    @FXML
+    private TableColumn<Autobus, Integer> columnPlaces;
+
 
     //</editor-fold>
 
@@ -26,7 +45,7 @@ public class FMostrarAutobus {
     protected void initialize() throws IOException, ClassNotFoundException,
             InterruptedException, NoSuchFieldException, IllegalAccessException {
         Autobus au = new Autobus();
-        TAPantalla.setText("");
+        TVPantalla.setItems(null);
         List<Autobus> llistaAutobussos = (List<Autobus>) au.retornaVehiclesEnLlista(au.getRutaFitxer(), Autobus.class);
         mostraAutobussos(llistaAutobussos);
 
@@ -35,18 +54,21 @@ public class FMostrarAutobus {
     /**
      * Omplim una TableView amb les dades de la Llista d'Objectes
      *
-     * @param tx Llista d'Autobusos que han sigut recollits del fitxer autobusos.dat
+     * @param au Llista d'Autobusos que han sigut recollits del fitxer autobusos.dat
      */
-    private void ompliTaula(List<Autobus> tx) {
+    private void ompliTaula(List<Autobus> au) {
 
-        TAPantalla.setEditable(false);
-        TAPantalla.clear();
-        TAPantalla.appendText("AUTOBUSOS\n");
-        TAPantalla.appendText("Matricula\tModel\tPotencia\n");
-        TAPantalla.appendText("-----------------------------------------------------------\n");
-        mostraAutobussos(tx);
+        ObservableList<Autobus> dades = FXCollections.observableArrayList();
 
-        //  OPCIONAL. HO PODEU FER EN TAULA O EN TEXT ÀREA  //
+        dades.addAll(au);
+
+        columnMatricula.setCellValueFactory(new PropertyValueFactory<>("matricula"));
+        columnModel.setCellValueFactory(new PropertyValueFactory<>("model"));
+        columnPotencia.setCellValueFactory(new PropertyValueFactory<>("potencia"));
+        columnPlaces.setCellValueFactory(new PropertyValueFactory<>("numPlaces"));
+
+        TVPantalla.setItems(dades);
+        TVPantalla.getColumns().addAll(columnMatricula, columnModel, columnPotencia, columnPlaces);
 
     }
 
@@ -59,14 +81,16 @@ public class FMostrarAutobus {
      * @param au Llista de tipus Autobusos
      */
     private void mostraAutobussos(List<Autobus> au) {
-
-        int i;
-        for (i = 0; i < au.size(); i++) {
-            TAPantalla.setText(TAPantalla.getText() + au.get(i).toString() + "\n" + au.get(i).getNumPlaces() + "\n");
-        }
-      // **** //
-
-
+        ompliTaula(au);
+//        int i;
+//        for (i = 0; i < au.size(); i++) {
+//            TAPantalla.setText(TAPantalla.getText() +
+//                    "\n Matricula: " + au.get(i).getMatricula() +
+//                    "\n Model: " + au.get(i).getModel() +
+//                    "\n Potencia: " + au.get(i).getPotencia() +
+//                    "\n Places: " + au.get(i).getNumPlaces() + "\n\n");
+//        }
+        // **** //
     }
     //</editor-fold>
 

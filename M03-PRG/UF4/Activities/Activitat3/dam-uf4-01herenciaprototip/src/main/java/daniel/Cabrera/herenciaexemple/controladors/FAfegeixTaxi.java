@@ -58,10 +58,10 @@ public class FAfegeixTaxi {
             Double potencia = Double.parseDouble(TFPotencia.getText());
             String matricula = TFMatricula.getText();
             String model = TFModel.getText();
-            String llicencia = TFLlicencia.getText();
+            String numeroLlicencia = TFLlicencia.getText();
 
             // construïm objecte, amb les dades de la classe pare (vehicle) i filla (taxi)
-            Taxi tx = new Taxi(matricula, model, potencia, llicencia);
+            Taxi tx = new Taxi(matricula, model, potencia, numeroLlicencia);
             tx.guardaVehicleFitxer(Taxi.getRutaFitxer());
             buidaCamps();
         } catch (Exception e){

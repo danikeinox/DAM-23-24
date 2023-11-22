@@ -14,14 +14,32 @@ public class Artist {
         System.out.print("Introduce el nombre del artista: ");
         String artistName = scanner.nextLine();
 
-        String sql = "INSERT INTO ARTIST (code, name) VALUES (?, ?)";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, artistCode);
-            statement.setString(2, artistName);
-            statement.executeUpdate();
-            System.out.println("Artista dado de alta correctamente.");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        while (true) {
+            String sqlCheckArtist = "SELECT * FROM ARTIST WHERE code = ?";
+            try (PreparedStatement statementCheckArtist = connection.prepareStatement(sqlCheckArtist)) {
+                statementCheckArtist.setString(1, artistCode);
+                ResultSet resultSet = statementCheckArtist.executeQuery();
+                if (!resultSet.next()) {
+                    String sql = "INSERT INTO ARTIST (code, name) VALUES (?, ?)";
+                    try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                        statement.setString(1, artistCode);
+                        statement.setString(2, artistName);
+                        statement.executeUpdate();
+                        System.out.println("Artista dado de alta correctamente.");
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                } else {
+                    System.out.println("Ya existe un artista con ese código.");
+                    System.out.print("Introduce el código del artista. (prem -1 per sortir):");
+                    artistCode = scanner.nextLine();
+                    if (artistCode.equals("-1")) {
+                        return;
+                    }
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
@@ -30,23 +48,41 @@ public class Artist {
         System.out.println("######################### BAIXE ARTISTA #########################");
         System.out.println("Introduce el código del artista que quieres dar de baja: ");
         String artistCode = scanner.nextLine();
-
-        String sql = "DELETE FROM ARTIST WHERE code = ?";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, artistCode);
-            statement.executeUpdate();
-            System.out.println("Artista dado de baja correctamente.");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        while (true) {
+            String sqlCheckArtist = "SELECT * FROM ARTIST WHERE code = ?";
+            try (PreparedStatement statementCheckArtist = connection.prepareStatement(sqlCheckArtist)) {
+                statementCheckArtist.setString(1, artistCode);
+                ResultSet resultSet = statementCheckArtist.executeQuery();
+                if (!resultSet.next() || resultSet.getString("code").equals(artistCode)) {
+                    System.out.println("No existe ningún artista con ese código.");
+                    System.out.println("Introduce el código del artista que quieres dar de baja. (prem -1 per sortir):");
+                    artistCode = scanner.nextLine();
+                    if (artistCode.equals("-1")) {
+                        return;
+                    }
+                } else {
+                    String sql = "DELETE FROM ARTIST WHERE code = ?";
+                    try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                        statement.setString(1, artistCode);
+                        statement.executeUpdate();
+                        System.out.println("Artista dado de baja correctamente.");
+                        break;
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
     public static void viewArtistes(Connection connection) {
-        String sql = "SELECT * FROM ARTIST";
+        String sql = "SELECT * FROM ARTIST ORDER BY code";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             ResultSet resultSet = statement.executeQuery();
             // Verificar si no hay filas en las columnas
-            if (!resultSet.isBeforeFirst()) {
+            if (!resultSet.next()) {
                 System.out.println("No existen artistes.");
             } else {
                 int i = 1;

@@ -6,34 +6,70 @@ import java.util.Scanner;
 public class Style {
     public static void altaEstilo(Connection connection) throws SQLException {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Introduce el código del estilo: ");
+        System.out.println("Introdueix el códi del estil que vols donar d'alta: ");
         String styleCode = scanner.nextLine();
-        System.out.print("Introduce el nombre del estilo: ");
+        System.out.print("Introdueix el nom del estil que vols donar d'alta: ");
         String styleName = scanner.nextLine();
 
-        String sql = "INSERT INTO STYLE (code, name) VALUES (?, ?)";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, styleCode);
-            statement.setString(2, styleName);
-            statement.executeUpdate();
-            System.out.println("Album dado de alta correctamente.");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        while (true) {
+            String sqlCheckArtist = "SELECT * FROM STYLE WHERE code = ?";
+            try (PreparedStatement statementCheckClient = connection.prepareStatement(sqlCheckArtist)) {
+                statementCheckClient.setString(1, styleCode);
+                ResultSet resultSet = statementCheckClient.executeQuery();
+                if (!resultSet.next() || resultSet.getString("code").equals(styleCode)) {
+                    System.out.println("No existeix ningún estil amb aquest codi.");
+                    System.out.println("Introdueix el códi del estil que vols donar d'alta. (prem -1 per sortir):");
+                    styleCode = scanner.nextLine();
+                    if (styleCode.equals("-1")) {
+                        return;
+                    }
+                } else {
+                    String sql = "INSERT INTO STYLE (code, name) VALUES (?, ?)";
+                    try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                        statement.setString(1, styleCode);
+                        statement.setString(2, styleName);
+                        statement.executeUpdate();
+                        System.out.println("Album dado de alta correctamente.");
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
         }
     }
 
     public static void bajaEstilo(Connection connection) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("######################### BAIXE ESTILO #########################");
-        System.out.println("Introduce el código del estilo que quieres dar de baja: ");
+        System.out.println("Introdueix el códi del estil que vols donar de baixa: ");
         String styleCode = scanner.nextLine();
-        String sql = "DELETE FROM STYLE WHERE code = ?";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, styleCode);
-            statement.executeUpdate();
-            System.out.println("Estilo dado de baja correctamente.");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+
+        while (true) {
+            String sqlCheckArtist = "SELECT * FROM STYLE WHERE code = ?";
+            try (PreparedStatement statementCheckClient = connection.prepareStatement(sqlCheckArtist)) {
+                statementCheckClient.setString(1, styleCode);
+                ResultSet resultSet = statementCheckClient.executeQuery();
+                if (!resultSet.next() || resultSet.getString("code").equals(styleCode)) {
+                    System.out.println("No existeix ningún estil amb aquest codi.");
+                    System.out.println("Introdueix el códi del estil que vols donar de baixa. (prem -1 per sortir):");
+                    styleCode = scanner.nextLine();
+                    if (styleCode.equals("-1")) {
+                        return;
+                    }
+                } else {
+                    String sql = "DELETE FROM STYLE WHERE code = ?";
+                    try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                        statement.setString(1, styleCode);
+                        statement.executeUpdate();
+                        System.out.println("Estilo dado de baja correctamente.");
+                        break;
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
@@ -43,7 +79,7 @@ public class Style {
             ResultSet resultSet = statement.executeQuery();
 
             // Verificar si no hay filas en el resultSet
-            if (!resultSet.isBeforeFirst()) {
+            if (!resultSet.next()) {
                 System.out.println("No existen estils.");
             } else {
                 int i = 1;

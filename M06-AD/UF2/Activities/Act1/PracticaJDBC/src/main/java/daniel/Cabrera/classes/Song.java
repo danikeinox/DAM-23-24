@@ -9,41 +9,83 @@ import java.util.Scanner;
 public class Song {
     public static void altaSong(Connection connection) throws SQLException {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Introdueix el códi de la cançó: ");
+        System.out.println("Introdueix el códi de la cançó que vols donar d'alta: ");
         String songCode = scanner.nextLine();
-        System.out.print("Introdueix el titol de la cançó: ");
+        System.out.print("Introdueix el titol de la cançó que vols donar d'alta: ");
         String songTitle = scanner.nextLine();
-        System.out.print("Introdueix el códi del álbum: ");
+        System.out.print("Introdueix el códi del álbum que vols donar d'alta: ");
         String albumCode = scanner.nextLine();
-        System.out.print("Introdueix el número de la cançó: ");
+        System.out.print("Introdueix el número de llista de la cançó que vols donar d'alta: ");
         String songTrack = scanner.nextLine();
 
-        String sql = "INSERT INTO SONG (code, title, album, track) VALUES (?, ?, ?, ?)";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, songCode);
-            statement.setString(2, songTitle);
-            statement.setString(3, albumCode);
-            statement.setString(4, songTrack);
-            statement.executeUpdate();
-            System.out.println("Canço donada d'alta correctament.");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        while (true) {
+            String sqlCheckArtist = "SELECT * FROM SONG WHERE code = ?";
+            try (PreparedStatement statementCheckSong = connection.prepareStatement(sqlCheckArtist)) {
+                statementCheckSong.setString(1, songCode);
+                ResultSet resultSet = statementCheckSong.executeQuery();
+                if (!resultSet.next() || resultSet.getString("track").equals(songTrack)) {
+                    System.out.println("Ja hi ha una canço assignada a el numero de llista.");
+                    System.out.print("Introdueix el número de llista de la cançó que vols donar d'alta. (prem -1 per sortir):");
+                    songTrack = scanner.nextLine();
+                    if (songTrack.equals("-1")) {
+                        return;
+                    }
+                }
+                if (!resultSet.next() || resultSet.getString("code").equals(songCode)) {
+                    System.out.println("No existeix ningúna cançó amb aquest codi.");
+                    System.out.println("Introdueix el códi de la cançó que vols donar d'alta. (prem -1 per sortir):");
+                    songCode = scanner.nextLine();
+                    if (songCode.equals("-1")) {
+                        return;
+                    }
+                } else {
+                    String sql = "INSERT INTO SONG (code, title, album, track) VALUES (?, ?, ?, ?)";
+                    try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                        statement.setString(1, songCode);
+                        statement.setString(2, songTitle);
+                        statement.setString(3, albumCode);
+                        statement.setString(4, songTrack);
+                        statement.executeUpdate();
+                        System.out.println("Canço donada d'alta correctament.");
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
         }
     }
 
     public static void bajaSong(Connection connection) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("######################### BAIXA CANÇON #########################");
+        System.out.println("######################### BAIXA CANÇÓ #########################");
         System.out.println("Introdueix el códi de la cançó que vols donar de baixa: ");
         String songCode = scanner.nextLine();
 
-        String sql = "DELETE FROM SONG WHERE code = ? ";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, songCode);
-            statement.executeUpdate();
-            System.out.println("Cançó donada de baixa correctament.");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        while (true) {
+            String sqlCheckArtist = "SELECT * FROM SONG WHERE code = ?";
+            try (PreparedStatement statementCheckSong = connection.prepareStatement(sqlCheckArtist)) {
+                statementCheckSong.setString(1, songCode);
+                ResultSet resultSet = statementCheckSong.executeQuery();
+                if (!resultSet.next() || !resultSet.getString("code").equals(songCode)) {
+                    System.out.println("No existeix cançó amb aquest codi.");
+                    System.out.println("Introdueix el códi de la cançó que vols donar de baixa. (prem -1 per sortir):");
+                    songCode = scanner.nextLine();
+                    if (songCode.equals("-1")) {
+                        return;
+                    }
+                } else {
+                    String sql = "DELETE FROM SONG WHERE code = ? ";
+                    try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                        statement.setString(1, songCode);
+                        statement.executeUpdate();
+                        System.out.println("Cançó donada de baixa correctament.");
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
@@ -53,7 +95,7 @@ public class Song {
             ResultSet resultSet = statement.executeQuery();
 
             // Verificar si no hay filas en el resultSet
-            if (!resultSet.isBeforeFirst()) {
+            if (!resultSet.next()) {
                 System.out.println("No existeixen cançons.");
             } else {
                 int i = 1;
@@ -77,6 +119,7 @@ public class Song {
             throw new RuntimeException(e);
         }
     }
+
     public static void menuSong(Connection connection) throws SQLException {
         Scanner scanner = new Scanner(System.in);
         int opc;
@@ -85,7 +128,8 @@ public class Song {
             System.out.println("############################ Menú CANÇONS ############################");
             System.out.println("1. ALTA CANÇÓ");
             System.out.println("2. BAIXA CANÇÓ");
-            System.out.println("3. VISTA CANÇONS");;
+            System.out.println("3. VISTA CANÇONS");
+            ;
             System.out.println("0. Sortir");
             System.out.print("Introdueix una opció: ");
             opc = scanner.nextInt();

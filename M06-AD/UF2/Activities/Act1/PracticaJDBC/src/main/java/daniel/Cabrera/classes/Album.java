@@ -17,17 +17,36 @@ public class Album {
         System.out.print("Introdueix el códi del estil del álbum: ");
         String albumStyle = scanner.nextLine();
 
-        String sql = "INSERT INTO ALBUM (code, title, artist, year, style) VALUES (?, ?, ?, ?, ?)";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, albumCode);
-            statement.setString(2, albumTitle);
-            statement.setString(3, artistCode);
-            statement.setString(4, albumYear);
-            statement.setString(5, albumStyle);
-            statement.executeUpdate();
-            System.out.println("Album dado de alta correctamente.");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        while (true) {
+            String sqlCheckArtist = "SELECT code FROM ALBUM WHERE code = ?";
+            try (PreparedStatement statementCheckArtist = connection.prepareStatement(sqlCheckArtist)) {
+                statementCheckArtist.setString(1, artistCode);
+                ResultSet resultSet = statementCheckArtist.executeQuery();
+                if (!resultSet.next() || resultSet.getString("code").equals(albumCode)) {
+                    System.out.println("Ya existe un álbum con ese código.");
+                    System.out.print("Introdueix el códi que vols donar d'alta a l'álbum. (prem -1 per sortir):");
+                    albumCode = scanner.nextLine();
+                    if (albumCode.equals("-1")) {
+                        return;
+                    }
+                } else {
+                    String sql = "INSERT INTO ALBUM (code, title, artist, year, style) VALUES (?, ?, ?, ?, ?)";
+                    try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                        statement.setString(1, albumCode);
+                        statement.setString(2, albumTitle);
+                        statement.setString(3, artistCode);
+                        statement.setString(4, albumYear);
+                        statement.setString(5, albumStyle);
+                        statement.executeUpdate();
+                        System.out.println("Album dado de alta correctamente.");
+                        break;
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
@@ -36,13 +55,32 @@ public class Album {
         System.out.println("######################### BAIXA ALBUM #########################");
         System.out.println("Introdueix el códi del álbum que vols donar de baixa: ");
         String albumCode = scanner.nextLine();
-        String sql = "DELETE FROM ALBUM WHERE code = ? ";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, albumCode);
-            statement.executeUpdate();
-            System.out.println("Album donat de baixa correctament.");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        while (true) {
+            String sqlCheckArtist = "SELECT * FROM ALBUM WHERE code = ?";
+            try (PreparedStatement statementCheckAlbum = connection.prepareStatement(sqlCheckArtist)) {
+                statementCheckAlbum.setString(1, albumCode);
+                ResultSet resultSet = statementCheckAlbum.executeQuery();
+                if (!resultSet.next() || !resultSet.getString("code").equals(albumCode)) {
+                    System.out.println("No existe ningún album con ese código.");
+                    System.out.println("Introdueix el códi del álbum que vols donar de baixa. (prem -1 per sortir):");
+                    albumCode = scanner.nextLine();
+                    if (albumCode.equals("-1")) {
+                        return;
+                    }
+                } else {
+                    String sql = "DELETE FROM ALBUM WHERE code = ? ";
+                    try (PreparedStatement statement = connection.prepareStatement(sql)) {
+                        statement.setString(1, albumCode);
+                        statement.executeUpdate();
+                        System.out.println("Album donat de baixa correctament.");
+                        break;
+                    } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
@@ -53,7 +91,7 @@ public class Album {
             ResultSet resultSet = statement.executeQuery();
 
             // Verificar si no hay filas en el resultSet
-            if (!resultSet.isBeforeFirst()) {
+            if (!resultSet.next()) {
                 System.out.println("No existeixen albums.");
             } else {
                 int i = 1;

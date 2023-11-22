@@ -57,9 +57,7 @@ public class Main {
                     Style.menuStyle(connection);
                     break;
                 case 6:
-                    // Lógica para realizar una venta
-                    // TODO implementar la lógica para realizar una venta
-                    // Shop.buySong(connection);
+                    Shop.buySong(connection);
                     break;
                 case 7:
                     // Lógica para listar ventas por artista

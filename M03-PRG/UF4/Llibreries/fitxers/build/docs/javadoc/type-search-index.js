@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"pkgFitxers","l":"Fitxers"},{"p":"pkgFitxers","l":"MeuObjecteOutputStream"}]
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"pkgFitxers","l":"ComparadorObjectes"},{"p":"pkgFitxers","l":"Fitxers"},{"p":"pkgFitxers","l":"MeuObjecteOutputStream"}];updateSearchResults();

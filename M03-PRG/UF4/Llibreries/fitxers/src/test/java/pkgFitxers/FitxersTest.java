@@ -25,7 +25,7 @@ class FitxersTest {
         for (int i = 0; i < lPersones.size(); i++) {
 
             if (lPersones.get(i).getEdat()>45)
-            System.out.println(lPersones.get(i));
+                System.out.println(lPersones.get(i));
 
         }
     }
@@ -38,7 +38,7 @@ class FitxersTest {
     }
 
     @Test
-    void retornaFitxerObjecteEnLlista() throws ClassNotFoundException {
+    void retornaFitxerObjecteEnLlista() throws ClassNotFoundException, IOException, NoSuchFieldException, InterruptedException, IllegalAccessException {
         List<Persona> lPersones= pers.retornaPersonesObjecte(pers.getFitxerDat());
         for (int i = 0; i < lPersones.size(); i++) {
 

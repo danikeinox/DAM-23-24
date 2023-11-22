@@ -6,7 +6,7 @@ import java.nio.file.*;
 import java.util.*;
 
 
-//import static java.lang.Thread.sleep;
+import static java.lang.Thread.sleep;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
 public class Fitxers {
@@ -46,7 +46,7 @@ public class Fitxers {
         // FITXERS CHARACTER STREAMS //
         // ///////////////////////// //
         try ( // BLOC DE TRY .. CATCH
-              FileReader in = new FileReader(fitxer)) {
+              FileReader in = new FileReader(fitxer);) {
             Scanner input = new Scanner(in);
 //
 //
@@ -97,7 +97,7 @@ public class Fitxers {
         String linia;                                   // per recollir la línia
 
         try ( // BLOC DE TRY .. CATCH
-              FileReader in = new FileReader(fitxer)) {
+              FileReader in = new FileReader(fitxer);) {
             Scanner input = new Scanner(in);
             while (input.hasNextLine()) {               // Mentre hi hagen línies a l'arxiu ...
                 linia = input.nextLine();               // Agafa una línia
@@ -124,7 +124,7 @@ public class Fitxers {
 
         // calculem les línies
         try ( // BLOC DE TRY .. CATCH
-              FileReader in = new FileReader(fitxer)) {
+              FileReader in = new FileReader(fitxer);) {
             Scanner input = new Scanner(in);
             while (input.hasNextLine()) {           // Mentre hi hagen línies a l'arxiu ...
                 linia = input.nextLine();
@@ -138,7 +138,7 @@ public class Fitxers {
         totalLinies = 0;                              // l'utilitzem ara per contador
         // introduïm les línes al array d'String
         try ( // BLOC DE TRY .. CATCH
-              FileReader in = new FileReader(fitxer)) {
+              FileReader in = new FileReader(fitxer);) {
             Scanner input = new Scanner(in);
             while (input.hasNextLine()) {           // Mentre hi hagen línies a l'arxiu ...
                 linia = input.nextLine();
@@ -172,7 +172,7 @@ public class Fitxers {
 
         try ( // BLOC DE TRY .. CATCH
 
-              FileReader in = new FileReader(fitxer)) {
+              FileReader in = new FileReader(fitxer);) {
             Scanner input = new Scanner(in);
 
             while (input.hasNextLine()) {           // Mentre hi hagen línies a l'arxiu ...
@@ -208,7 +208,7 @@ public class Fitxers {
 
 
         try ( // BLOC DE TRY .. CATCH
-              FileReader in = new FileReader(fitxer)) {
+              FileReader in = new FileReader(fitxer);) {
             Scanner input = new Scanner(in);
             while (input.hasNextLine()) {           // Mentre hi hagen línies a l'arxiu ...
                 linia = input.nextLine();           // Agafa una línia
@@ -223,7 +223,6 @@ public class Fitxers {
 
         return LFitxer;
     }
-
 
 
     // DATA STREAM //
@@ -335,8 +334,8 @@ public class Fitxers {
             in.close();                     // tanquem el fitxer d'objectes
             in = null;                      // i l'alliberem de memòria
         } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("\nFinal Fitxer");
+            //e.printStackTrace();
+            //System.err.println("\nFinal Fitxer");
         }
         return LObjs;
     }
@@ -345,189 +344,81 @@ public class Fitxers {
     /**
      * Llegeix un arxiu binari i retorna els seus components en objectes Object
      * Funció polimòrfica on podem passar-li una classe sencera
-     * i convertir els objectes object, en objectes de la classe passada per parametre.
+     * i convertir els objectes object, en objectes de la classe passada per paràmetre.
      * <p>
      * Per cridar-lo ho farem així:
-     * <p>
-     * Llist 'classeQueVolem' llista;
-     * llista=(List 'classeQueVolem')retornaFitxerObjecteEnLlista(rutaArxiu,classeQueVolem.Class);
+     * <pre>
+     *     {@code
+     * Llist<classeQueVolem>llista;
+     * llista=(List <classeQueVolem>)retornaFitxerObjecteEnLlista(rutaArxiu,classeQueVolem.Class);
      * exemple:
-     * List'Autor' LAutors = (List'Autor') retornaFitxerObjecteEnLlista(rutaFitxer,Autor.class);
+     * List<Autor> LAutors = (List<Autor>) retornaFitxerObjecteEnLlista(rutaFitxer,Autor.class);
+     * }
+     * </pre>
      *
-     * @param arxiu ruta de l'arxiu a llegir
-     * @param Class classe a la que volem convertir els elements objectes del fitxer
-     * @param <T>   classe objecte
-     * @return llista d'objectes de la classe objecte
-     * @throws ClassNotFoundException excepció
-     */
-    public <T> Object retornaFitxerObjecteEnLlista(String arxiu,
-                                                   T Class) throws ClassNotFoundException {
-
-             /*
-             Per cridar al mèteode:
-             Llist<Object>llista;
-             llista=(List <classeQueVolem>)retornaFitxerObjecteEnLlista(rutaArxiu,classeQueVolem.Class);
-             */
-
-
-        List<T> LObjs = new ArrayList<>();
-        try {
-            ObjectInputStream in = new ObjectInputStream(
-                    new FileInputStream(arxiu));
-            do {
-                T obj = (T) in.readObject();
-                LObjs.add(obj);
-            } while (in != null);
-            in.close();                     // tanquem el fitxer d'objectes
-            in = null;                      // i l'allibrerem de memòria
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("\nFinal Fitxer");
-        }
-        return LObjs;
-    }
-
-    /**
-     * Llegeix un arxiu binari i retorna els seus components en objectes Object
-     * Funció polimòrfica on podem passar-li una classe sencera
-     * i convertir els objectes object, en objectes de la classe passada per parametre.
-     * <p>
-     * Per cridar-lo ho farem així:
-     * <p>
-     * Llist 'classeQueVolem' llista;
-     * llista=(List 'classeQueVolem')retornaFitxerObjecteEnLlista(rutaArxiu,classeQueVolem.Class);
-     * exemple:
-     * List'Autor' LAutors = (List'Autor') retornaFitxerObjecteEnLlista(rutaFitxer,Autor.class);
-     *
-     * @param arxiu ruta de l'arxiu a llegir
-     * @param Class classe a la que volem convertir els elements objectes del fitxer
-     * @param <T>   classe objecte
-     * @return llista d'objectes de la classe objecte
-     * @throws ClassNotFoundException excepció
-     */
-    public <T> Object retornaFitxerObjecteEnPila(String arxiu,
-                                                 T Class) throws ClassNotFoundException {
-
-             /*
-             Per cridar al mèteode:
-             Llist<Object>llista;
-             llista=(List <classeQueVolem>)retornaFitxerObjecteEnLlista(rutaArxiu,classeQueVolem.Class);
-             */
-
-
-        Stack<T> LObjs = new Stack<>();
-        try {
-            ObjectInputStream in = new ObjectInputStream(
-                    new FileInputStream(arxiu));
-            do {
-                T obj = (T) in.readObject();
-                LObjs.push(obj);
-            } while (in != null);
-            in.close();                     // tanquem el fitxer d'objectes
-            in = null;                      // i l'allibrerem de memòria
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("\nFinal Fitxer");
-        }
-        return LObjs;
-    }
-
-
-    /**
-     * Llegeix un arxiu binari i retorna els seus components en objectes Object
-     * Funció polimòrfica on podem passar-li una classe sencera
-     * i convertir els objectes object, en objectes de la classe passada per parametre.
-     * <p>
-     * Per cridar-lo ho farem així:
-     * <p>
-     * Llist 'classeQueVolem' llista;
-     * llista=(List 'classeQueVolem')retornaFitxerObjecteEnLlista(rutaArxiu,classeQueVolem.Class);
-     * exemple:
-     * List'Autor' LAutors = (List'Autor') retornaFitxerObjecteEnLlista(rutaFitxer,Autor.class);
-     *
-     * @param arxiu ruta de l'arxiu a llegir
-     * @param Class classe a la que volem convertir els elements objectes del fitxer
-     * @param <T>   classe objecte
-     * @return llista d'objectes de la classe objecte
-     * @throws ClassNotFoundException excepció
-     */
-    public <T> Object retornaFitxerObjecteEnCua(String arxiu,
-                                                T Class) throws ClassNotFoundException {
-
-             /*
-             Per cridar al mèteode:
-             Llist<Object>llista;
-             llista=(List <classeQueVolem>)retornaFitxerObjecteEnLlista(rutaArxiu,classeQueVolem.Class);
-             */
-
-
-        Queue<T> LObjs = new LinkedList<>();
-        try {
-            ObjectInputStream in = new ObjectInputStream(
-                    new FileInputStream(arxiu));
-            do {
-                T obj = (T) in.readObject();
-                LObjs.add(obj);
-            } while (in != null);
-            in.close();                     // tanquem el fitxer d'objectes
-            in = null;                      // i l'allibrerem de memòria
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("\nFinal Fitxer");
-        }
-        return LObjs;
-    }
-
-
-    /**
-     * !!! No funciona!!!
-     * <p>
-     * Funció polimòrfica. Entra una classe i depenent d'aquesta classe convertià els objectes del fitxer
-     * Retornarà una llista d'objectes ja convertits a aquesta classe
-     * <p>
-     * Per cridar al mètode, per exemple des d'objectes Llibre:
-     * <p>
-     * Llibre lli;
-     * lli=cercaObjecteFitxer(rutaArxiu, ObjecteLlibreACercar, class.Llibre);
-     * Cerca un objecte al fitxer
-     * i retorna aquest objecte si està al fitxer
-     * retornarà null si no el troba
-     *
-     * @param arxiu ruta del fitxer on estan les dades
-     * @param obj   objecte a cercar
-     * @param T     referència a la classe de l'objecte que entrarà al mètode
-     * @param <T>   referència a la classe de l'objecte que retornarà
-     * @return null si no troba l'objecte. L'objecte si el troba
+     * @param arxiu Arxiu on estan els objectes
+     * @param Class Classe que utilitzarem per convertir els objectes Object en Objectes de la classe passada per paràmetre
+     * @param <T>   Tipus de la Classe que li passem
+     * @return Llista amb els objectes convertits ja a la classe passada per paràmetre
      * @throws InterruptedException   excepció
      * @throws IOException            excepció
      * @throws ClassNotFoundException excepció
-     * @deprecated !!! No funciona!!!
+     * @throws NoSuchFieldException   excepció
+     * @throws IllegalAccessException excepció
      */
-    @Deprecated
-    public <T> T cercaObjecteFitxer(String arxiu, T obj, Class T)
-            throws InterruptedException, IOException, ClassNotFoundException {
-        List<T> LObj = (List<T>) retornaFitxerObjecteEnLlista(arxiu);
-        T obj2;
-        int i;
-        for (i = 0; i < LObj.size(); i++) {
-            obj2 = LObj.get(i);
+    public <T> Object retornaFitxerObjecteEnLlista(String arxiu, T Class) throws
+            InterruptedException, IOException, ClassNotFoundException,
+            NoSuchFieldException, IllegalAccessException {
+ /* Per cridar al mètode des d’una altra classe:
+ Llist<Object>llista;
+ llista=(List<classeQueVolem>)retornaFitxerObjecteEnLlista(rutaArxiu,classeQueVolem.Class);
+ */
+        List<T> LObjs = new ArrayList<>(); // Llista a retornar de tipus T (paràmetre d’entrada)
+        try {
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream(arxiu));
 
-            if (obj2.equals(obj)) {
-                return (T) obj;
-            }
+            do {
+                T obj = (T) in.readObject(); // Llegim els objectes i els convertim a la classe T
+                LObjs.add(obj); // Els afegim a la llista
+            } while (in != null);
+            in.close(); // tanquem el fitxer d'objectes
+            in = null; // i l’alliberem de la memòria
+        } catch (IOException e) {
+            //e.printStackTrace();
+            //System.err.println("\nFinal Fitxer");
         }
-        return null;
+        return LObjs;
     }
 
+
     /**
-     * !!! No funciona!!!
      * <p>
      * Cerca un objecte al fitxer
      * i retorna aquest objecte si està al fitxer
      * retornarà null si no el troba
+     * <p>
+     * IMPORTANT!! EL MÈTODE equals HA D'ESTAR REESCRIT EN LA CLASSE DE L'OBJECTE QUE VOLEM ELIMINAR:
+     * Exemple:
+     * <pre>
+     *  {@code
+     *
+     *
+     *        public boolean equals(Object obj){
+     *        // comprovem primer que l'objecte sigui el mateix objecte
+     *        if(obj==this)
+     *           return true;
+     *        // comprovem ara que l'objecte obj sigui una instància de JugadorSeleccio
+     *        if(!(obj instanceof JugadorSeleccio))
+     *           return false;
+     *        // passem ara a comprovar els valors de les propietats.
+     *       //Primer convertim obj a la nostra classe
+     *        JugadorSeleccio j=(JugadorSeleccio) obj;
+     *        return Integer.compare(dorsal,j.dorsal)==0 &&
+     *            nom.equals(j.nom) && demarcacio.equals(j.demarcacio);
+     *       }
+     *
+     *  }
+     *       </pre>
      *
      * @param arxiu ruta del fitxer on estan les dades
      * @param obj   objecte a cercar
@@ -535,19 +426,17 @@ public class Fitxers {
      * @throws InterruptedException   excepció
      * @throws IOException            excepció
      * @throws ClassNotFoundException excepció
-     *                                <p>
-     *                                !!! No funciona!!!
+     *
      */
-    @Deprecated
-    public Object cercaObjecteFitxer(String arxiu, Object obj) throws InterruptedException, IOException, ClassNotFoundException {
+    public Object cercaObjecteFitxer(String arxiu, ComparadorObjectes obj) throws InterruptedException, IOException, ClassNotFoundException {
         List<Object> LObj = retornaFitxerObjecteEnLlista(arxiu);
-        Object obj2;
+        Object objFitxer;
         int i;
         for (i = 0; i < LObj.size(); i++) {
-            obj2 = LObj.get(i);
+            objFitxer = LObj.get(i);
 
-            if (obj2.equals(obj)) {
-                return obj;
+            if (objFitxer.equals(obj)) {     // IMPORTANT!! El mètode equals de la classe de l'objecte que volem eliminar
+                return obj;             // ha d'estar reescrit. Mira descripció javadoc del mètode "eliminaRegistreFitxerObjecte". Hi ha un exemple
             }
         }
         return null;
@@ -556,26 +445,51 @@ public class Fitxers {
 
     /**
      * Elimina un objecte del fitxer d'Objectes
+     * <p>
+     * IMPORTANT!! EL MÈTODE equals HA D'ESTAR REESCRIT EN LA CLASSE DE L'OBJECTE QUE VOLEM ELIMINAR:
+     * Exemple:
+     * <pre>
+     *     {@code
+     *
+     *
+     * public boolean equals(Object obj){
+     *  // comprovem primer que l'objecte sigui el mateix objecte
+     *  if(obj==this)
+     *  return true;
+     *  // comprovem ara que l'objecte obj sigui una instància de JugadorSeleccio
+     *  if(!(obj instanceof JugadorSeleccio))
+     *  return false;
+     *  // passem ara a comprovar els valors de les propietats.
+     * //Primer convertim obj a la nostra classe
+     *  JugadorSeleccio j=(JugadorSeleccio) obj;
+     *  return Integer.compare(dorsal,j.dorsal)==0 &&
+     *  nom.equals(j.nom) && demarcacio.equals(j.demarcacio);
+     * }
+     *
+     * }
+     * </pre>
      *
      * @param fitxer fitxer d'objectes
-     * @param Obj    Objecte a eliminar
+     * @param Obj    Objecte a eliminar <strong>(LA CLASSE DE L'OBJECTE HA DE TENIR EL MÈTODE equals() REESCRIT</strong>
      * @throws InterruptedException   excepció
      * @throws IOException            excepció
      * @throws ClassNotFoundException excepció
      */
     public void eliminaRegistreFitxerObjecte(String fitxer,
-                                             Object Obj) throws InterruptedException, IOException, ClassNotFoundException {
+                                             ComparadorObjectes Obj) throws InterruptedException, IOException, ClassNotFoundException {
+
 
         List<Object> LObj = retornaFitxerObjecteEnLlista(fitxer);
+
         int i;
         boolean primerRegistreGravat = true;
         for (i = 0; i < LObj.size(); i++) {
-            if (!LObj.get(i).equals(Obj)) {
-                if (primerRegistreGravat) {
-                    escriuObjecteFitxer(Obj, fitxer, false);
+            if (!LObj.get(i).equals(Obj)) {     // IMPORTANT!! El mètode equals de la classe de l'objecte que volem eliminar
+                if (primerRegistreGravat) {     // ha d'estar reescrit. Mira descripció javadoc d'aquest mètode. Hi ha un exemple
+                    escriuObjecteFitxer(LObj.get(i), fitxer, false);
                     primerRegistreGravat = false;
                 } else {
-                    escriuObjecteFitxer(Obj, fitxer, true);
+                    escriuObjecteFitxer(LObj.get(i), fitxer, true);
                 }
             }
         }
@@ -630,7 +544,7 @@ public class Fitxers {
         Files.createDirectory(path);    // Files --> import java.nio.file.Files
     }
 
-      /**
+    /**
      * Elimina un fitxer o directori passat per paràmetre
      *
      * @param fitx fitxer o directori a eliminar
@@ -775,7 +689,6 @@ public class Fitxers {
     }
 
 
-
     /**
      * Retorna el contingut d'un fitxer de text en una cua d'String
      * !!EN AQUEST CAS HA D'ESTAR ESCRIT EN UN JOC DE CARÀCTERS: UTF-8 !!
@@ -799,7 +712,6 @@ public class Fitxers {
     }
 
     // </editor-fold>
-
 
 
 }

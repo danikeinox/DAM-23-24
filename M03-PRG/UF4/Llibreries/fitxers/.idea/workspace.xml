@@ -5,27 +5,76 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c05e159-92df-401c-b10a-278878745020" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/src/M09_UF1_ACT02_Cabrera.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/src/main/java/org/example/Act2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/src/main/java/org/example/Act3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/src/main/java/org/example/Act4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Pruebas/fitxer.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../M13-PROJECT/PycharmProjects/fastApiProject/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../M13-PROJECT/PycharmProjects/fastApiProject/test_main.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/classes/Autobus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/classes/Autobus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/classes/Taxi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/classes/Taxi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/classes/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/classes/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/controladors/FAfegeixAutobus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/controladors/FAfegeixAutobus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/controladors/FAfegeixTaxi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/controladors/FAfegeixTaxi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/controladors/FMostrarAutobus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/controladors/FMostrarAutobus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/controladors/FMostrarTaxis.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Activities/Activitat2/dam-uf4-01herenciaprototip/src/main/java/daniel/Cabrera/herenciaexemple/controladors/FMostrarTaxis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pkgFitxers/Fitxers.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/pkgFitxers/Fitxers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/pkgFitxers/MeuObjecteOutputStream.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/pkgFitxers/MeuObjecteOutputStream.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/allclasses.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/constant-values.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/deprecated-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/index-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/index-all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/jquery/external/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/jquery/jquery-3.6.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/jquery/jquery-ui.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/jquery/jquery-ui.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/jquery/jszip-utils/dist/jszip-utils-ie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/jquery/jszip-utils/dist/jszip-utils-ie.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/jquery/jszip-utils/dist/jszip-utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/jquery/jszip-utils/dist/jszip-utils.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/jquery/jszip/dist/jszip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/jquery/jszip/dist/jszip.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/legal/jqueryUI.md" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/legal/jqueryUI.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/legal/jszip.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/legal/pako.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/member-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/member-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/package-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/package-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/pkgFitxers/Fitxers.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/pkgFitxers/Fitxers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/pkgFitxers/MeuObjecteOutputStream.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/pkgFitxers/MeuObjecteOutputStream.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/pkgFitxers/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/pkgFitxers/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/pkgFitxers/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/pkgFitxers/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/docs/javadoc/type-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/docs/javadoc/type-search-index.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/Fitxers-4.0-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/Fitxers-4.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/publications/library/module.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/publications/library/module.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/publications/library/pom-default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/publications/library/pom-default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/publications/maven/module.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/publications/maven/module.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/publications/maven/pom-default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/publications/maven/pom-default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/javadoc/javadoc.options" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/javadocJar/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/publishLibraryPublicationToMavenRepository/module-maven-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/publishMavenPublicationToMavenRepository/module-maven-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/persones.csv" beforeDir="false" afterPath="$PROJECT_DIR$/persones.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persones.dat" beforeDir="false" afterPath="$PROJECT_DIR$/persones.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pkgFitxers/Fitxers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pkgFitxers/Fitxers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/src/main/java/org/example/Act1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/src/main/java/org/example/Act1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Simetric/Act2/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pkgFitxers/MeuObjecteOutputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pkgFitxers/MeuObjecteOutputStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pkgFitxers/FitxersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pkgFitxers/FitxersTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pkgFitxers/Metodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pkgFitxers/Metodes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Artist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Style.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Style.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Tarjeta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Asimetric/Act3/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Asimetric/Act3/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Asimetric/Act3/src/main/java/daniel/Cabrera/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Asimetric/Act3/src/main/java/daniel/Cabrera/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Asimetric/Act3/src/main/java/daniel/Cabrera/classes/Claus.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Asimetric/Act3/src/main/java/daniel/Cabrera/classes/Claus.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +100,13 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
@@ -97,7 +153,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
@@ -223,9 +279,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.fitxers [publish]" />
-        <item itemvalue="Gradle.fitxers [init]" />
-        <item itemvalue="Gradle.fitxers [clean]" />
         <item itemvalue="Gradle.fitxers [build]" />
+        <item itemvalue="Gradle.fitxers [clean]" />
+        <item itemvalue="Gradle.fitxers [init]" />
         <item itemvalue="Gradle.fitxers [assemble]" />
       </list>
     </recent_temporary>
@@ -244,6 +300,7 @@
       <workItem from="1698170033790" duration="46000" />
       <workItem from="1698170193113" duration="761000" />
       <workItem from="1699370952056" duration="2435000" />
+      <workItem from="1700568585826" duration="2549000" />
     </task>
     <servers />
   </component>

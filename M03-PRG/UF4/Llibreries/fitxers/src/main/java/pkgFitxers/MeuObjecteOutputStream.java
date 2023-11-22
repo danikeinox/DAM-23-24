@@ -10,6 +10,16 @@ import java.io.OutputStream;
 
 /**
  *
+ * Bàsicament una reescriptura de la classe ObjectOutputStream però sense el mètode writeStreamHeader()
+ * que reescriu la capçalera cada cop que l'utilitzem.
+ *
+ * D'aquesta manera puc escriure un objecte a un fitxer sense haver d'escriure la capçalera del fitxer cada cop
+ * i em permetrà afegir objectes a un fitxer on ja hi han objectes prèviament
+ *
+ * S'utilitza en el mètode: escriuObjecteFitxer
+ *
+ * @see Fitxers#escriuObjecteFitxer(Object, String, boolean) escriuObjecteFitxer()
+ *
  * @author vicent
  */
 public class MeuObjecteOutputStream extends ObjectOutputStream{

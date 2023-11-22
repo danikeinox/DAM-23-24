@@ -14,7 +14,7 @@ public abstract class Metodes implements Serializable {
     }
 
 
-    public List<Persona> retornaPersonesObjecte(String fitxerDat) throws ClassNotFoundException {
+    public List<Persona> retornaPersonesObjecte(String fitxerDat) throws ClassNotFoundException, IOException, NoSuchFieldException, InterruptedException, IllegalAccessException {
         return (List<Persona>) f.retornaFitxerObjecteEnLlista(fitxerDat,Persona.class);
 
     }

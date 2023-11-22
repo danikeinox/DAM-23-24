@@ -1,19 +1,21 @@
-package daniel.Cabrera.classes;
+# FUNCIONS CRIPTOGRAFIA ASIMÈTRICA
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.security.*;
-import java.util.Base64;
-import java.util.Scanner;
+---
+## Com s'han creat les funcions?
 
-public class Claus {
-    public static String publicKey;
-    public static String privateKey;
-    private static KeyPair keyPair;
-    private static Scanner scan = new Scanner(System.in);
+Consta principalment d'una classe anomenada `Claus` amb diverses 
+funcions relacionades amb el menu anterior del `main()`.
 
-    public static void generaClaus() {
+### Creació de variables generals de la classe `Claus`
+
+### Funció "generaClaus"
+
+Aquesta funció inicialitza el motor d'encriptació i genera un parell de claus
+(clau pública i clau privada) utilitzant l'algoritme RSA amb una longitud de
+2048 bits. Si ja s'ha generat un parell de claus, es mostrarà un missatge d'avís.
+
+```java
+public static void generaClaus() {
         System.out.println("Inicialitzant el motor d'encriptació...");
         if (keyPair == null) {
             System.out.println("INFO: Encara no s'ha generat cap parell de claus. Creant un de nou...");
@@ -23,8 +25,11 @@ public class Claus {
             System.out.println("WARN: Ja s'han generat un parells de claus. No es pot crear de nou...");
         }
     }
+```
 
-    private static KeyPair generateKeyPair() {
+```java
+// Clau privada per generar i inicialitzar el KeyPair
+private static KeyPair generateKeyPair() {
         try {
             KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
             keyPairGenerator.initialize(2048);
@@ -34,8 +39,16 @@ public class Claus {
             return null;
         }
     }
+```
 
-    private static void guardaClaus() {
+### Funció "guardaClaus"
+
+Aquesta funció guarda el parell de claus generat en les variables "publicKey"
+i "privateKey" en format Base64. Si no s'ha generat cap parell de claus, es
+mostrarà un missatge d'error.
+
+```java
+private static void guardaClaus() {
         if (keyPair != null) {
             PublicKey publicKeyObj = keyPair.getPublic();
             PrivateKey privateKeyObj = keyPair.getPrivate();
@@ -47,8 +60,19 @@ public class Claus {
             System.out.println("ERROR: No s'ha generat cap parell de claus.");
         }
     }
+```
 
-    public static void signaDocument() throws Exception {
+### Funció "signaDocument"
+
+Aquesta funció permet signar un document utilitzant la clau privada. 
+Primer, es demana a l'usuari que introdueixi la ruta del document a signar. 
+A continuació, es llegeix el contingut del document i es calcula la 
+signatura utilitzant l'algoritme SHA256 amb RSA. La signatura es 
+guarda en un fitxer amb extensió ".sig" i es mostra per pantalla
+en format Base64.
+
+```java
+public static void signaDocument() throws Exception {
         String ruta = "";
         try {
             if (keyPair != null) {
@@ -76,8 +100,18 @@ public class Claus {
             e.printStackTrace();
         }
     }
+```
 
-    public static void verificaSignatura() throws Exception {
+### Funció "verificaSignatura"
+Aquesta funció permet verificar la signatura d'un document utilitzant
+la clau pública. Primer, es demana a l'usuari que introdueixi
+la ruta del document original i la ruta del document amb la signatura.
+A continuació, es llegeixen els continguts d'ambdós documents i es verifica
+la signatura utilitzant l'algoritme SHA256 amb RSA. Es mostra un missatge
+indicant si la signatura és vàlida o no.
+
+```java
+public static void verificaSignatura() throws Exception {
         try {
             if (keyPair != null) {
                 System.out.println("Introdueix la ruta del document original: ");
@@ -113,4 +147,24 @@ public class Claus {
             e.printStackTrace();
         }
     }
-}
+```
+
+#### Accedir a el repositori del programa:
+- [Repositori principal](../../../../../../)
+
+---
+
+## Informació tècnica utilitzada
+**IDE:** 
+- IntelliJ Professional
+
+**Llenguatge:** 
+- Java (SDK Coretto-11)
+
+**Imports:** 
+- java.util
+- java.security
+- java.nio.file
+
+## Autor
+- [@danikeinox](https://www.github.com/danikeinox)

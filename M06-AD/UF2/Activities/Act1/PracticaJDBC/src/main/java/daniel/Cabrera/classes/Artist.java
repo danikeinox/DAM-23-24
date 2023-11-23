@@ -26,6 +26,7 @@ public class Artist {
                         statement.setString(2, artistName);
                         statement.executeUpdate();
                         System.out.println("Artista dado de alta correctamente.");
+                        break;
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
                     }

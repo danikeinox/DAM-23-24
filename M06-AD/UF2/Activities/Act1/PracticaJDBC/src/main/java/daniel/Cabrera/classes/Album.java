@@ -20,16 +20,9 @@ public class Album {
         while (true) {
             String sqlCheckArtist = "SELECT code FROM ALBUM WHERE code = ?";
             try (PreparedStatement statementCheckArtist = connection.prepareStatement(sqlCheckArtist)) {
-                statementCheckArtist.setString(1, artistCode);
+                statementCheckArtist.setString(1, albumCode);
                 ResultSet resultSet = statementCheckArtist.executeQuery();
-                if (!resultSet.next() || resultSet.getString("code").equals(albumCode)) {
-                    System.out.println("Ya existe un álbum con ese código.");
-                    System.out.print("Introdueix el códi que vols donar d'alta a l'álbum. (prem -1 per sortir):");
-                    albumCode = scanner.nextLine();
-                    if (albumCode.equals("-1")) {
-                        return;
-                    }
-                } else {
+                if (!resultSet.next()) {
                     String sql = "INSERT INTO ALBUM (code, title, artist, year, style) VALUES (?, ?, ?, ?, ?)";
                     try (PreparedStatement statement = connection.prepareStatement(sql)) {
                         statement.setString(1, albumCode);
@@ -39,9 +32,17 @@ public class Album {
                         statement.setString(5, albumStyle);
                         statement.executeUpdate();
                         System.out.println("Album dado de alta correctamente.");
-                        break;
+                        return;
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
+                    }
+
+                } else {
+                    System.out.println("Ya existe un álbum con ese código.");
+                    System.out.print("Introdueix el códi que vols donar d'alta a l'álbum. (prem -1 per sortir):");
+                    albumCode = scanner.nextLine();
+                    if (albumCode.equals("-1")) {
+                        return;
                     }
                 }
             } catch (SQLException e) {

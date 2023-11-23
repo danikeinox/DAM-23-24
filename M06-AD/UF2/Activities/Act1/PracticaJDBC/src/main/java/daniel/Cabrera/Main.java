@@ -62,12 +62,12 @@ public class Main {
                 case 7:
                     // Lógica para listar ventas por artista
                     // TODO implementar la lógica para listar las ventas por artista
-                    // Shop.soldArtista(connection);
+                    Shop.soldArtista(connection);
                     break;
                 case 8:
                     // Lógica para listar compras por cliente
                     // TODO implementar la lógica para listar las compras por cliente
-                    // Shop.purchasedClient(connection);
+                    Shop.purchasedClient(connection);
                     break;
                 case 0:
                     System.out.println("Programa finalizado.");

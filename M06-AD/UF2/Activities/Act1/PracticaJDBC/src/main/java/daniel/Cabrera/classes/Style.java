@@ -16,22 +16,23 @@ public class Style {
             try (PreparedStatement statementCheckClient = connection.prepareStatement(sqlCheckArtist)) {
                 statementCheckClient.setString(1, styleCode);
                 ResultSet resultSet = statementCheckClient.executeQuery();
-                if (!resultSet.next() || resultSet.getString("code").equals(styleCode)) {
-                    System.out.println("No existeix ningún estil amb aquest codi.");
-                    System.out.println("Introdueix el códi del estil que vols donar d'alta. (prem -1 per sortir):");
-                    styleCode = scanner.nextLine();
-                    if (styleCode.equals("-1")) {
-                        return;
-                    }
-                } else {
+                if (!resultSet.next()) {
                     String sql = "INSERT INTO STYLE (code, name) VALUES (?, ?)";
                     try (PreparedStatement statement = connection.prepareStatement(sql)) {
                         statement.setString(1, styleCode);
                         statement.setString(2, styleName);
                         statement.executeUpdate();
                         System.out.println("Album dado de alta correctamente.");
+                        break;
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
+                    }
+                } else {
+                    System.out.println("No existeix ningún estil amb aquest codi.");
+                    System.out.println("Introdueix el códi del estil que vols donar d'alta. (prem -1 per sortir):");
+                    styleCode = scanner.nextLine();
+                    if (styleCode.equals("-1")) {
+                        return;
                     }
                 }
             }

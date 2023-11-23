@@ -23,22 +23,7 @@ public class Song {
             try (PreparedStatement statementCheckSong = connection.prepareStatement(sqlCheckArtist)) {
                 statementCheckSong.setString(1, songCode);
                 ResultSet resultSet = statementCheckSong.executeQuery();
-                if (!resultSet.next() || resultSet.getString("track").equals(songTrack)) {
-                    System.out.println("Ja hi ha una canço assignada a el numero de llista.");
-                    System.out.print("Introdueix el número de llista de la cançó que vols donar d'alta. (prem -1 per sortir):");
-                    songTrack = scanner.nextLine();
-                    if (songTrack.equals("-1")) {
-                        return;
-                    }
-                }
-                if (!resultSet.next() || resultSet.getString("code").equals(songCode)) {
-                    System.out.println("No existeix ningúna cançó amb aquest codi.");
-                    System.out.println("Introdueix el códi de la cançó que vols donar d'alta. (prem -1 per sortir):");
-                    songCode = scanner.nextLine();
-                    if (songCode.equals("-1")) {
-                        return;
-                    }
-                } else {
+                if (!resultSet.next()) {
                     String sql = "INSERT INTO SONG (code, title, album, track) VALUES (?, ?, ?, ?)";
                     try (PreparedStatement statement = connection.prepareStatement(sql)) {
                         statement.setString(1, songCode);
@@ -47,8 +32,16 @@ public class Song {
                         statement.setString(4, songTrack);
                         statement.executeUpdate();
                         System.out.println("Canço donada d'alta correctament.");
+                        break;
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
+                    }
+                } else {
+                    System.out.println("No existeix ningúna cançó amb aquest codi.");
+                    System.out.println("Introdueix el códi de la cançó que vols donar d'alta. (prem -1 per sortir):");
+                    songCode = scanner.nextLine();
+                    if (songCode.equals("-1")) {
+                        return;
                     }
                 }
             }
@@ -79,6 +72,7 @@ public class Song {
                         statement.setString(1, songCode);
                         statement.executeUpdate();
                         System.out.println("Cançó donada de baixa correctament.");
+                        break;
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
                     }

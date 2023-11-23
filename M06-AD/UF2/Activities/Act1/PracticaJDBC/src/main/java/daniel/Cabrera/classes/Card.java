@@ -21,14 +21,7 @@ public class Card {
             try (PreparedStatement statementCheckCard = connection.prepareStatement(sqlCheckArtist)) {
                 statementCheckCard.setString(1, cardID);
                 ResultSet resultSet = statementCheckCard.executeQuery();
-                if (!resultSet.next() || resultSet.getString("code").equals(cardID)) {
-                    System.out.println("Ja existeix una tarjeta amb aquest codi.");
-                    System.out.print("Introdueix el ID de la tarjeta. (prem -1 per sortir):");
-                    cardID = scanner.nextLine();
-                    if (cardID.equals("-1")) {
-                        return;
-                    }
-                } else {
+                if (!resultSet.next()) {
                     String sql = "INSERT INTO CARD (code, card_number, csv, exp_date, client) VALUES (?, ?, ?, ?, ?)";
                     try (PreparedStatement statement = connection.prepareStatement(sql)) {
                         statement.setString(1, cardID);
@@ -38,8 +31,16 @@ public class Card {
                         statement.setString(5, cardClientID);
                         statement.executeUpdate();
                         System.out.println("Tarjeta donada d'alta correctament.");
+                        break;
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
+                    }
+                } else {
+                    System.out.println("Ja existeix una tarjeta amb aquest codi.");
+                    System.out.print("Introdueix el ID de la tarjeta. (prem -1 per sortir):");
+                    cardID = scanner.nextLine();
+                    if (cardID.equals("-1")) {
+                        return;
                     }
                 }
             } catch (SQLException e) {
@@ -72,6 +73,7 @@ public class Card {
                         statement.setString(1, cardID);
                         statement.executeUpdate();
                         System.out.println("Tarjeta donada de baixa correctament.");
+                        break;
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
                     }

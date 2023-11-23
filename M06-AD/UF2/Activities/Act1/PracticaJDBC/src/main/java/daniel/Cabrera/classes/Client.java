@@ -74,6 +74,7 @@ public class Client {
                         statement.setString(5, clientRegion);
                         statement.executeUpdate();
                         System.out.println("Client dado de alta correctamente.");
+                        break;
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
                     }
@@ -115,6 +116,7 @@ public class Client {
                         statement.setString(1, clientID);
                         statement.executeUpdate();
                         System.out.println("Client dado de baja correctamente.");
+                        break;
                     } catch (SQLException e) {
                         throw new RuntimeException(e);
                     }

@@ -5,8 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c05e159-92df-401c-b10a-278878745020" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Asimetric/Act3/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Asimetric/Act3/src/main/java/daniel/Cabrera/classes/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Asimetric/Act3/src/main/java/daniel/Cabrera/classes/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Activities/Activitat4/dam-uf4-01herenciaprototip/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Activities/Activitat4/dam-uf4-01herenciaprototip/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Artist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Style.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Style.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M06-AD/UF2/Activities/Act1/PracticaJDBC/src/main/java/daniel/Cabrera/classes/Testing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Asimetric/Act3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../M09-PSP/UF1/Xifratge/Asimetric/Act3/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,27 +85,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/K3IN0X/Documents/GitHub/DAM-23-24/M09-PSP/UF1/Xifratge/Simetric/Act2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/K3IN0X/Documents/GitHub/DAM-23-24/M09-PSP/UF1/Xifratge/Simetric/Act2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="gradlew clean" />
@@ -232,7 +246,8 @@
       <workItem from="1698170033790" duration="46000" />
       <workItem from="1698170193113" duration="761000" />
       <workItem from="1699370952056" duration="2435000" />
-      <workItem from="1700568585826" duration="2549000" />
+      <workItem from="1700568585826" duration="2560000" />
+      <workItem from="1700685382298" duration="599000" />
     </task>
     <servers />
   </component>

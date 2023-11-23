@@ -80,7 +80,7 @@ aquest càs únicament utilitzarem 5, per tant, no sería molt difícil llegir
 el códi.
 
 #### Accedir a el README.md del directori classes:
-- [README de les Funcions Asimètriques](./src/main/java/daniel.Cabrera/classes/)
+- [README de les Funcions Asimètriques](./src/main/java/daniel/Cabrera/classes/)
 
 ---
 

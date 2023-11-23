@@ -8,11 +8,11 @@
       <jdbc-url>jdbc:mysql://localhost:3306/musica</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="yagotest@10.0.52.108" uuid="447543d4-7190-4d04-a857-8b29d40c29e1">
+    <data-source source="LOCAL" name="yagotest@10.0.207.130" uuid="447543d4-7190-4d04-a857-8b29d40c29e1">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://10.0.52.108:3306/yagotest</jdbc-url>
+      <jdbc-url>jdbc:mysql://10.0.207.130:3306/yagotest</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

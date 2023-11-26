@@ -40,11 +40,11 @@ public class CardSpace {
 
     private void showImage()
     {
-        if(this.type == CardType.GINGERBREAD) this.img.setImageResource(R.drawable.card_1);
-        else if(this.type == CardType.HONEYCOMB) this.img.setImageResource(R.drawable.card_2);
-        else if(this.type == CardType.SANDWICH) this.img.setImageResource(R.drawable.card_3);
-        else if(this.type == CardType.JELLYBEAN) this.img.setImageResource(R.drawable.card_4);
-        else if(this.type == CardType.LOLLIPOP) this.img.setImageResource(R.drawable.card_5);
-        else if(this.type == CardType.KITKAT) this.img.setImageResource(R.drawable.card_6);
+        if(this.type == CardType.GINGERBREAD)this.img.setImageResource(R.drawable.card_1);
+        else if(this.type == CardType.HONEYCOMB)this.img.setImageResource(R.drawable.card_2);
+        else if(this.type == CardType.SANDWICH)this.img.setImageResource(R.drawable.card_3);
+        else if(this.type == CardType.JELLYBEAN)this.img.setImageResource(R.drawable.card_4);
+        else if(this.type == CardType.LOLLIPOP)this.img.setImageResource(R.drawable.card_5);
+        else if(this.type == CardType.KITKAT)this.img.setImageResource(R.drawable.card_6);
     }
 }

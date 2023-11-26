@@ -166,15 +166,42 @@
                             android:textColor="@color/white" />
                     </RadioGroup>
 
-                    <TextView
-                        android:id="@+id/tx_winner"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:textAlignment="center"
-                        android:textColor="@color/white"
-                        android:textSize="34sp" />
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tx_winner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="34sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom|center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tx_winsCercles"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textAlignment="center" />
+
+                            <TextView
+                                android:id="@+id/tx_winsCreus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textAlignment="center" />
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 

@@ -3,7 +3,9 @@ package dam2.dcabrera.activitat4;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.WindowDecorActionBar;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,6 +19,10 @@ public class MainActivity extends AppCompatActivity {
     private Joc3R joc;
     private int nJugadors;
     private TextView tx_winner;
+    private TextView tx_winsCercles;
+    private TextView tx_winsCreus;
+    private int cerclesCount = 0;
+    private int creusCount = 0;
 
 
     @Override
@@ -33,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
         caselles[7] = R.id.C2;
         caselles[8] = R.id.C3;
         tx_winner = (TextView) findViewById(R.id.tx_winner);
+        tx_winsCercles = (TextView) findViewById(R.id.tx_winsCercles);
+        tx_winsCreus = (TextView) findViewById(R.id.tx_winsCreus);
+        tx_winsCercles.setText(String.valueOf(cerclesCount));
+        tx_winsCreus.setText(String.valueOf(creusCount));
     }
 
     public void juguemHi(View view) {
@@ -118,12 +128,34 @@ public class MainActivity extends AppCompatActivity {
 
     public void finalPartida(int resT) {
         String missatge;
-        if (resT == 1) missatge = "Guanya Cercles";
-        else if (resT == 2) missatge = "Guanya Creus";
+        if (resT == 1) {
+            missatge = "Guanya Cercles";
+            cerclesCount+=1;
+        }
+        else if (resT == 2){
+            missatge = "Guanya Creus";
+            creusCount+=1;
+        }
         else missatge = "Empate";
         tx_winner.setText(missatge);
         ((Button) findViewById(R.id.unjug)).setEnabled(true);
         ((Button) findViewById(R.id.dosjug)).setEnabled(true);
         ((RadioGroup) findViewById(R.id.cnfRad)).setAlpha(1);
+    }
+
+    public void onPause() {
+        super.onPause();
+        SharedPreferences dades = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor mEditor = dades.edit(); // fem editable l’objecte
+        mEditor.putInt("cerclesCount", cerclesCount);
+        mEditor.putInt("creusCount", creusCount);
+        mEditor.commit();
+    }
+
+    public void onResume() {
+        super.onResume();
+        SharedPreferences dades = PreferenceManager.getDefaultSharedPreferences(this);
+        cerclesCount = dades.getInt("cerclesCount", 0);
+        creusCount = dades.getInt("creusCount", 0);
     }
 }

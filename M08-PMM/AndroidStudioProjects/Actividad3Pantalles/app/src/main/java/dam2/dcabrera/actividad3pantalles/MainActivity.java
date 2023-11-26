@@ -2,25 +2,35 @@ package dam2.dcabrera.actividad3pantalles;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupMenu;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText tx_nombre;
+    private EditText tx_id;
     private EditText tx_apellido;
     private EditText tx_correo;
     private EditText tx_telefono;
     private Button bt_borrar;
     private Button bt_email;
     private Button bt_registrar;
+    private Button bt_delete;
+    private Button bt_update;
+    private Button bt_search;
     private Button bt_tarjeta;
     private Button bt_menu;
+    private BBDD_Helper mBDHelper = new BBDD_Helper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +40,12 @@ public class MainActivity extends AppCompatActivity {
         bt_email = findViewById(R.id.bt_email);
         bt_tarjeta = findViewById(R.id.bt_tarjeta);
         bt_registrar = findViewById(R.id.bt_registrar);
+        bt_delete = findViewById(R.id.bt_delete);
+        bt_update = findViewById(R.id.bt_update);
+        bt_search = findViewById(R.id.bt_search);
         bt_menu = findViewById(R.id.bt_menu);
         bt_borrar = findViewById(R.id.bt_borrar);
+        tx_id = findViewById(R.id.tx_id);
         tx_nombre = findViewById(R.id.tx_nombre);
         tx_apellido = findViewById(R.id.tx_apellido);
         tx_correo = findViewById(R.id.tx_correo);
@@ -41,6 +55,98 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showMenu(view);
+            }
+        });
+        buttons();
+    }
+
+    public void buttons() {
+        bt_registrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase db = mBDHelper.getWritableDatabase();
+                ContentValues values = new ContentValues();
+                values.put(Estruct_BBDD.COLUMN_ID, tx_id.getText().toString());
+                values.put(Estruct_BBDD.COLUMN_NAME1, tx_nombre.getText().toString());
+                values.put(Estruct_BBDD.COLUMN_NAME2, tx_apellido.getText().toString());
+                values.put(Estruct_BBDD.COLUMN_EMAIL, tx_correo.getText().toString());
+                values.put(Estruct_BBDD.COLUMN_PHONE, tx_telefono.getText().toString());
+                long nouRegId = db.insert(Estruct_BBDD.TABLE_NAME, null, values);
+                Toast to = Toast.makeText(MainActivity.this, "Registre guardat amb ID: " + nouRegId, Toast.LENGTH_LONG);
+                to.setGravity(Gravity.CENTER, 0, 0);
+                to.show();
+                tx_id.setText("");
+                tx_nombre.setText("");
+                tx_apellido.setText("");
+                tx_correo.setText("");
+                tx_telefono.setText("");
+            }
+        });
+
+        bt_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase db = mBDHelper.getWritableDatabase();
+                String seleccio = Estruct_BBDD.COLUMN_ID + "=?";
+                String [] selectionArgs = {tx_id.getText().toString()};
+                db.delete(Estruct_BBDD.TABLE_NAME, seleccio , selectionArgs);
+                Toast to = Toast.makeText(MainActivity.this, "S'ha eliminat el registre amb ID: " + tx_id.getText().toString() + ".", Toast.LENGTH_SHORT);
+                to.setGravity(Gravity.CENTER, 0, 0);
+                to.show();
+                tx_id.setText("");
+                tx_nombre.setText("");
+                tx_apellido.setText("");
+                tx_correo.setText("");
+                tx_telefono.setText("");
+
+            }
+        });
+
+        bt_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase db = mBDHelper.getWritableDatabase();
+                String seleccio = Estruct_BBDD.COLUMN_ID + "=?";
+                String [] selectionArgs = {tx_id.getText().toString()};
+                ContentValues values = new ContentValues();
+                values.put(Estruct_BBDD.COLUMN_ID, tx_id.getText().toString());
+                values.put(Estruct_BBDD.COLUMN_NAME1, tx_nombre.getText().toString());
+                values.put(Estruct_BBDD.COLUMN_NAME2, tx_apellido.getText().toString());
+                values.put(Estruct_BBDD.COLUMN_EMAIL, tx_correo.getText().toString());
+                values.put(Estruct_BBDD.COLUMN_PHONE, tx_telefono.getText().toString());
+                db.update(Estruct_BBDD.TABLE_NAME, values, seleccio, selectionArgs);
+                Toast to = Toast.makeText(MainActivity.this, "S'ha actualitzat el registre amb ID: " + tx_id.getText().toString() + ".", Toast.LENGTH_SHORT);
+                to.setGravity(Gravity.CENTER, 0, 0);
+                to.show();
+                tx_id.setText("");
+                tx_nombre.setText("");
+                tx_apellido.setText("");
+                tx_correo.setText("");
+                tx_telefono.setText("");
+            }
+        });
+
+        bt_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase db = mBDHelper.getReadableDatabase();
+                String [] nomColumnes = {
+                        Estruct_BBDD.COLUMN_ID,
+                        Estruct_BBDD.COLUMN_NAME1,
+                        Estruct_BBDD.COLUMN_NAME2,
+                        Estruct_BBDD.COLUMN_EMAIL,
+                        Estruct_BBDD.COLUMN_PHONE
+                };
+                String seleccio = Estruct_BBDD.COLUMN_ID + "=?";
+                String [] selectionArgs = {tx_id.getText().toString()};
+                String sOrder = Estruct_BBDD.COLUMN_ID + " ASC";
+                Cursor c = db.query(Estruct_BBDD.TABLE_NAME, nomColumnes , seleccio, selectionArgs, null , null, sOrder);
+                c.moveToFirst();
+                tx_id.setText(c.getString (0));
+                tx_nombre.setText(c.getString (1));
+                tx_apellido.setText(c.getString (2));
+                tx_correo.setText(c.getString (3));
+                tx_telefono.setText(c.getString (4));
             }
         });
     }
@@ -60,11 +166,53 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void Registrar(View view) {
-        Intent intent = new Intent(this, Auth.class);
-        intent.putExtra("tx_nombre", tx_nombre.getText().toString());
-        startActivity(intent);
-    }
+
+
+    /*public void Registrar(View view) {
+        bt_registrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase db = mBDHelper.getWritableDatabase();
+                ContentValues values = new ContentValues();
+                values.put(Estruct_BBDD.COLUMN_ID, tx_id.getText().toString());
+                values.put(Estruct_BBDD.COLUMN_NAME1, tx_nombre.getText().toString());
+                values.put(Estruct_BBDD.COLUMN_NAME2, tx_apellido.getText().toString());
+                values.put(Estruct_BBDD.COLUMN_EMAIL, tx_correo.getText().toString());
+                values.put(Estruct_BBDD.COLUMN_PHONE, tx_telefono.getText().toString());
+                long nouRegId = db.insert(Estruct_BBDD.TABLE_NAME, null, values);
+                Toast to = Toast.makeText(MainActivity.this, "Registre guardat amb ID: " + nouRegId, Toast.LENGTH_LONG);
+                to.setGravity(Gravity.CENTER, 0, 0);
+                to.show();
+            }
+        });
+        //Intent intent = new Intent(this, Auth.class);
+        //intent.putExtra("tx_nombre", tx_nombre.getText().toString());
+        //startActivity(intent);
+    }*/
+
+    /*public void Search(View view) {
+        bt_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SQLiteDatabase db = mBDHelper.getReadableDatabase();
+                String [] nomColumnes = {
+                        Estruct_BBDD.COLUMN_NAME1,
+                        Estruct_BBDD.COLUMN_NAME2,
+                        Estruct_BBDD.COLUMN_EMAIL,
+                        Estruct_BBDD.COLUMN_PHONE
+                };
+                String seleccio = Estruct_BBDD.COLUMN_NAME1 + "=?";
+                String [] selectionArgs = {tx_id.getText().toString()};
+                String sOrder = Estruct_BBDD.COLUMN_NAME2 + " ASC";
+                Cursor c = db.query(Estruct_BBDD.TABLE_NAME, nomColumnes , seleccio, selectionArgs, null , null, sOrder);
+                c.moveToFirst();
+                tx_nombre.setText(c.getString (0));
+                tx_apellido.setText(c.getString (1));
+                tx_correo.setText(c.getString (2));
+                tx_telefono.setText(c.getString (3));
+            }
+        });
+    }*/
 
     public void showMenu(View view) {
         // Initializing the popup menu and giving the reference as current context
@@ -93,6 +241,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Borrar(View view) {
+        tx_id.setText("");
         tx_nombre.setText("");
         tx_apellido.setText("");
         tx_correo.setText("");

@@ -13,6 +13,9 @@
     <string name="bt_email">EMAIL</string>
     <string name="bt_tarjeta">TARJETA</string>
     <string name="bt_registrar">REGISTRAR</string>
+    <string name="bt_update">UPDATE</string>
+    <string name="bt_delete">ELIMINAR</string>
+    <string name="bt_search">CERCAR</string>
     <string name="bt_borrar">BORRAR</string>
     <string name="textView2">Registrado con éxito</string>
     <string name="tx_nombreAuth">Usuario</string>

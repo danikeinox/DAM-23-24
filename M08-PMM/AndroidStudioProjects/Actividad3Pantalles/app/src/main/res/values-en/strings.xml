@@ -4,7 +4,7 @@
     <string name="bt_menu">☰</string>
     <string name="label_nombre">Name:</string>
     <string name="tx_nombre">Enter your name</string>
-    <string name="label_apellido">Last Name:</string>
+    <string name="label_apellido">Surname:</string>
     <string name="tx_apellido">Enter your last name</string>
     <string name="label_correo">Email:</string>
     <string name="tx_correo">Enter your email</string>
@@ -13,6 +13,9 @@
     <string name="bt_email">EMAIL</string>
     <string name="bt_tarjeta">CARD</string>
     <string name="bt_registrar">REGISTER</string>
+    <string name="bt_update">UPDATE</string>
+    <string name="bt_delete">DELETE</string>
+    <string name="bt_search">SEARCH</string>
     <string name="bt_borrar">CLEAR</string>
     <string name="textView2">Registered successfully</string>
     <string name="tx_nombreAuth">User</string>

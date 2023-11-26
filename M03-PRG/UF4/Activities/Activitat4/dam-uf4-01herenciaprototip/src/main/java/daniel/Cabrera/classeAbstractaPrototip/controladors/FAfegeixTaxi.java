@@ -64,6 +64,7 @@ public class FAfegeixTaxi {
             Taxi tx = new Taxi(matricula, model, potencia, numeroLlicencia);
             tx.guardaVehicleFitxer(Taxi.getRutaFitxer());
             buidaCamps();
+            TFMatricula.setText(tx.generaMatricula());
         } catch (Exception e){
             e.printStackTrace();
         }

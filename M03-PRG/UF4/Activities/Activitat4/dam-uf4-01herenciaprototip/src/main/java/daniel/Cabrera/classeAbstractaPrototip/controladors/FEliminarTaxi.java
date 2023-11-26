@@ -3,6 +3,7 @@ package daniel.Cabrera.classeAbstractaPrototip.controladors;
 import daniel.Cabrera.classeAbstractaPrototip.classes.Taxi;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
@@ -25,6 +26,8 @@ public class FEliminarTaxi {
     private Button BEliminar;
     @FXML
     private Button BCerca;
+    @FXML
+    private Label LabelEliminat;
 
 
     //</editor-fold>
@@ -48,7 +51,7 @@ public class FEliminarTaxi {
         TFPotencia.setText("");
         TFLlicencia.setText("");
 
-            // ** //
+        // ** //
 
     }
 
@@ -59,36 +62,37 @@ public class FEliminarTaxi {
      */
     @FXML
     public void BtEliminar() throws IOException {
-        try{
+        try {
             String matricula = TFMatricula.getText();
             Double potencia = Double.parseDouble(TFPotencia.getText());
             String model = TFModel.getText();
             String numeroLlicencia = TFLlicencia.getText();
 
             tx = new Taxi(matricula, model, potencia, numeroLlicencia);
-            tx.eliminarVehicle(Taxi.getRutaFitxer(), Taxi.class);
+            tx.eliminarVehicle(Taxi.getRutaFitxer());
             buidaCamps();
-        } catch (Exception e){
+            LabelEliminat.setVisible(true);
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
-       // *** //
+        // *** //
 
     }
 
     @FXML
     public void BtCerca() throws IOException {
-        try{
+        LabelEliminat.setVisible(false);
+        try {
             String matricula = TFMatricula.getText();
-            TFModel.setText(String.valueOf(tx.cercaVehicle().getModel()));
-            TFPotencia.setText(String.valueOf(tx.cercaVehicle().getPotencia()));
-            TFLlicencia.setText(String.valueOf(tx.cercaVehicle().getNumeroLlicencia()));
-        } catch (Exception e){
+            TFMatricula.setText(tx.cercaVehicle(matricula).getMatricula());
+            TFModel.setText(tx.cercaVehicle(matricula).getModel());
+            TFLlicencia.setText(String.valueOf(tx.cercaVehicle(matricula).getNumeroLlicencia()));
+            TFPotencia.setText(String.valueOf(tx.cercaVehicle(matricula).getPotencia()));
+            BEliminar.setDisable(tx.cercaVehicle(matricula).getMatricula().equals("No existeix"));
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
-       // *** //
-
     }
 
     /**

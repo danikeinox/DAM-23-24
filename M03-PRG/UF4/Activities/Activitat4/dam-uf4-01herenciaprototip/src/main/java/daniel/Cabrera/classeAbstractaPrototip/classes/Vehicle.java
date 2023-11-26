@@ -7,7 +7,7 @@ import pkgFitxers.Fitxers;
 import java.io.IOException;
 import java.io.Serializable;
 
-public abstract class Vehicle implements Serializable, Comparable {
+public abstract class Vehicle extends ComparadorObjectes implements Serializable, Comparable {
 
 
     /**
@@ -66,8 +66,10 @@ public abstract class Vehicle implements Serializable, Comparable {
      *
      * @param fitxer ruta del fitxer
      */
-    public void eliminarVehicle(String fitxer, Object obj) throws IOException, InterruptedException, ClassNotFoundException {
-        f.eliminaRegistreFitxerObjecte(fitxer, (ComparadorObjectes) obj);
+    public void eliminarVehicle(String fitxer) throws IOException, InterruptedException, ClassNotFoundException {
+        if (!f.existeix(dir))
+            f.creaDirectori(dir);
+        f.eliminaRegistreFitxerObjecte(fitxer, this);
     }
 
     /**
@@ -82,8 +84,7 @@ public abstract class Vehicle implements Serializable, Comparable {
      *
      * @return cercaVehicle
      */
-    public abstract Vehicle cercaVehicle();
-
+    public abstract Vehicle cercaVehicle(String matricula);
 
     /**
      * POLIMORFISME. Ja que en la classe derivada taxi, utilitzarà aquest mètode
@@ -118,6 +119,11 @@ public abstract class Vehicle implements Serializable, Comparable {
 
     public abstract String getMatricula();
     public abstract String getModel();
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
+    }
 
 
     //</editor-fold>

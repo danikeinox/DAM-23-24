@@ -1,8 +1,10 @@
 package daniel.Cabrera.classeAbstractaPrototip.controladors;
 
 import daniel.Cabrera.classeAbstractaPrototip.classes.Autobus;
+import daniel.Cabrera.classeAbstractaPrototip.classes.Taxi;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
@@ -23,7 +25,11 @@ public class FEliminarAutobus {
     @FXML
     private TextField TFMatricula;
     @FXML
-    private Button BGuarda;
+    private Button BEliminar;
+    @FXML
+    private Button BCerca;
+    @FXML
+    private Label LabelEliminat;
 
 
     //</editor-fold>
@@ -42,7 +48,10 @@ public class FEliminarAutobus {
     @FXML
     protected void initialize() throws IOException {
 
-        TFMatricula.setText(au.generaMatricula());
+        TFMatricula.setText("");
+        TFModel.setText("");
+        TFPotencia.setText("");
+        TFPlaces.setText("");
 
         // *** //
 
@@ -54,17 +63,17 @@ public class FEliminarAutobus {
      * @throws IOException execpció d'entrada sortida
      */
     @FXML
-    public void BtGuarda() throws IOException {
+    public void BtEliminar() throws IOException {
         try {
-            Double potencia = Double.parseDouble(TFPotencia.getText());
             String matricula = TFMatricula.getText();
             String model = TFModel.getText();
-            int places = Integer.parseInt(TFPlaces.getText());
+            Double potencia = Double.parseDouble(TFPotencia.getText());
+            int numPlaces = Integer.parseInt(TFPlaces.getText());
 
-            // construïm objecte, amb les dades de la classe pare (vehicle) i filla (autobus)
-            Autobus au = new Autobus(matricula, model, potencia, places);
-            au.guardaVehicleFitxer(Autobus.getRutaFitxer());
+            au = new Autobus(matricula, model, potencia, numPlaces);
+            au.eliminarVehicle(Autobus.getRutaFitxer());
             buidaCamps();
+            LabelEliminat.setVisible(true);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -72,6 +81,22 @@ public class FEliminarAutobus {
         // *** //
 
     }
+
+    @FXML
+    public void BtCerca() throws IOException {
+        LabelEliminat.setVisible(false);
+        try {
+            String matricula = TFMatricula.getText();
+            TFMatricula.setText(au.cercaVehicle(matricula).getMatricula());
+            TFModel.setText(au.cercaVehicle(matricula).getModel());
+            TFPlaces.setText(String.valueOf(au.cercaVehicle(matricula).getNumPlaces()));
+            TFPotencia.setText(String.valueOf(au.cercaVehicle(matricula).getPotencia()));
+            BEliminar.setDisable(au.cercaVehicle(matricula).getMatricula().equals("No existeix"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
     /**
      * Buidem els comboBox del formulari

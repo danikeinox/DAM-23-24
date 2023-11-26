@@ -60,7 +60,7 @@ public class Taxi extends Vehicle {
 
     @Override
     public boolean equals(Object obj) {
-         // si l'objecte que vull comparar (obj) i jo(this) som el mateix objecte return true
+        // si l'objecte que vull comparar (obj) i jo(this) som el mateix objecte return true
         if (obj == this)
             return true;
 
@@ -81,16 +81,25 @@ public class Taxi extends Vehicle {
     }
 
     @Override
-    public Taxi cercaVehicle() {
+    public Taxi cercaVehicle(String matricula) {
         try {
-            String checkMatricula = getMatricula();
             List<Taxi> taxis = (List<Taxi>) Taxi.retornaVehiclesEnLlista(Taxi.getRutaFitxer());
+            boolean found = false;
             for (Taxi taxi : taxis) {
-                if (taxi.getMatricula().equals(checkMatricula)) {
-                    this.potencia = getPotencia();
-                    this.model = getModel();
-                    this.numeroLlicencia = getNumeroLlicencia();
+                if (taxi.matricula.equals(matricula)) {
+                    this.matricula = taxi.getMatricula();
+                    this.potencia = taxi.getPotencia();
+                    this.model = taxi.getModel();
+                    this.numeroLlicencia = taxi.getNumeroLlicencia();
+                    found = true;
+                    break;
                 }
+            }
+            if (!found) {
+                this.matricula = "No existeix";
+                this.potencia = 0.0;
+                this.model = "";
+                this.numeroLlicencia = "";
             }
         } catch (IOException | NoSuchFieldException | InterruptedException | ClassNotFoundException |
                  IllegalAccessException e) {

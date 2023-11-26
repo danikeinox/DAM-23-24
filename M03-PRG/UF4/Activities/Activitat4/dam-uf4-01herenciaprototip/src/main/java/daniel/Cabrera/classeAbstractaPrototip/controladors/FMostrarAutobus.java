@@ -68,7 +68,10 @@ public class FMostrarAutobus {
         columnPlaces.setCellValueFactory(new PropertyValueFactory<>("numPlaces"));
 
         TVPantalla.setItems(dades);
-        TVPantalla.getColumns().addAll(columnMatricula, columnModel, columnPotencia, columnPlaces);
+        TVPantalla.getColumns().add(columnMatricula);
+        TVPantalla.getColumns().add(columnModel);
+        TVPantalla.getColumns().add(columnPotencia);
+        TVPantalla.getColumns().add(columnPlaces);
 
     }
 

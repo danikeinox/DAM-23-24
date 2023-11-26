@@ -58,6 +58,7 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Label fx:id="LabelEliminat" layoutX="178.0" layoutY="161.0" text="VEHICLE ELIMINAT" visible="false" />
          </children></AnchorPane>
     </items>
 </SplitPane>

@@ -56,15 +56,16 @@ public class FAfegeixAutobus {
     @FXML
     public void BtGuarda() throws IOException {
         try {
-            Double potencia = Double.parseDouble(TFPotencia.getText());
             String matricula = TFMatricula.getText();
             String model = TFModel.getText();
+            Double potencia = Double.parseDouble(TFPotencia.getText());
             int places = Integer.parseInt(TFPlaces.getText());
 
             // construïm objecte, amb les dades de la classe pare (vehicle) i filla (autobus)
             Autobus au = new Autobus(matricula, model, potencia, places);
             au.guardaVehicleFitxer(Autobus.getRutaFitxer());
             buidaCamps();
+            TFMatricula.setText(au.generaMatricula());
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -36,7 +36,7 @@
                   <Label text="Llicencia:" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <TextField fx:id="TFModel" disable="true" maxWidth="-Infinity" prefHeight="26.0" prefWidth="143.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                   <TextField fx:id="TFPotencia" disable="true" maxWidth="-Infinity" prefHeight="26.0" prefWidth="143.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <TextField fx:id="TFLlicencia" disable="true" maxWidth="-Infinity" prefHeight="26.0" prefWidth="143.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <TextField fx:id="TFPlaces" disable="true" maxWidth="-Infinity" prefHeight="26.0" prefWidth="143.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                   <TextField fx:id="TFMatricula" maxWidth="-Infinity" prefHeight="26.0" prefWidth="143.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <Label text="Matricula:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
@@ -58,6 +58,7 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Label fx:id="LabelEliminat" layoutX="178.0" layoutY="161.0" text="VEHICLE ELIMINAT" visible="false" />
          </children></AnchorPane>
     </items>
 </SplitPane>

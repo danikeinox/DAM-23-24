@@ -1,5 +1,6 @@
 package daniel.Cabrera.classeAbstractaPrototip.classes;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
@@ -25,7 +26,7 @@ public class Autobus extends Vehicle {
     public Autobus(String matricula, String model, Double potencia, int numPlaces) {
         try {
             this.matricula = matricula;
-            this.model = getModel();
+            this.model = model;
             this.potencia = potencia;
             this.numPlaces = numPlaces;
         } catch (Exception e) {
@@ -116,8 +117,30 @@ public class Autobus extends Vehicle {
     }
 
     @Override
-    public Vehicle cercaVehicle() {
-        this.matricula = getMatricula();
+    public Autobus cercaVehicle(String matricula) {
+        try {
+            List<Autobus> autobus = (List<Autobus>) Autobus.retornaVehiclesEnLlista(Autobus.getRutaFitxer());
+            boolean found = false;
+            for (Autobus bus : autobus) {
+                if (bus.matricula.equals(matricula)) { // Compare with the matricula passed as a parameter
+                    this.matricula = bus.getMatricula();
+                    this.potencia = bus.getPotencia();
+                    this.model = bus.getModel();
+                    this.numPlaces = bus.getNumPlaces();
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                this.matricula = "No existeix";
+                this.potencia = 0.0;
+                this.model = "";
+                this.numPlaces = 0;
+            }
+        } catch (IOException | NoSuchFieldException | InterruptedException | ClassNotFoundException |
+                 IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
         return this;
     }
 

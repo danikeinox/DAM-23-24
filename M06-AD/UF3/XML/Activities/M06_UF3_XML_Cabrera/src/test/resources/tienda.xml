@@ -1,0 +1,16 @@
+<tienda nombre="tienda para geeks" ubicacion="Tokio, Japon">
+    <computadora id="01">
+		<nom>iBook</nom>
+		<preu>1200</preu>
+	</computadora>
+	<computadora id="02">
+		<nom>PCHP</nom>
+		<preu>700</preu>
+	</computadora>
+	<computadora id="03">
+		<nom>PCSony</nom>
+		<preu>1000</preu>
+	</computadora>
+</tienda>
+
+

@@ -1,0 +1,22 @@
+{
+  "persones": [
+    {
+      "id": 1,
+      "nom": "Daniel",
+      "cognom": "Cabrera",
+      "edat": 22
+    },
+    {
+      "id": 2,
+      "nom": "Juan",
+      "cognom": "Orozco",
+      "edat": 32
+    },
+    {
+      "id": 3,
+      "nom": "Pedro",
+      "cognom": "Perez",
+      "edat": 18
+    }
+  ]
+}

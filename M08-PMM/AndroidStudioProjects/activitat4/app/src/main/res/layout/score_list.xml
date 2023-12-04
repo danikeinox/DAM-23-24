@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fons">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/titleTicTacToe2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:ems="10"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/titleTicTacToe3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:text="SCORE"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <ListView
+            android:id="@+id/lv_playerData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </ListView>
+
+        <TabHost
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/tab1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tab2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tab3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

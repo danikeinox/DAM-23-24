@@ -3,11 +3,18 @@ package dam2.dcabrera.activitat4;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.WindowDecorActionBar;
 
+import android.content.ContentValues;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -21,9 +28,12 @@ public class MainActivity extends AppCompatActivity {
     private TextView tx_winner;
     private TextView tx_winsCercles;
     private TextView tx_winsCreus;
+    private Button bt_score;
     private int cerclesCount = 0;
     private int creusCount = 0;
-
+    private BBDD_Helper mBDHelper = new BBDD_Helper(this);
+    private int id;
+    private int BDid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +53,23 @@ public class MainActivity extends AppCompatActivity {
         tx_winsCreus = (TextView) findViewById(R.id.tx_winsCreus);
         tx_winsCercles.setText(String.valueOf(cerclesCount));
         tx_winsCreus.setText(String.valueOf(creusCount));
+        bt_score = (Button) findViewById(R.id.bt_score);
+        tx_winsCercles.setText(String.valueOf(cerclesCount));
+        tx_winsCreus.setText(String.valueOf(creusCount));
+    }
+
+    public void onClickScore(View view) {
+        Intent intent = new Intent(this, ScoreListActivity.class);
+        intent.putExtra("cercles", cerclesCount);
+        intent.putExtra("creus", creusCount);
+        intent.putExtra("nJugadors", nJugadors);
+        startActivity(intent);
     }
 
     public void juguemHi(View view) {
         tx_winner.setText("");
         ImageView img;
+        onClickStartBD();
 
         for (int casella : caselles) {
             img = (ImageView) findViewById(casella);
@@ -57,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         nJugadors = 1;
         if (view.getId() == R.id.dosjug) {
             nJugadors = 2;
+            onClickStartBD();
         }
 
         RadioGroup confDir = (RadioGroup) findViewById(R.id.cnfRad);
@@ -83,35 +106,53 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public int onClickStartBD() {
+        // get COLUMN_ID from SQLite and get the last value and add it to BDid
+        SQLiteDatabase db = mBDHelper.getReadableDatabase();
+        String[] projection = {Estruct_BBDD.COLUMN_ID};
+        String sortOrder = Estruct_BBDD.COLUMN_ID + " DESC";
+        Cursor cursor = db.query(Estruct_BBDD.TABLE_NAME, projection, null, null, null, null, sortOrder);
+        if (cursor.moveToFirst()) {
+            int columnIndex = cursor.getColumnIndexOrThrow(Estruct_BBDD.COLUMN_ID);
+            int lastValue = cursor.getInt(columnIndex);
+            BDid = lastValue + 1;
+        }
+        cursor.close();
+        return BDid;
+    }
+
     public void tocCasella(View vistaCasella) {
-        int casella=0;
-        if (joc==null){
-            return;
-        }
-        for (int i = 0; i < 9; i++) {
-            if (caselles[i] == vistaCasella.getId()) {
-                casella = i;
+        if (nJugadors != 0) {
+            int resTirada;
+            int casella = 0;
+            if (joc == null) {
+                return;
             }
-        }
-        if (joc.checkCasella(casella) == false) {
-            return;
-        }
-        marcaCasella(casella);
-        int resTirada = joc.torn();
-        if (resTirada>0) {
-            finalPartida(resTirada);
-            return;
-        }
-        if(nJugadors == 1) {
-            casella = joc.jugaMaquina();
-            while(joc.checkCasella(casella) != true){
-                casella = joc.jugaMaquina();
+            for (int i = 0; i < 9; i++) {
+                if (caselles[i] == vistaCasella.getId()) {
+                    casella = i;
+                }
+            }
+            if (joc.checkCasella(casella) == false) {
+                return;
             }
             marcaCasella(casella);
             resTirada = joc.torn();
-            if (resTirada>0) {
+            if (resTirada > 0) {
                 finalPartida(resTirada);
                 return;
+            }
+            if (nJugadors == 1) {
+                casella = joc.jugaMaquina();
+                while (joc.checkCasella(casella) != true) {
+                    casella = joc.jugaMaquina();
+                }
+                marcaCasella(casella);
+                resTirada = joc.torn();
+                if (resTirada > 0) {
+                    finalPartida(resTirada);
+                    return;
+                }
             }
         }
     }
@@ -119,10 +160,29 @@ public class MainActivity extends AppCompatActivity {
     public void marcaCasella(int casella) {
         ImageView img;
         img = (ImageView) findViewById(caselles[casella]);
+        String casellaDB = getResources().getResourceEntryName(caselles[casella]);
         if (joc.jugador == 1) {
             img.setImageResource(R.drawable.cercle);
+            checkDBPlays(casellaDB);
         } else {
             img.setImageResource(R.drawable.creu);
+            checkDBPlays(casellaDB);
+        }
+    }
+
+    public void checkDBPlays(String casella) {
+        try {
+            SQLiteDatabase db = mBDHelper.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put(Estruct_BBDD.COLUMN_ID, BDid);
+            if (joc.jugador == 1) {
+                values.put(Estruct_BBDD.COLUMN_JUG1, casella);
+            } else {
+                values.put(Estruct_BBDD.COLUMN_JUG2, casella);
+            }
+            db.insert(Estruct_BBDD.TABLE_NAME, null, values);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -130,14 +190,15 @@ public class MainActivity extends AppCompatActivity {
         String missatge;
         if (resT == 1) {
             missatge = "Guanya Cercles";
-            cerclesCount+=1;
-        }
-        else if (resT == 2){
+            cerclesCount++;
+        } else if (resT == 2) {
             missatge = "Guanya Creus";
-            creusCount+=1;
-        }
-        else missatge = "Empate";
+            creusCount++;
+        } else missatge = "Empate";
+        nJugadors = 0;
         tx_winner.setText(missatge);
+        tx_winsCercles.setText(String.valueOf(cerclesCount));
+        tx_winsCreus.setText(String.valueOf(creusCount));
         ((Button) findViewById(R.id.unjug)).setEnabled(true);
         ((Button) findViewById(R.id.dosjug)).setEnabled(true);
         ((RadioGroup) findViewById(R.id.cnfRad)).setAlpha(1);

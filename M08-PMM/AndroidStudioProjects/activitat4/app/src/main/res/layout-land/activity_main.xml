@@ -113,30 +113,45 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
                         <Button
-                            android:id="@+id/unjug"
-                            style="@style/boto"
+                            android:id="@+id/bt_score"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="10dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_weight="1"
-                            android:text="Un Jugador"
-                            android:textColor="@color/white" />
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:onClick="onClickScore"
+                            android:text="SCORE" />
 
-                        <Button
-                            android:id="@+id/dosjug"
-                            style="@style/boto"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_margin="10dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_weight="1"
-                            android:text="Dos Jugadors"
-                            android:textColor="@color/white" />
+                            android:layout_margin="5dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/unjug"
+                                style="@style/boto"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_weight="1"
+                                android:text="Un Jugador"
+                                android:textColor="@color/white" />
+
+                            <Button
+                                android:id="@+id/dosjug"
+                                style="@style/boto"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_weight="1"
+                                android:text="Dos Jugadors"
+                                android:textColor="@color/white" />
+                        </LinearLayout>
+
                     </LinearLayout>
 
                 </LinearLayout>

@@ -3,7 +3,7 @@ package daniel.Cabrera;
 import daniel.Cabrera.Classes.*;
 
 public class Main {
-    public static String fitxer = "C:/Users/K3IN0X/Documents/GitHub/DAM-23-24/M09-PSP/UF2/Activities/ex1-comptador-vocals/src/main/java/daniel/Cabrera/Resources/test.txt";
+    public static String fitxer = "C:/Users/K3IN0X/Documents/GitHub/DAM-23-24/M09-PSP/UF2/Activities/M09_UF2_ACT01_Cabrera/ex1-comptador-vocals/src/main/java/daniel/Cabrera/Resources/test.txt";
 
     public static void main(String[] args) throws InterruptedException {
         ACounter fA = new ACounter();

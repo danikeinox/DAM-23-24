@@ -1,58 +1,149 @@
-# Exercici: Efficient vocal counter
+# Exemple de Fil d'Execució Asíncrona amb Comptador de Vocals
 
-**Objectiu:**  
-Desenvolupar un programa en Java que compti el nombre de cada vocal (a, e, i, o, u) present en un fitxer de text. L'exercici es realitzarà creant una classe `Thread` específica per a cada vocal, i el programa s'implementarà en dues versions: una amb execució **asíncrona** i l'altra amb execució **síncrona** dels fils.
+Aquest és un petit programa Java que utilitza fils d'execució per fer recompte de vocals en un fitxer de text. Cada vocal té el seu propi fil per accelerar el procés de recompte. El codi està estructurat de la següent manera:
 
-**Descripció:**  
-El programa haurà de llegir el contingut d'un fitxer de text i utilitzar cinc fils diferents per comptar les aparicions de cada vocal. Cada fil s'encarregarà d'una vocal específica. Es crearan les següents classes derivades de `Thread`:
-- ACounter
-- ECounter
-- ICounter
-- OCounter
-- UCounter
+### `Main.java`
 
-Cada una d'aquestes classes comptarà el nombre d'aparicions de la seva vocal assignada dins del text.
+En el punt d'entrada del programa, es creen i inicien fils per a cadascuna de les vocals (A, E, I, O, U). El programa espera que tots els fils finalitzin abans de passar a la següent etapa. Després, aquest procés es repeteix sense esperar que cada fil finalitzi abans de crear el següent. Finalment, es calcula i mostra el temps d'execució per les execucions tant asíncrones com síncrones.
 
-**Tasques:**
+```java
 
-1. **Implementació de classes de fil:**  
-   Crear una classe per a cada vocal que estengui `Thread`. Cada classe haurà de sobreescriure el mètode `run()` per a comptar el nombre d'aparicions de la seva vocal en el text.
+public class Main {
+    
+	// Indiquem el directori del fitxer que es vol analitzar.
+	public static String fitxer = "C:/Users/K3IN0X/Documents/GitHub/DAM-23-24/M09-PSP/UF2/Activities/M09_UF2_ACT01_Cabrera/ex1-comptador-vocals/src/main/java/daniel/Cabrera/Resources/test.txt";
 
-2. **Lectura del fitxer:**  
-   Llegir el contingut del fitxer de text que serà analitzat.
 
-3. **Execució asíncrona:**  
-   En aquesta versió, tots els fils s'iniciaran simultàniament. El programa principal no esperarà que un fil acabi abans d'iniciar el següent.
+    public static void main(String[] args) throws InterruptedException {
+        // Creació dels fils per a cada vocal
+        ACounter fA = new ACounter();
+        ECounter fE = un ECounter();
+        ICounter fI = un ICounter();
+        OCounter fO = un OCounter();
+        UCounter fU = un UCounter();
 
-4. **Execució síncrona:**  
-   En aquesta versió, el programa principal esperarà a que un fil acabi abans d'iniciar el següent. Això garantirà que els fils s'executin de manera seqüencial.
+		// Iniciem la proba asíncrona
+        System.out.println("Inici d'execució asíncron");
 
-5. **Resultats:**  
-   Per a cada versió, el programa ha d'imprimir el recompte total de cada vocal.
+        // Indiquem variables per a la mesura del temps d'execució
+        long resultat;
+        long endTime;
+        long startTime;
+        try {
+            startTime = System.currentTimeMillis();
 
-## Preguntes
-**Quin penses que serà més eficient?**
+            // Inici i espera de finalització per a cada fil
+            fA.start();
+            fA.join();
+            fE.start();
+            fE.join();
+            fI.start();
+            fI.join();
+            fO.start();
+            fO.join();
+            fU.start();
+            fU.join();
 
-✅ Per a fer-ho calcula el temps d'execució de cada forma d'execució.
+            // Final de la mesura del temps d'execució
+            endTime = System.currentTimeMillis();
+            resultat = endTime - startTime;
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
-### Exemple de sortida
-```text
-Inici d'execució asíncron
-	Recompte de a's: 1405
-	Recompte de o's: 706
-	Recompte de u's: 1484
-	Recompte de i's: 1746
-	Recompte de e's: 1837
-Temps d'execució asíncron: XXX ms
+        // Mostra del temps d'execució asíncron
+        System.out.println("Temps d'execució asíncron: " + resultat + " ms");
 
-Inici d'execució síncron
-	Recompte de a's: 1405
-	Recompte de e's: 1837
-	Recompte de i's: 1746
-	Recompte de o's: 706
-	Recompte de u's: 1484
-Temps d'execució síncron: XXX ms
+		// Iniciem la proba síncrona
+        System.out.println("Inici d'execució síncron");
+
+        // Inici de la mesura del temps d'execució síncron
+        startTime = System.currentTimeMillis();
+
+        // Inici de tots els fils simultàniament i espera de finalització
+        fA.start();
+        fE.start();
+        fI.start();
+        fO.start();
+        fU.start();
+        fA.join();
+        fE.join();
+        fI.join();
+        fO.join();
+        fU.join();
+
+        // Final de la mesura del temps d'execució síncron
+        endTime = System.currentTimeMillis();
+        resultat = endTime - startTime;
+
+        // Mostra del temps d'execució síncron
+        System.out.println("Temps d'execució síncron: " + resultat + " ms");
+    }
+}
 ```
 
-On **XXX** representa en valor en milisegons de temps d'execució.
-El resultat de la sortida pot variar en funció de l'ordinador on s'executi.
+### `ACounter.java` (Similar per a les altres vocals)
+
+Aquesta classe defineix el fil d'execució per a la recompte de la vocal 'A'. El recompte es realitza llegint el fitxer especificat i utilitzant algunes utilitats. 
+
+```java
+
+public class ACounter extends Thread {
+
+    @Override
+    public void run() {
+        // Vocal a recomptar
+        char vocal = 'a';
+        try {
+            // Llegir i mostrar el recompte de la vocal
+            int counter = llegeixVocal(vocal, fitxer);
+            System.out.printf("Recompte de " + vocal + "'s: %d\n", counter);
+            // Pausa opcional (comentada en aquest cas)
+            // pausa(1000);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
+```
+
+### `Utils.java`
+
+Aquesta classe conté algunes utilitats que s'utilitzen en els fils d'execució.
+
+```java
+// ... (altres imports)
+
+public class Utils {
+    // ... (altres mètodes i utilitats)
+
+    // Mètode per llegir una vocal específica en un fitxer
+    public static int llegeixVocal(char vocal, String fitxer) {
+        int counter = 0;
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(fitxer));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                for (int i = 0; i < line.length(); i++) {
+                    if (line.toLowerCase().charAt(i) == vocal) {
+                        counter++;
+                    }
+                }
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return counter;
+    }
+
+    // Mètode per fer una pausa (no utilitzat en aquest exemple)
+    public static void pausa(int milisegons) {
+        try {
+            Thread.sleep(milisegons);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```

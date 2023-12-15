@@ -1,6 +1,8 @@
-# Exemple de Fil d'Execució Asíncrona amb Comptador de Vocals
+# Comptador de vocals Asíncrona i Síncrona amb Threads
 
 Aquest és un petit programa Java que utilitza fils d'execució per fer recompte de vocals en un fitxer de text. Cada vocal té el seu propi fil per accelerar el procés de recompte. El codi està estructurat de la següent manera:
+
+## Com s'ha creat el programa?
 
 ### `Main.java`
 

@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView tx_winsCercles;
     private TextView tx_winsCreus;
     private Button bt_score;
-    private int cerclesCount = 0;
-    private int creusCount = 0;
+    private int cerclesCount;
+    private int creusCount;
     private BBDD_Helper mBDHelper = new BBDD_Helper(this);
     private int id;
     private int BDid;
@@ -51,18 +51,11 @@ public class MainActivity extends AppCompatActivity {
         tx_winner = (TextView) findViewById(R.id.tx_winner);
         tx_winsCercles = (TextView) findViewById(R.id.tx_winsCercles);
         tx_winsCreus = (TextView) findViewById(R.id.tx_winsCreus);
-        tx_winsCercles.setText(String.valueOf(cerclesCount));
-        tx_winsCreus.setText(String.valueOf(creusCount));
         bt_score = (Button) findViewById(R.id.bt_score);
-        tx_winsCercles.setText(String.valueOf(cerclesCount));
-        tx_winsCreus.setText(String.valueOf(creusCount));
     }
 
     public void onClickScore(View view) {
         Intent intent = new Intent(this, ScoreListActivity.class);
-        intent.putExtra("cercles", cerclesCount);
-        intent.putExtra("creus", creusCount);
-        intent.putExtra("nJugadors", nJugadors);
         startActivity(intent);
     }
 
@@ -77,7 +70,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         nJugadors = 1;
+        if (view.getId() == R.id.unjug) {
+            tx_winsCercles.setVisibility(View.GONE);
+            tx_winsCreus.setVisibility(View.GONE);
+        }
         if (view.getId() == R.id.dosjug) {
+            tx_winsCercles.setVisibility(View.VISIBLE);
+            tx_winsCreus.setVisibility(View.VISIBLE);
             nJugadors = 2;
             onClickStartBD();
         }
@@ -107,6 +106,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public int onClickStartBD() {
+        tx_winner.setText("");
+        tx_winsCercles.setText("o = " + String.valueOf(cerclesCount));
+        tx_winsCreus.setText("x = " + String.valueOf(creusCount));
         // get COLUMN_ID from SQLite and get the last value and add it to BDid
         SQLiteDatabase db = mBDHelper.getReadableDatabase();
         String[] projection = {Estruct_BBDD.COLUMN_ID};
@@ -188,17 +190,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void finalPartida(int resT) {
         String missatge;
-        if (resT == 1) {
-            missatge = "Guanya Cercles";
-            cerclesCount++;
-        } else if (resT == 2) {
-            missatge = "Guanya Creus";
-            creusCount++;
-        } else missatge = "Empate";
+        if (resT == 2 && nJugadors == 1) {
+            missatge = "Guanya Maquina";
+        } else if (resT == 1 && nJugadors == 1) {
+            missatge = "Guanyes Tu!";
+        } else {
+            if (resT == 1 && nJugadors == 2) {
+                missatge = "Guanya Cercles";
+                cerclesCount++;
+            } else if (resT == 2 && nJugadors == 2) {
+                missatge = "Guanya Creus";
+                creusCount++;
+            } else missatge = "Empate";
+        }
         nJugadors = 0;
         tx_winner.setText(missatge);
-        tx_winsCercles.setText(String.valueOf(cerclesCount));
-        tx_winsCreus.setText(String.valueOf(creusCount));
+        tx_winsCercles.setText("o = " + String.valueOf(cerclesCount));
+        tx_winsCreus.setText("x = " + String.valueOf(creusCount));
         ((Button) findViewById(R.id.unjug)).setEnabled(true);
         ((Button) findViewById(R.id.dosjug)).setEnabled(true);
         ((RadioGroup) findViewById(R.id.cnfRad)).setAlpha(1);

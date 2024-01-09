@@ -15,7 +15,10 @@ L'aplicació ha de gestionar situacions de saldo negatiu.
 
 ### `Main.java`
 
-En el punt d'entrada del programa, es creen i inicien fils per a cadascuna de les vocals (A, E, I, O, U). El programa espera que tots els fils finalitzin abans de passar a la següent etapa. Després, aquest procés es repeteix sense esperar que cada fil finalitzi abans de crear el següent. Finalment, es calcula i mostra el temps d'execució per les execucions tant asíncrones com síncrones.
+En el punt d'entrada del programa, es creen i inicien fils per a el Consumidor i per el Productor. 
+El programa inicia tots els fils deixant-ho com a bucle infinit simulant un banc, que com es normal ha de estar sempre funcional. 
+Seguit els fils executen el seu codi infinitament de manera `asíncrona`.
+
 
 ```java
 

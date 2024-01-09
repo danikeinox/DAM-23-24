@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!---Base application theme. -->
-    <style name="Base.Theme.Actividad2" parent="Theme.Material3.DayNight.NoActionBar">
-    </style>
-    <style name="Theme.Actividad2" parent="Base.Theme.Actividad2" />
-</resources>

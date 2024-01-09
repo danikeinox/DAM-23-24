@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!--  <item name="colorPrimary">@color/colorPrimary</item>
+         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+         <item name="colorAccent">@color/colorAccent</item>-->
+    </style>
+
+    <style name="pantalla">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/paisatge_1</item>
+
+
+    </style>
+
+    <style name="ajust_general">
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margen</item>
+        <item name="android:padding">@dimen/padding</item>
+        <item name="android:textColor">#ffffff</item>
+
+    </style>
+
+    <style name="text_botons" parent="@style/ajust_general">
+
+        <item name="android:background">@drawable/fons</item>
+        <item name="android:textSize">@dimen/text</item>
+        <item name="android:text">@string/dificultat</item>
+
+    </style>
+
+    <style name="botons" parent="@style/ajust_general">
+
+        <item name="android:minHeight">@dimen/alt_min_boto</item>
+        <item name="android:textSize">@dimen/text_boto</item>
+        <item name="android:background">@drawable/boto</item>
+
+    </style>
+    <style name="boto_Dificultat" parent="@style/botons">
+        <item name="android:onClick">dificultad</item>
+    </style>
+</resources>

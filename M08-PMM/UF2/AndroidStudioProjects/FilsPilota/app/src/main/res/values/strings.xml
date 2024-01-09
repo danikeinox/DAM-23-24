@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ThreadsPilota</string>
+
+
+    <string name="dificultat">Please choose starting level:</string>
+    <string name="facil">Easy</string>
+    <string name="mig">Standard</string>
+    <string name="dificil">Dificult</string>
+</resources>

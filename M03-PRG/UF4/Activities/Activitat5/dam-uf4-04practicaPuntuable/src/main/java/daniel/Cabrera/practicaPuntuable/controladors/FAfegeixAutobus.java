@@ -1,7 +1,9 @@
 package daniel.Cabrera.practicaPuntuable.controladors;
 
+import daniel.Cabrera.practicaPuntuable.classes.TipusAutobus;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import daniel.Cabrera.practicaPuntuable.classes.Autobus;
@@ -15,7 +17,7 @@ public class FAfegeixAutobus {
     @FXML
     private AnchorPane FAfegeixLlibre;
     @FXML
-    private TextField TFModel;
+    private ComboBox TFModel;
     @FXML
     private TextField TFPotencia;
     @FXML
@@ -43,6 +45,8 @@ public class FAfegeixAutobus {
     protected void initialize() throws IOException {
 
         TFMatricula.setText(au.generaMatricula());
+        // ADD Enum TipusAutobus to TFModel ComboBox
+        TFModel.setItems(TipusAutobus.getTipusAutobus());
 
         // *** //
 
@@ -57,7 +61,7 @@ public class FAfegeixAutobus {
     public void BtGuarda() throws IOException {
         try {
             String matricula = TFMatricula.getText();
-            String model = TFModel.getText();
+            String model = TFModel.getItems().get(TFModel.getSelectionModel().getSelectedIndex()).toString();
             Double potencia = Double.parseDouble(TFPotencia.getText());
             int places = Integer.parseInt(TFPlaces.getText());
 
@@ -80,7 +84,7 @@ public class FAfegeixAutobus {
     public void buidaCamps() {
 
         TFMatricula.setText("");
-        TFModel.setText("");
+        TFModel.setButtonCell(TFModel.getButtonCell());
         TFPlaces.setText("");
         TFPotencia.setText("");
 

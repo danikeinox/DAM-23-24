@@ -19,14 +19,16 @@
                         <items>
                           <MenuItem fx:id="MIAfegirTaxi" mnemonicParsing="false" onAction="#afegirTaxi" text="Afegir Taxi" />
                               <MenuItem fx:id="MIMostrarTaxi" mnemonicParsing="false" onAction="#mostrarTaxi" text="Mostrar Taxi" />
-                                <MenuItem fx:id="MIEliminarTaxi" mnemonicParsing="false" onAction="#eliminarTaxi" text="Eliminar Taxi" />
+                                <MenuItem fx:id="MIModificarTaxi" mnemonicParsing="false" onAction="#modificarTaxi" text="Modificar Taxi" />
+                                    <MenuItem fx:id="MIEliminarTaxi" mnemonicParsing="false" onAction="#eliminarTaxi" text="Eliminar Taxi" />
                         </items>
                       </Menu>
                       <Menu mnemonicParsing="false" text="     Autobus   ">
                         <items>
                           <MenuItem fx:id="MIAfegirAutobus" mnemonicParsing="false" onAction="#afegirAutobus" text="Afegir Autobus" />
                               <MenuItem fx:id="MIMostrarAutobus" mnemonicParsing="false" onAction="#mostarAutobus" text="Mostrar Autobus" />
-                                <MenuItem fx:id="MIEliminarAutobus" mnemonicParsing="false" onAction="#eliminarAutobus" text="Eliminar Autobus" />
+                                <MenuItem fx:id="MIModificarAutobus" mnemonicParsing="false" onAction="#modificarAutobus" text="Modificar Autobus" />
+                                    <MenuItem fx:id="MIEliminarAutobus" mnemonicParsing="false" onAction="#eliminarAutobus" text="Eliminar Autobus" />
                         </items>
                       </Menu>
                     </menus>

@@ -22,11 +22,15 @@ public class FPrincipal {
     @FXML
     private MenuItem MIMostrarTaxi;
     @FXML
+    private MenuItem MIModificarTaxi;
+    @FXML
     private MenuItem MIEliminarTaxi;
     @FXML
     private MenuItem MIAfegirAutobus;
     @FXML
     private MenuItem MIMostrarAutobus;
+    @FXML
+    private MenuItem MIModificarAutobus;
     @FXML
     private MenuItem MIEliminarAutobus;
 
@@ -89,6 +93,15 @@ public class FPrincipal {
     }
 
     @FXML
+    public void modificarTaxi() {
+        FGeneric("Taxi/FModificarTaxi.fxml", "Modificar Taxi");
+
+
+        //***//
+
+    }
+
+    @FXML
     public void eliminarTaxi() {
         FGeneric("Taxi/FEliminarTaxi.fxml", "Eliminar Taxi");
 
@@ -107,6 +120,15 @@ public class FPrincipal {
     @FXML
     public void mostarAutobus() {
         FGeneric("Autobus/FMostrarAutobus.fxml", "Llista d'autobussos");
+
+
+        //***//
+
+    }
+
+    @FXML
+    public void modificarAutobus() {
+        FGeneric("Autobus/FModificarAutobus.fxml", "Modificar Autobus");
 
 
         //***//

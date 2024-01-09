@@ -7,7 +7,7 @@ import pkgFitxers.Fitxers;
 import java.io.IOException;
 import java.io.Serializable;
 
-public abstract class Vehicle extends ComparadorObjectes implements Serializable, Comparable {
+public abstract class Persona extends ComparadorObjectes implements Serializable, Comparable {
 
 
     /**
@@ -23,19 +23,23 @@ public abstract class Vehicle extends ComparadorObjectes implements Serializable
     protected static String dir = ".data/";       // carpeta contenidora dels fitxers
 
     private int id;
-    private String matricula;
-    private Double potencia;
+    private String name;
+    private String surname;
+    private String username;
+    private String password;
+    private boolean admin;
+
     //missatgesJavaSwing m = new missatgesJavaSwing();
     //</editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Mètodes">
 
     /**
-     * Mètode per guardar un objecte vehicle
+     * Mètode per guardar un objecte Persona
      *
      * @throws IOException Excepció d'E/S
      */
-    public void guardaVehicleFitxer(String rutaFitxer) throws IOException {
+    public void guardaPersonaFitxer(String rutaFitxer) throws IOException {
         if (!f.existeix(dir))
             f.creaDirectori(dir);
         f.escriuObjecteFitxer(this, rutaFitxer, true);
@@ -43,7 +47,7 @@ public abstract class Vehicle extends ComparadorObjectes implements Serializable
 
 
     /**
-     * Mètode per retornar qualsevol objecte vehicle
+     * Mètode per retornar qualsevol objecte Persona
      * ja retorna fins i tot formatat a la classe que pertany
      *
      * @param arxiu ruta de l'arxiu
@@ -54,7 +58,7 @@ public abstract class Vehicle extends ComparadorObjectes implements Serializable
      * @throws IllegalAccessException excepció
      * @throws IOException            excepció
      */
-    public static <T> Object retornaVehiclesEnLlista(String arxiu)
+    public static <T> Object retornaPersonasEnLlista(String arxiu)
             throws InterruptedException, ClassNotFoundException, NoSuchFieldException,
             IllegalAccessException, IOException {
         return f.retornaFitxerObjecteEnLlista(arxiu);
@@ -67,38 +71,28 @@ public abstract class Vehicle extends ComparadorObjectes implements Serializable
      * @param fitxer ruta del fitxer
      */
     public void eliminarVehicle(String fitxer) throws IOException, InterruptedException, ClassNotFoundException, NoSuchFieldException, IllegalAccessException {
-        Vehicle vh = cercaVehicle();
-        int q = (int) f.retornaFitxerObjecteEnLlista(fitxer, vh);
+        Persona pe = cercaPersona();
+        int q = (int) f.retornaFitxerObjecteEnLlista(fitxer, pe);
         if (q == 1)
             f.eliminarFitxerDirectori(fitxer);
         else
-            f.eliminaRegistreFitxerObjecte(fitxer, vh);
+            f.eliminaRegistreFitxerObjecte(fitxer, pe);
     }
 
     /**
-     * Mètode per retornar l'equals del vehicle
+     * Mètode per retornar l'equals de la Persona
      *
      * @return equals
      */
     public abstract boolean equals(Object obj);
 
     /**
-     * Mètode per cercar un vehicle
+     * Mètode per cercar una Persona
      *
-     * @return cercaVehicle
+     * @return cercaPersona
      */
-    public abstract Vehicle cercaVehicle();
+    public abstract Persona cercaPersona();
 
-    /**
-     * POLIMORFISME. Ja que en la classe derivada taxi, utilitzarà aquest mètode
-     * i en la classe derivada Autobús s'ha de reescriure el mètode.
-     * <p>
-     * Genera una matrícula aleatoria ) 4 números i 3 lletres
-     * <p>
-     *
-     * @return matrícula
-     */
-    public abstract String generaMatricula();
 
     //</editor-fold>
 
@@ -111,22 +105,50 @@ public abstract class Vehicle extends ComparadorObjectes implements Serializable
         return this.id;
     }
 
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public Double getPotencia() {
-        this.potencia = potencia;
-        return this.potencia;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public abstract String getMatricula();
+    public String getName() {
+        return name;
+    }
 
-    public abstract String getModel();
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public boolean getAdmin() {
+        return admin;
+    }
+
+    public abstract int getEdat();
+
 
     @Override
     public int compareTo(Object o) {
         return 0;
+    }
+
+    public abstract void setAdmin(boolean admin);
+
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
 

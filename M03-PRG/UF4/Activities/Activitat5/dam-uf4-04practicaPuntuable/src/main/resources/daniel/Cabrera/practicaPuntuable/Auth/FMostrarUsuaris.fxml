@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="551.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="daniel.Cabrera.practicaPuntuable.controladors.FMostrarUsuaris">
+
+
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="297.0" prefWidth="521.0">
+            <children>
+                <TableView fx:id="TVPantalla" layoutX="13.0" layoutY="10.0" prefHeight="278.0" prefWidth="521.0">
+                    <columns>
+                        <TableColumn fx:id="columnUsername" prefWidth="86.666748046875" text="Username" />
+                        <TableColumn fx:id="columnPassword" prefWidth="86.666748046875" text="Password" />
+                        <TableColumn fx:id="columnName" prefWidth="86.666748046875" text="Name" />
+                        <TableColumn fx:id="columnSurname" prefWidth="86.666748046875" text="Surname" />
+                        <TableColumn fx:id="columnAdmin" prefWidth="86.666748046875" text="Admin" />
+                        <TableColumn fx:id="columnEdat" prefWidth="86.666748046875" text="Edat" />
+                    </columns>
+                </TableView>
+                <!-- <TextArea fx:id="TAPantalla" layoutX="13.0" layoutY="10.0" prefHeight="278.0" prefWidth="200.0" /> -->
+            </children>
+        </AnchorPane>
+    </items>
+</SplitPane>

@@ -12,12 +12,14 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
     private BBDD_Helper mBDHelper = new BBDD_Helper(this);
     private int id;
     private int BDid;
+    public int fitxesX = 0;
+    public int fitxesO = 0;
+    private int[] casillasOcupadasO = new int[3];
+    private int[] casillasOcupadasX = new int[3];
+    private int fitxes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         tx_winner.setText("");
         ImageView img;
         onClickStartBD();
+        fitxesX = 0;
+        fitxesO = 0;
 
         for (int casella : caselles) {
             img = (ImageView) findViewById(casella);
@@ -135,25 +144,34 @@ public class MainActivity extends AppCompatActivity {
                     casella = i;
                 }
             }
-            if (joc.checkCasella(casella) == false) {
-                return;
+            if (joc.jugador == 1) {
+                fitxes = fitxesO;
             }
-            marcaCasella(casella);
-            resTirada = joc.torn();
-            if (resTirada > 0) {
-                finalPartida(resTirada);
-                return;
+            if (joc.jugador == 2) {
+                fitxes = fitxesX;
             }
-            if (nJugadors == 1) {
-                casella = joc.jugaMaquina();
-                while (joc.checkCasella(casella) != true) {
-                    casella = joc.jugaMaquina();
-                }
+            if (fitxesO == 3 && fitxesX == 3) {
+                desmarcaCasella(casella);
+                // comentari: Funciona 1 vegada, i despres no funciona més... Ni aquesta part ni el else...
+                // Y de cop dona que algú guanya si es fa click al centre...
+            } else {
                 marcaCasella(casella);
                 resTirada = joc.torn();
                 if (resTirada > 0) {
                     finalPartida(resTirada);
                     return;
+                }
+                if (nJugadors == 1) {
+                    casella = joc.jugaMaquina();
+                    while (joc.checkCasella(casella) != true) {
+                        casella = joc.jugaMaquina();
+                    }
+                    marcaCasella(casella);
+                    resTirada = joc.torn();
+                    if (resTirada > 0) {
+                        finalPartida(resTirada);
+                        return;
+                    }
                 }
             }
         }
@@ -163,12 +181,65 @@ public class MainActivity extends AppCompatActivity {
         ImageView img;
         img = (ImageView) findViewById(caselles[casella]);
         String casellaDB = getResources().getResourceEntryName(caselles[casella]);
+
         if (joc.jugador == 1) {
-            img.setImageResource(R.drawable.cercle);
-            checkDBPlays(casellaDB);
+            if (joc.checkCasella(casella) == false) {
+                return;
+            } else {
+                fitxesO++;
+                if (fitxesO <= 3) {
+                    casillasOcupadasO[fitxesO - 1] = casella;
+                    img.setImageResource(R.drawable.cercle);
+                    checkDBPlays(casellaDB);
+                }
+            }
         } else {
-            img.setImageResource(R.drawable.creu);
-            checkDBPlays(casellaDB);
+            if (joc.checkCasella(casella) == false) {
+                return;
+            } else {
+                fitxesX++;
+                if (fitxesX <= 3) {
+                    casillasOcupadasX[fitxesX - 1] = casella;
+                    img.setImageResource(R.drawable.creu);
+                    checkDBPlays(casellaDB);
+                }
+            }
+        }
+    }
+
+    public void desmarcaCasella(int casella) {
+        ImageView img;
+        img = (ImageView) findViewById(caselles[casella]);
+        String casellaDB = getResources().getResourceEntryName(caselles[casella]);
+
+        if (joc.jugador == 1) {
+            if (fitxesO == 3 && joc.checkCasellaPropia(casella) == true) {
+                joc.jugador = 0;
+                img.setImageResource(R.drawable.casella);
+                fitxesO--;
+                for (int i = 0; i < casillasOcupadasX.length; i++){
+                    if (casillasOcupadasX[i] == casella) {
+                        casillasOcupadasX[i] = 0;
+                        break;
+                    };
+                }
+            } else if (fitxesO == 3 && joc.checkCasella(casella) == false) {
+                return;
+            }
+        } else {
+            if (fitxesX == 3 && joc.checkCasellaPropia(casella) == true) {
+                joc.jugador = 0;
+                img.setImageResource(R.drawable.casella);
+                fitxesX--;
+                for (int i = 0; i < casillasOcupadasX.length; i++){
+                    if (casillasOcupadasX[i] == casella) {
+                        casillasOcupadasX[i] = 0;
+                        break;
+                    };
+                }
+            } else if (fitxesX == 3 && joc.checkCasella(casella) == false) {
+                return;
+            }
         }
     }
 

@@ -82,6 +82,14 @@ public class Joc3R {
         return true;
     }
 
+    public boolean checkCasellaPropia(int casella) {
+        if (statCasella[casella] == jugador) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public int cerca2R(int jugador) {
         int casActual = -1;
         int contador = 0;

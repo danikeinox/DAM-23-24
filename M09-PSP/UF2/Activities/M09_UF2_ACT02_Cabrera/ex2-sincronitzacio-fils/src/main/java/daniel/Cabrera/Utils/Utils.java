@@ -3,6 +3,7 @@ package daniel.Cabrera.Utils;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Random;
 
 public class Utils {
 
@@ -31,5 +32,10 @@ public class Utils {
             e.printStackTrace();
         }
         return counter;
+    }
+
+    public static float ValorRandom(float min, float max) {
+        Random random = new Random();
+        return random.nextFloat() * (max - min) + min;
     }
 }

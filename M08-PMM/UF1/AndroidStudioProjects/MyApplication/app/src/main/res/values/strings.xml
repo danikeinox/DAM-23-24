@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="bt_linear">Obrir finestra lineal</string>
+    <string name="bt_test1">Esborrar</string>
+    <string name="bt_test2">Afegir</string>
+    <string name="txDisplay"></string>
+    <string name="txZero">0</string>
+    <string name="txMenysUn">-1</string>
+    <string name="txMesUn">+1</string>
+    <string name="btMesUn">+1</string>
+    <string name="btMenysUn">-1</string>
+    <string name="btZero">0</string>
+</resources>

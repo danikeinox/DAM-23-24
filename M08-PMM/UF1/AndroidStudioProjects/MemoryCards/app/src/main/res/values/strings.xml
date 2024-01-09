@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Projecto Cartas</string>
+    <string name="tx_title">Parejas de Cartas</string>
+    <string name="tx_subtitle1">Edición</string>
+    <string name="tx_subtitle2">Android</string>
+    <string name="tx_subtitle3">Versions</string>
+    <string name="bt_play">Jugar</string>
+    <string name="bt_restart">Reiniciar</string>
+    <string name="txtTries">Intentos: </string>
+    <string name="textWinCongrat">¡Enhorabuena!</string>
+    <string name="txtWin1">Has ganado con</string>
+    <string name="txtWin3">intentos.</string>
+    <string name="bt_playAgain">Volver a jugar</string>
+</resources>

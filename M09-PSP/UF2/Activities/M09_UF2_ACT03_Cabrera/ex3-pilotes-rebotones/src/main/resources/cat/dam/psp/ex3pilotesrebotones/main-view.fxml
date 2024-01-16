@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="515.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cat.dam.psp.ex3pilotesrebotones.controller.MainViewController">
+    <Pane fx:id="pilotaPane" layoutX="20.0" layoutY="14.0" prefHeight="400.0" prefWidth="400.0" style="-fx-border-color: BLUE; -fx-border-width: 2.5;">
+        <effect>
+            <InnerShadow />
+        </effect>
+    </Pane>
+   <Button fx:id="bt_pilota1" layoutX="54.0" layoutY="434.0" mnemonicParsing="false" onAction="#onClickButtonPilota1" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: RED;" text="Pilota 1" textFill="WHITE">
+      <font>
+         <Font name="Calibri" size="15.0" />
+      </font>
+   </Button>
+   <Button fx:id="bt_pilota2" layoutX="144.0" layoutY="434.0" mnemonicParsing="false" onAction="#onClickButtonPilota2" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: BLUE;" text="Pilota 2" textFill="WHITE">
+      <font>
+         <Font name="Calibri" size="15.0" />
+      </font>
+   </Button>
+   <Button fx:id="bt_pilota3" layoutX="233.0" layoutY="434.0" mnemonicParsing="false" onAction="#onClickButtonPilota3" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: GREEN;" text="Pilota 3" textFill="WHITE">
+      <font>
+         <Font name="Calibri" size="15.0" />
+      </font>
+   </Button>
+   <Button fx:id="bt_pilota4" layoutX="320.0" layoutY="434.0" mnemonicParsing="false" onAction="#onClickButtonPilota4" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: PURPLE;" text="Pilota 4" textFill="WHITE">
+      <font>
+         <Font name="Calibri" size="15.0" />
+      </font>
+   </Button>
+   <Button fx:id="bt_exit" layoutX="360.0" layoutY="481.0" mnemonicParsing="false" onAction="#onClickButtonExit" prefHeight="30.0" prefWidth="60.0" text="EXIT">
+      <font>
+         <Font name="Calibri" size="15.0" />
+      </font>
+   </Button>
+   <Slider fx:id="sl_velocitat" layoutX="93.0" layoutY="496.0" />
+   <Label layoutX="25.0" layoutY="493.0" text="Velocitat">
+      <font>
+         <Font name="Calibri" size="15.0" />
+      </font>
+   </Label>
+   <Label fx:id="lb_velocitat" layoutX="236.0" layoutY="492.0" prefHeight="14.0" prefWidth="31.0" text="0.0" textFill="RED">
+      <font>
+         <Font name="Calibri" size="15.0" />
+      </font>
+   </Label>
+    <opaqueInsets>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </opaqueInsets>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+</AnchorPane>

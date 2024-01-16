@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 
+import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -75,7 +76,8 @@ public class Partida extends androidx.appcompat.widget.AppCompatImageView {
 
         if(y<posY || y>posY+tamPilota) return false;
 
-        velY=-velY;
+//        velY=-velY;
+        velY = -Math.abs(velY);
 
         double desplX=x-(posX+tamPilota/2);
 
@@ -93,7 +95,8 @@ public class Partida extends androidx.appcompat.widget.AppCompatImageView {
 
             posY=0-tamPilota;
 
-            velY=acel;
+//            velY=acel;
+            velY = Math.abs(acel);
         }
 
         posX+=velX;
@@ -123,6 +126,6 @@ public class Partida extends androidx.appcompat.widget.AppCompatImageView {
 
         llenç.drawBitmap(pilota, posX, posY, null);
 
-
+        Log.d("Partida", "Posición de la pelota: (" + posX + ", " + posY + ")");
     }
 }

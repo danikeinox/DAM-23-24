@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tienda nombre="tienda para geeks" ubicacion="Tokio, Japon">
-  <computadora id="01">
-    <nom>iBook</nom>
-    <preu>1200</preu>
-  </computadora>
-  <computadora id="02">
-    <nom>PCHP</nom>
-    <preu>700</preu>
-  </computadora>
-  <computadora id="03">
-    <nom>PCSony</nom>
-    <preu>1000</preu>
-  </computadora>
-  <computadora id="04">
-    <nom>MondongoPC</nom>
-    <preu>15000</preu>
-  </computadora>
-  <computadora id="05">
-    <nom>PatataPC</nom>
-    <preu>100</preu>
-  </computadora>
+<computadora id="1">
+<nom>iBook</nom>
+<preu>1200.0€</preu>
+</computadora>
+<computadora id="2">
+<nom>PCHP</nom>
+<preu>700.0€</preu>
+</computadora>
+<computadora id="3">
+<nom>PCSony</nom>
+<preu>1000.0€</preu>
+</computadora>
 </tienda>

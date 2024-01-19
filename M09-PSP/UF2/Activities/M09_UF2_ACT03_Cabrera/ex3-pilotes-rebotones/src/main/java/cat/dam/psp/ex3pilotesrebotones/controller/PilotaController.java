@@ -5,6 +5,8 @@ import javafx.scene.Node;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
+import java.util.Objects;
+
 public class PilotaController {
     protected static Pane pane = new Pane();
     private final double limitX, limitY;
@@ -25,28 +27,21 @@ public class PilotaController {
     }
 
     public void addPilota(Color color, int radius) {
-        Pilota pilota = PilotaController.findPilota(color);
-        if (pilota != null) {
-            pilota.running = true;
-        } else {
-            Pilota pilotaAdd = new Pilota(color, radius, limitX, limitY);
-            pane.getChildren().add(pilotaAdd);
-            new Thread(pilotaAdd).start();
-        }
+        Pilota pilota = new Pilota(color, radius, limitX, limitY);
+        pane.getChildren().add(pilota);
+        new Thread(pilota).start();
     }
+
 
     public void stopPilota(Color color) {
         Pilota pilota = PilotaController.findPilota(color);
-        if (pilota != null) {
-            pilota.running = false;
-        }
+        pilota.running = false;
     }
 
 
     public void resumePilota(Color color) {
         Pilota pilota = PilotaController.findPilota(color);
-        if (pilota != null) {
-            pilota.running = true;
-        }
+        pilota.running = true;
+        new Thread(pilota).start();
     }
 }

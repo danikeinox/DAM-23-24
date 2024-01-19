@@ -8,7 +8,7 @@ public class Pilota extends Circle implements Runnable {
     private double dx, dy;  // Direccions de moviment
     private final double limitX, limitY;  // Límits de l'àrea de moviment
     public volatile boolean running = true;  // Controla si la pilota està en moviment
-    public double velocitat = 1.0;  // Velocitat comuna a totes les pilotes
+    public static double velocitat = 1.0;  // Velocitat comuna a totes les pilotes
 
     public Pilota(Color color, int radius, double limitX, double limitY) {
         super(radius, color);  // És filla de Circle. Li facilitem el color i el radi

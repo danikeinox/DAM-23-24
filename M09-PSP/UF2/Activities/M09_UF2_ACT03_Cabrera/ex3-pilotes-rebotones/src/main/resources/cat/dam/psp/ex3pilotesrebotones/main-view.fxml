@@ -15,22 +15,22 @@
             <InnerShadow />
         </effect>
     </Pane>
-   <Button fx:id="bt_pilota1" layoutX="54.0" layoutY="434.0" mnemonicParsing="false" onAction="#onClickButtonPilota1" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: RED;" text="Pilota 1" textFill="WHITE">
+   <Button fx:id="bt_pilota1" layoutX="54.0" layoutY="434.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: RED;" text="Pilota 1" textFill="WHITE">
       <font>
          <Font name="Calibri" size="15.0" />
       </font>
    </Button>
-   <Button fx:id="bt_pilota2" layoutX="144.0" layoutY="434.0" mnemonicParsing="false" onAction="#onClickButtonPilota2" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: BLUE;" text="Pilota 2" textFill="WHITE">
+   <Button fx:id="bt_pilota2" layoutX="144.0" layoutY="434.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: BLUE;" text="Pilota 2" textFill="WHITE">
       <font>
          <Font name="Calibri" size="15.0" />
       </font>
    </Button>
-   <Button fx:id="bt_pilota3" layoutX="233.0" layoutY="434.0" mnemonicParsing="false" onAction="#onClickButtonPilota3" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: GREEN;" text="Pilota 3" textFill="WHITE">
+   <Button fx:id="bt_pilota3" layoutX="233.0" layoutY="434.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: GREEN;" text="Pilota 3" textFill="WHITE">
       <font>
          <Font name="Calibri" size="15.0" />
       </font>
    </Button>
-   <Button fx:id="bt_pilota4" layoutX="320.0" layoutY="434.0" mnemonicParsing="false" onAction="#onClickButtonPilota4" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: PURPLE;" text="Pilota 4" textFill="WHITE">
+   <Button fx:id="bt_pilota4" layoutX="320.0" layoutY="434.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: PURPLE;" text="Pilota 4" textFill="WHITE">
       <font>
          <Font name="Calibri" size="15.0" />
       </font>

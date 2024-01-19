@@ -464,18 +464,18 @@ Utilitza-la, si vols, per tenir una base i poder-te centrar en la gestió del fi
 
 Si l'executes obtindràs aquesta 'sortida':
 
-![ScreeShoot](act_3_bouncing_balls_template.png){width=42%}
+![ScreeShoot](act_3_bouncing_balls_template.png)
 
 
 ## Exemple d'aplicació final
 
 Un exemple d'aplicació podria ser:
 
-![ScreeShoot](act_3_bouncing_balls.png){width=42%}
+![ScreeShoot](act_3_bouncing_balls.png)
 
 En funcionament ...
 
-![Bouncing balls demo](act_3_bouncing_balls_demo.mov)
+[act_3_bouncing_balls_demo.mov](act_3_bouncing_balls_demo.mov)
 
 ## CODI D’HONOR
 

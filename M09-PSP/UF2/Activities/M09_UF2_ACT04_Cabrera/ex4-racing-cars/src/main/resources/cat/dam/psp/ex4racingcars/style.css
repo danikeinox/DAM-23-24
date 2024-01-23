@@ -1,0 +1,55 @@
+/* Estil general de l'aplicació */
+.root {
+    -fx-font-family: "Arial", sans-serif;
+    -fx-background-color: #f5f2f2;
+}
+
+/* Estil de la pista de carrera */
+.pistaCarrera {
+    -fx-padding: 10px;
+}
+
+/* Estils dels carrils */
+.carril {
+    -fx-background-color: #555555; /* Color de fons del carril */
+    -fx-border-color: white; /* Color de la vora del carril */
+    -fx-border-width: 2px 0; /* Gruix de la vora superior i inferior */
+    -fx-background-size: 10px 2px; /* Ample i alt de la línia discontinua */
+    -fx-background-position: center;
+    -fx-background-repeat: repeat-x; /* Repetició horitzontal de la línia */
+}
+
+/* Estils dels números dels carrils */
+.carrilLabel {
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-alignment: bottom-right;
+    -fx-padding: 5px;
+}
+
+/* Estils dels botons */
+.button {
+    -fx-background-color: #ff5050;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #ff3333;
+}
+
+/* Estil del botó Sortir */
+#btnSortir {
+    -fx-background-color: #4CAF50;
+}
+
+#btnSortir:hover {
+    -fx-background-color: #43A047;
+}

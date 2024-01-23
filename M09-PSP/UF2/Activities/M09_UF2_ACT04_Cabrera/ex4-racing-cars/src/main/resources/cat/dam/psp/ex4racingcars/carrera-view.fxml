@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<AnchorPane prefHeight="469.0" prefWidth="694.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cat.dam.psp.ex4racingcars.controller.CarreraViewController">
+    <!-- Àrea de la carrera amb 4 carrils -->
+    <Pane fx:id="pistaCarrera" layoutX="50.0" layoutY="84.0" prefHeight="376.0" prefWidth="600" styleClass="pistaCarrera">
+        <Pane prefHeight="75" prefWidth="600" styleClass="carril">
+            <children>
+                <Line endX="485.0" endY="-0.5" layoutX="115.0" layoutY="38.0" startX="-115.0" startY="-0.5" stroke="WHITE" strokeWidth="3.0" style="-fx-stroke-dash-array: 10;" />
+            </children>
+        </Pane>
+
+        <!-- Botons de control -->
+        <HBox fx:id="controlBotons" alignment="CENTER" layoutX="-1.0" layoutY="319.0" prefHeight="57.0" prefWidth="603.0" spacing="30.0">
+            <Button fx:id="btnIniciar" onAction="#handleIniciar" text="Iniciar" />
+            <Button fx:id="btnPausar" onAction="#handlePausar" text="Pausar" />
+            <Button fx:id="btnReprendre" onAction="#handleReprendre" text="Reprendre" />
+            <Button fx:id="btnReiniciar" onAction="#handleReiniciar" text="Reiniciar" />
+            <Button fx:id="btnSortir" onAction="#handleSortir" text="Sortir" />
+        </HBox>
+    </Pane>
+    <Line endX="600.0" endY="7.0" layoutX="50.0" layoutY="85.0" startX="600.0" startY="66.0" stroke="#6b555c" strokeWidth="12.0" />
+    <Text fill="RED" layoutX="22.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+        <font>
+            <Font size="36.0" />
+        </font>
+    </Text>
+    <Text fill="#e10808" layoutX="6.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GT Racing Cars" textAlignment="CENTER" wrappingWidth="688.0">
+        <font>
+            <Font name="System Bold" size="32.0" />
+        </font>
+        <effect>
+            <BoxBlur />
+        </effect>
+    </Text>
+</AnchorPane>

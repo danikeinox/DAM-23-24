@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="minim">11dp</dimen>
+    <dimen name="mig">24dp</dimen>
+    <dimen name="llarg">42dp</dimen>
+    <dimen name="maxim">150dp</dimen>
+    <dimen name="text">17sp</dimen>
+    <dimen name="interspai">6dp</dimen>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- rounded_buttons.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <corners android:radius="30dp" /> <!-- Ajusta el valor de "radius" según tus preferencias -->
+        <solid android:color="#F2181818" /> <!-- Color de fondo -->
+    </shape>
+</selector>

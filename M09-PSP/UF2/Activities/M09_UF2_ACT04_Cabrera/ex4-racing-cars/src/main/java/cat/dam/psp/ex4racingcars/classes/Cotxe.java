@@ -6,14 +6,14 @@ import javafx.scene.shape.Rectangle;
 
 
 public class Cotxe extends Rectangle implements Runnable {
-    private volatile boolean enMoviment;
+    public volatile boolean enMoviment;
     private final double velocitatMaxima;
     private double velocitatActual;
     private final double carrilY;
     private final int limitX;
     private final int ampladaCarril;
-    private long tempsInici;
-    private long tempsFinal;
+    public long tempsInici;
+    public long tempsFinal;
     private final Color colorCotxe;
     private final CarreraController carreraController;
     private static final int VELOCITAT_REFRESC = 5;

@@ -1,6 +1,7 @@
 package cat.dam.psp.ex4racingcars.controller;
 
 import cat.dam.psp.ex4racingcars.classes.CarreraController;
+import cat.dam.psp.ex4racingcars.classes.Cotxe;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -28,26 +29,29 @@ public class CarreraViewController implements Initializable {
 
     @FXML
     private void handleIniciar() {
-        throw new UnsupportedOperationException();
+        carreraController.iniciarCarrera();
+        //throw new UnsupportedOperationException();
     }
 
     @FXML
     private void handlePausar() {
-        throw new UnsupportedOperationException();
+        carreraController.pausarCarrera();
     }
 
     @FXML
     private void handleReprendre() {
-        throw new UnsupportedOperationException();
+        carreraController.continuarCarrera();
     }
 
     @FXML
     private void handleReiniciar() {
-        throw new UnsupportedOperationException();
+        carreraController.reiniciarCarrera();
+        carreraController = new CarreraController(pistaCarrera, limitX, ampladaCarril);
     }
 
     @FXML
     private void handleSortir() {
-        throw new UnsupportedOperationException();
+        carreraController.pausarCarrera();
+        System.exit(0);
     }
 }

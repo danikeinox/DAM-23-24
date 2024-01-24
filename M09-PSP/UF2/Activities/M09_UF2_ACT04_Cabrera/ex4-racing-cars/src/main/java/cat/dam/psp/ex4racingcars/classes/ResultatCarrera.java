@@ -1,8 +1,14 @@
 package cat.dam.psp.ex4racingcars.classes;
 
+import javafx.scene.Node;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Rectangle;
 
-public class ResultatCarrera implements Comparable<ResultatCarrera> {
+import java.util.HashMap;
+import java.util.Map;
+
+public class ResultatCarrera extends Node implements Comparable<ResultatCarrera> {
     private Color colorCotxe;
     private long temps;
 
@@ -18,11 +24,23 @@ public class ResultatCarrera implements Comparable<ResultatCarrera> {
 
     @Override
     public String toString() {
-        return String.format("Cotxe: %s - Temps: %d ms", colorToString(colorCotxe), temps);
+        return String.format("\nCotxe: %s - Temps: %d ms\n", colorToString(colorCotxe), temps);
+    }
+
+    private static final Map<Color, String> COLOR_NAMES = new HashMap<>();
+    static {
+        COLOR_NAMES.put(Color.RED, "Vermell");
+        COLOR_NAMES.put(Color.GREEN, "Verd");
+        COLOR_NAMES.put(Color.BLUE, "Blau");
+        COLOR_NAMES.put(Color.PURPLE, "Violeta");
     }
 
     private String colorToString(Color color) {
-        if (color == Color.RED) return "Vermell";
-        return "Desconegut";
+        return COLOR_NAMES.getOrDefault(color, "Desconegut");
+    }
+
+    @Override
+    public Node getStyleableNode() {
+        return super.getStyleableNode();
     }
 }

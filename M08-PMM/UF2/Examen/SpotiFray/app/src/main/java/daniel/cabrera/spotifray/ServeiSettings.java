@@ -9,7 +9,7 @@ public class ServeiSettings extends Service {
     MediaPlayer mRep;
     public void onCreate(){
         super.onCreate();
-        mRep=MediaPlayer.create(getApplicationContext(), R.raw.musicon);
+        mRep=MediaPlayer.create(getApplicationContext(), R.raw.cancion1);
         mRep.setLooping(true);
         mRep.setVolume(100,100);
 

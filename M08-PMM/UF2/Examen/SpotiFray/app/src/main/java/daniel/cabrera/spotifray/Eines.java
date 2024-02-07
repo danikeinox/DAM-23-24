@@ -18,10 +18,9 @@ public class Eines extends AppCompatActivity implements CommMenu {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eines);
-        elsFragments=new Fragment[3];
-        elsFragments[0]=new Musica();
-        elsFragments[1]=new MusicPlayer();
-        elsFragments[2]=new Menu();
+        elsFragments=new Fragment[2];
+        elsFragments[0]=new MusicPlayer();
+        elsFragments[1]=new Menu();
         Bundle extras=getIntent().getExtras();
         menu(extras.getInt("BotoPres"));
     }

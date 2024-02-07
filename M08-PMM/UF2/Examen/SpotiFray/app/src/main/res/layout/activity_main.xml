@@ -20,7 +20,7 @@
             tools:layout="@layout/fragment_menu" />
 
         <fragment
-            android:id="@+id/menu4"
+            android:id="@+id/music"
             android:name="daniel.cabrera.spotifray.Musica"
             android:layout_width="wrap_content"
             android:layout_height="515dp"
@@ -28,7 +28,7 @@
             tools:layout="@layout/fragment_musica" />
 
         <fragment
-            android:id="@+id/menu2"
+            android:id="@+id/MusicPlayer"
             android:name="daniel.cabrera.spotifray.MusicPlayer"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

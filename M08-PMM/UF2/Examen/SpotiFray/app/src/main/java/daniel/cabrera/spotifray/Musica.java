@@ -1,14 +1,22 @@
 package daniel.cabrera.spotifray;
 
+import static java.util.ResourceBundle.getBundle;
+
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import java.util.ResourceBundle;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,9 +25,9 @@ import android.widget.ImageView;
  */
 public class Musica extends Fragment {
 
-    private boolean musOn;
+    private static boolean musOn;
 
-    private ImageView bMusica;
+    private ImageView IMusica;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,16 +46,14 @@ public class Musica extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
+     * @param musOn Parameter 1.
      * @return A new instance of fragment Musica.
      */
     // TODO: Rename and change types and number of parameters
-    public static Musica newInstance(String param1, String param2) {
+    public static Musica newInstance(boolean musOn) {
         Musica fragment = new Musica();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putBoolean("musicaOnOff", musOn);
         fragment.setArguments(args);
         return fragment;
     }
@@ -64,31 +70,28 @@ public class Musica extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View fragMus = inflater.inflate(R.layout.fragment_musica, container, false);
-        bMusica= (ImageView) fragMus.findViewById(R.id.musica);
-        if(musOn) bMusica.setImageResource(R.drawable.musica2);
-        bMusica.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(musOn) apagaMusica();
-                else encenMusica();
-            }
-        });
+        IMusica = (ImageView) fragMus.findViewById(R.id.musica);
+
+        // Recibe el estado de la música como argumento
+        Bundle args = getArguments();
+        if (args != null) {
+            musOn = args.getBoolean("musicaOnOff", false);
+        }
+
         return fragMus;
     }
 
-    public void apagaMusica(){
-        bMusica.setImageResource(R.drawable.musica);
-        Intent mRep = new Intent(getActivity(), ServeiMusica.class);
-        getActivity().stopService((mRep));
-    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-    private void encenMusica() {
-        bMusica.setImageResource(R.drawable.musica2);
-        Intent mRep = new Intent(getActivity(), ServeiMusica.class);
-        getActivity().startService((mRep));
-        musOn=!musOn;
+        // Actualiza la imagen de fondo del ImageView
+        if (musOn) {
+            IMusica.setImageResource(R.drawable.icon_big);
+        } else {
+            IMusica.setImageResource(R.drawable.icon_big);
+        }
     }
 
     @Override
@@ -96,3 +99,20 @@ public class Musica extends Fragment {
         super.onPause();
     }
 }
+
+
+// old
+//
+//    ImageView backgroundImg;
+//    boolean musOn;
+//    public void onCreate(){
+//        super.onCreate();
+//        ImageView bckImg = backgroundImg.findViewById(R.id.musica);
+//        if (musOn){
+//            bckImg.setBackgroundResource(R.drawable.musica2);
+//            musOn=!musOn;
+//        } else {
+//            bckImg.setBackgroundResource(R.drawable.musica);
+//            musOn=!musOn;
+//        }
+//    }

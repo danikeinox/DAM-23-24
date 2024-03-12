@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI bestScoreText;
 
     public Slider ProgressBar;
-
+    internal static bool mute;
 
     private void Awake()
     {

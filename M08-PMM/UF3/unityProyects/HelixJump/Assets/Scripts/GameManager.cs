@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
     public static GameManager singleton;
     public int best;
     public int score;
@@ -43,6 +42,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        // Load music of the game
+        FindObjectOfType<AudioManager>().Play("GameMusic");
         passCheckRing = 0;
     }
 
@@ -119,20 +120,28 @@ public class GameManager : MonoBehaviour
 
     public void WinLevel()
     {
-        Debug.Log("Win Level");
-        levelWin = true;
+        if (!GameManager.levelWin)
+        {
+            FindObjectOfType<AudioManager>().Play("LevelWin");
+            Debug.Log("Win Level");
+            levelWin = true;
+        }
     }
 
     public void RestartLevel()
     {
-        Debug.Log("Restarting Level");
-        gameOver = true;
+        if (!GameManager.gameOver)
+        {
+            FindObjectOfType<AudioManager>().Play("GameOver");
+            Debug.Log("Restarting Level");
+            gameOver = true;
+        }
     }
 
     public void AddScore(int scoreToAdd)
     {
         score += scoreToAdd;
-
+        FindObjectOfType<AudioManager>().Play("Whoosh");
         if (score > best)
         {
             PlayerPrefs.SetInt("Highscore", score);

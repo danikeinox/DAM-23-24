@@ -47,6 +47,9 @@ public class BallController : MonoBehaviour
 
         splits.Add(newSplit);
 
+        // music of the ball bounce
+        FindObjectOfType<AudioManager>().Play("Land");
+
         ignoreNextCollision = true;
         Invoke("AllowCollision", .2f);
 

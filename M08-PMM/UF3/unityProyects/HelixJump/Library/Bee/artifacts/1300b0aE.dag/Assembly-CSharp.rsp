@@ -380,6 +380,8 @@
 "Assets/Scripts/HelixController.cs"
 "Assets/Scripts/PassCheck.cs"
 "Assets/Scripts/Stage.cs"
+"Assets/Sounds/AudioManager.cs"
+"Assets/Sounds/Sound.cs"
 -langversion:9.0
 
 /deterministic
